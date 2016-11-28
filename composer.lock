@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7bb86c8cef7add50067c0ca58cfad35c",
+    "hash": "7726dffbf63428c30f0563cf5ad77c3e",
+    "content-hash": "3bb7a2e377ceae7ac8c3eaa299d34795",
     "packages": [
         {
             "name": "composer/installers",
@@ -108,16 +109,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.6.1",
+            "version": "4.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3"
+                "reference": "f5c6f4dd899e6365ddf2752d2705ed1de7e10715"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3",
-                "reference": "aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/f5c6f4dd899e6365ddf2752d2705ed1de7e10715",
+                "reference": "f5c6f4dd899e6365ddf2752d2705ed1de7e10715",
                 "shasum": ""
             },
             "require": {
@@ -141,7 +142,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2016-09-07 15:01:47"
+            "time": "2016-06-21 16:31:21"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -232,63 +233,6 @@
                 "env"
             ],
             "time": "2016-05-08 17:14:32"
-        },
-        {
-            "name": "roots/wp-password-bcrypt",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/roots/wp-password-bcrypt.git",
-                "reference": "5cecd2e98ccc3193443cc5c5db9b3bc7abed5ffa"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/roots/wp-password-bcrypt/zipball/5cecd2e98ccc3193443cc5c5db9b3bc7abed5ffa",
-                "reference": "5cecd2e98ccc3193443cc5c5db9b3bc7abed5ffa",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.0",
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "brain/monkey": "^1.3.1",
-                "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "^4.8.23|^5.2.9",
-                "squizlabs/php_codesniffer": "^2.5.1"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "wp-password-bcrypt.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Scott Walkinshaw",
-                    "email": "scott.walkinshaw@gmail.com",
-                    "homepage": "https://github.com/swalkinshaw"
-                },
-                {
-                    "name": "qwp6t",
-                    "homepage": "https://github.com/qwp6t"
-                },
-                {
-                    "name": "Jan Pingel",
-                    "email": "jpingel@bitpiston.com",
-                    "homepage": "http://janpingel.com"
-                }
-            ],
-            "description": "WordPress plugin which replaces wp_hash_password and wp_check_password's phpass hasher with PHP 5.5's password_hash and password_verify using bcrypt.",
-            "homepage": "https://roots.io/plugins/wp-password-bcrypt",
-            "keywords": [
-                "wordpress wp bcrypt password"
-            ],
-            "time": "2016-03-01 16:27:06"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -427,7 +371,10 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6"
+        "php": ">=5.4"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "platform-overrides": {
+        "php": "5.4.45"
+    }
 }
