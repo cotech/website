@@ -53,6 +53,7 @@
 
     "wpackagist-plugin/advanced-custom-fields": "4.4.11",
     "wpackagist-plugin/custom-post-type-ui": "1.4.3",
+    "wpackagist-plugin/posts-to-posts": "1.6.5",
     "outlandish/oowp": "dev-master",
     "outlandish/routemaster": "dev-master"
   },
