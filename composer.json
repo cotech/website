@@ -43,6 +43,7 @@
     "oscarotero/env": "^1.0",
 
 
+    "wpackagist-plugin/advanced-custom-fields": "4.4.11",
     "wpackagist-plugin/custom-post-type-ui": "1.4.3"
   },
   "require-dev": {
