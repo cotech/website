@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dd902e15114bcdb341cbfa10420b24ad",
-    "content-hash": "894cf79f9c761d83d41df3033a75f4b0",
+    "hash": "ea5bf2fb2560705d6d697d992a0a8267",
+    "content-hash": "85485fddd874fe7f2f01f09985c1c697",
     "packages": [
         {
             "name": "composer/installers",
@@ -235,6 +235,88 @@
             "time": "2016-05-08 17:14:32"
         },
         {
+            "name": "outlandish/oowp",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/outlandishideas/oowp.git",
+                "reference": "d17a165926eb40f782af13829eac4ea569ea35b8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/outlandishideas/oowp/zipball/d17a165926eb40f782af13829eac4ea569ea35b8",
+                "reference": "d17a165926eb40f782af13829eac4ea569ea35b8",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-muplugin",
+            "autoload": {
+                "classmap": [
+                    "classes/"
+                ]
+            },
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Rasmus Winter",
+                    "email": "ras@outlandish.com"
+                },
+                {
+                    "name": "Tamlyn Rhodes",
+                    "email": "tam@outlandish.com"
+                },
+                {
+                    "name": "Harry Robbins",
+                    "email": "harry@outlandish.com"
+                }
+            ],
+            "description": "A routing plugin for WordPress",
+            "support": {
+                "source": "https://github.com/outlandishideas/oowp/tree/master",
+                "issues": "https://github.com/outlandishideas/oowp/issues"
+            },
+            "time": "2016-07-20 21:12:19"
+        },
+        {
+            "name": "outlandish/routemaster",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/outlandishideas/routemaster.git",
+                "reference": "e84c7e1ac0a6d012369f4ae31b89c7fe313f818c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/outlandishideas/routemaster/zipball/e84c7e1ac0a6d012369f4ae31b89c7fe313f818c",
+                "reference": "e84c7e1ac0a6d012369f4ae31b89c7fe313f818c",
+                "shasum": ""
+            },
+            "type": "wordpress-muplugin",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Rasmus Winter",
+                    "email": "ras@outlandish.com"
+                },
+                {
+                    "name": "Tamlyn Rhodes",
+                    "email": "tam@outlandish.com"
+                }
+            ],
+            "description": "A routing plugin for WordPress",
+            "support": {
+                "source": "https://github.com/outlandishideas/routemaster/tree/master",
+                "issues": "https://github.com/outlandishideas/routemaster/issues"
+            },
+            "time": "2015-09-18 14:49:52"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v2.4.0",
             "source": {
@@ -407,7 +489,10 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "outlandish/oowp": 20,
+        "outlandish/routemaster": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

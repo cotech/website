@@ -1,0 +1,19 @@
+{
+  "name": "outlandish-starter-theme",
+  "private": true,
+  "version": "1.0",
+  "description": "The Outlandish Starter Theme",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "watch": "gulp watch",
+    "build:production": "gulp --production"
+  },
+  "author": "Matthew Kendon <matt@outlandish.com>",
+  "license": "ISC",
+  "dependencies": {
+    "font-awesome": "4.7.0",
+    "foundation-sites": "6.2.4",
+    "laravel-elixir": "6.0.0-13"
+  }
+}
