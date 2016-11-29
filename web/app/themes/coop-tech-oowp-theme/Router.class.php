@@ -11,6 +11,10 @@ class Router extends \ooRoutemaster
 	    // don't add routes here, add them in routes.php.
         // they will be loaded in functions.php
 		$this->routes   = [];
+
+        $this->viewPath = get_template_directory() . '/views/';
+        $this->layout = 'layout';
+
 		parent::__construct();
 	}
 

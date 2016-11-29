@@ -5,9 +5,9 @@ class ouCoOp extends ouPost {
     public static function init()
     {
         parent::init();
-        self::registerConnection(ouClient::postType()); // TODO + the rest
-        self::registerConnection(ouService::postType());
-        self::registerConnection(ouTechnology::postType());
+//        self::registerConnection(ouClient::postType()); // TODO + the rest
+//        self::registerConnection(ouService::postType());
+//        self::registerConnection(ouTechnology::postType());
     }
 
     /**
