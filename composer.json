@@ -33,6 +33,14 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/outlandishideas/oowp.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/outlandishideas/routemaster.git"
     }
   ],
   "require": {
@@ -44,7 +52,9 @@
 
 
     "wpackagist-plugin/advanced-custom-fields": "4.4.11",
-    "wpackagist-plugin/custom-post-type-ui": "1.4.3"
+    "wpackagist-plugin/custom-post-type-ui": "1.4.3",
+    "outlandish/oowp": "dev-master",
+    "outlandish/routemaster": "dev-master"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
