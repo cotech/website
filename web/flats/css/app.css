@@ -1,0 +1,95 @@
+/* -------------------- HEADER  -------------------- */
+
+.top-bar {
+  padding: 0.5rem 1rem;
+}
+
+.top-bar-right .menu > li {
+  padding-right: 0.5rem;
+}
+
+.top-bar-right .menu > li > a {
+  padding: 0.7rem;
+}
+
+/* Small only - For small screens, make the burger icon align to the right of top bar*/
+@media screen and (max-width: 39.9375em) {
+  .top-bar-title {
+  width: 100%;
+  }
+  
+  /* Burger Icon */
+  .top-bar-title span {
+  float:right;
+  } 
+}
+
+#logo, .top-bar-title span {
+  line-height: 2.4;
+}
+
+
+/* -------------------- BANNER  -------------------- */
+
+#banner {
+  padding: 8rem 0;
+  border-bottom: 1px solid #aaa;
+}
+
+/* -------------------- SECTIONS  -------------------- */
+
+section {
+  padding: 6rem 0;
+  border-bottom: 1px solid #aaa;
+}
+
+section h2 span {
+  float: right;
+  font-size: 1rem;
+  line-height: 3;
+}
+
+section h2 {
+  text-align: center;
+  padding-bottom: 1.6rem;
+}
+
+/* -------------------- KPI -------------------- */
+
+#kpi {
+  text-align: center;
+}
+
+
+/* -------------------- HIRE  -------------------- */
+
+textarea {
+  height: 200px;
+}
+
+
+/* -------------------- COOP  -------------------- */
+
+#breadcrumb {
+  padding: 2rem 0;
+}
+
+#page-banner {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* -------------------- FOOTER  -------------------- */
+
+footer {
+  padding: 2rem 0;
+}
+
+footer p {
+  padding: 0;
+  margin: 0;
+}
+
+footer .menu > li > a {
+  display: inline;
+}
