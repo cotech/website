@@ -21,7 +21,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Outlandish\\StarterTheme\\": "src/"
+      "Outlandish\\MappingCoTech\\": "src/"
     }
   },
   "require": {

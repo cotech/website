@@ -1,5 +1,7 @@
 <?php
 
+use Outlandish\MappingCoTech\Fields\Fields;
+
 class ouService extends ouPost {
 
     /**
@@ -9,6 +11,11 @@ class ouService extends ouPost {
         return $this->title();
     }
 
-    // public function colour() { }
+    /**
+     * @return string
+     */
+     public function icon() {
+         return $this->metadata(Fields::ICON);
+     }
 
 }
