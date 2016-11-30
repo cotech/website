@@ -1,13 +1,26 @@
 <?php
 
+use Outlandish\MappingCoTech\Fields\Fields;
+
 class ouCoOp extends ouPost {
 
-    public static function init()
-    {
+    public static function init() {
         parent::init();
-//        self::registerConnection(ouClient::postType()); // TODO + the rest
-//        self::registerConnection(ouService::postType());
-//        self::registerConnection(ouTechnology::postType());
+    }
+
+    public static function bruv() {
+        parent::bruv();
+        self::registerConnection(ouClient::postType());
+        self::registerConnection(ouService::postType());
+        self::registerConnection(ouTechnology::postType());
+    }
+
+    public static function friendlyName() {
+        return 'Co-Op';
+    }
+
+    public static function friendlyNamePlural() {
+        return 'Co-Ops';
     }
 
     /**
@@ -37,43 +50,45 @@ class ouCoOp extends ouPost {
      * @return string
      */
     public function websiteUrl() {
-        return $this->metadata('websiteUrl');
-    }
-
-    /**
-     * @return string
-     */
-    public function address() {
-        return $this->metadata('address');
+        return $this->metadata(Fields::WEBSITE_URL);
     }
 
     /**
      * @return int
      */
     public function employeeCount() {
-        return $this->metadata('employeeCount');
+        return $this->metadata(Fields::EMPLOYEE_COUNT);
+    }
+
+    /**
+     * @return int
+     */
+    public function turnover() {
+        return $this->metadata(Fields::TURNOVER);
     }
 
     //TODO doc-ify
+    public function address() {
+        return $this->metadata(Fields::ADDRESS);
+    }
+
     public function services() {
-        return $this->metadata('services');
+        return $this->metadata(Fields::SERVICES);
     }
 
     public function technologies() {
-        return $this->metadata('technologies');
+        return $this->metadata(Fields::TECHNOLOGIES);
     }
 
     public function clients() {
-        return $this->metadata('clients');
+        return $this->metadata(Fields::CLIENTS);
     }
-
-    //public function email() {}
 
     /**
      * @return array
      */
     public function socialMedia() {
-        return $this->metadata('socialMedia');
+        return $this->metadata(Fields::SOCIAL_MEDIA);
     }
 
 }

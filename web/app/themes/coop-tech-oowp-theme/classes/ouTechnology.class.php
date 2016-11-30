@@ -2,6 +2,10 @@
 
 class ouTechnology extends ouPost {
 
+    public static function friendlyNamePlural() {
+        return 'Technologies';
+    }
+
     /**
      * @return string
      */
@@ -17,7 +21,5 @@ class ouTechnology extends ouPost {
     public function logoUrl($size = 'thumbnail', $attrs = array()) {
         return $this->featuredImage($size, $attrs);
     }
-
-    // public function colour() { }
 
 }

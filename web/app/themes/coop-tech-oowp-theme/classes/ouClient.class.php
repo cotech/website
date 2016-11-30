@@ -1,5 +1,7 @@
 <?php
 
+use Outlandish\MappingCoTech\Fields\Fields;
+
 class ouClient extends ouPost {
 
     /**
@@ -22,7 +24,7 @@ class ouClient extends ouPost {
      * @return string
      */
     public function websiteUrl() {
-        return $this->metadata('websiteUrl');
+        return $this->metadata(Fields::WEBSITE_URL);
     }
 
 }
