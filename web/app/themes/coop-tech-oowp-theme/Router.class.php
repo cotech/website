@@ -8,15 +8,17 @@ class Router extends \ooRoutemaster
 	 */
 	protected function __construct()
 	{
-	    // don't add routes here, add them in routes.php.
+        parent::__construct();
+        // don't add routes here, add them in routes.php.
         // they will be loaded in functions.php
-		$this->routes   = [];
+        $this->routes   = [];
 
         $this->viewPath = get_template_directory() . '/views/';
         $this->layout = 'layout';
 
-		parent::__construct();
-	}
+        remove_action('wp_head', 'feed_links', 2);
+        remove_action('wp_head', 'feed_links_extra', 3);
+    }
 
 	protected function preDispatch($action, $args = array())
 	{
