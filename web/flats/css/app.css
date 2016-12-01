@@ -147,6 +147,11 @@ section p {
   max-width: 150rem;
 }
 
+.coop-thumb {
+  border: solid 1px #f8f8f9;
+  display: block
+}
+
 .coop-thumb img {
   margin-bottom: 0;
 }
@@ -162,10 +167,7 @@ section p {
   text-align: center;
 }
 
-.thumbnail {
-  border: solid 1px #f8f8f9;
-  box-shadow: none;
-}
+
 
 /* -------------------- CLIENTS  -------------------- */
 
