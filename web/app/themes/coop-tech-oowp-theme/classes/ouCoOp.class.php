@@ -23,6 +23,11 @@ class ouCoOp extends ouPost {
         return 'Co-Ops';
     }
 
+    public function permalink($leaveName = false) {
+        $parentUrl = get_bloginfo('url') . '/co-op/';
+        return $parentUrl . $this->post_name . '/';
+    }
+
     /**
      * @return string
      */

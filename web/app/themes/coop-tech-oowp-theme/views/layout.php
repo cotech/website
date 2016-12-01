@@ -6,7 +6,6 @@
     <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
     <link rel="canonical" href="<?php print $post->permalink(); ?>">
     <?php wp_head(); ?>
-    <script type='text/javascript'>    var $ = jQuery;    </script>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="alternate" type="application/rss+xml" title="Latest Trafficking Culture Updates" href="<?php bloginfo('url'); ?>/feed.rss" />
 </head>
