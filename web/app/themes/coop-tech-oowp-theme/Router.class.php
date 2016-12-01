@@ -1,18 +1,19 @@
 <?php
 
-class Router extends \ooRoutemaster
-{
+class Router extends \ooRoutemaster {
+
 	/**
 	 * Called early in the WP boot sequence.
 	 * Set up filters etc. here.
 	 */
-	protected function __construct()
-	{
+	protected function __construct() {
         parent::__construct();
         // don't add routes here, add them in routes.php.
         // they will be loaded in functions.php
         $this->routes   = [
-            '|co-op/([\w\-]+)/?$|' => 'coOpSingle'
+            '|co-op/([\w\-]+)/?$|' => 'coOpSingle',
+            '|service/([\w\-]+)/?$|' => 'service',
+            '|technology/([\w\-]+)/?$|' => 'technology',
         ];
 
         $this->viewPath = get_template_directory() . '/views/';
@@ -22,8 +23,7 @@ class Router extends \ooRoutemaster
         remove_action('wp_head', 'feed_links_extra', 3);
     }
 
-	protected function preDispatch($action, $args = array())
-	{
+	protected function preDispatch($action, $args = array()) {
 		parent::preDispatch($action, $args);
 	}
 
@@ -46,8 +46,21 @@ class Router extends \ooRoutemaster
             'name' => $slug,
             'post_type' => ouCoOp::postType()
         ]);
-        $this->view->hello = 'Hello World';
-}
+    }
+
+    protected function service($slug) {
+        $this->querySingle([
+            'name' => $slug,
+            'post_type' => ouService::postType()
+        ]);
+    }
+
+    protected function technology($slug) {
+        $this->querySingle([
+            'name' => $slug,
+            'post_type' => ouTechnology::postType()
+        ]);
+    }
 
 }
 

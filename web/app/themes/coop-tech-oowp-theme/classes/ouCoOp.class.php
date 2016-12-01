@@ -77,16 +77,25 @@ class ouCoOp extends ouPost {
         return $this->metadata(Fields::ADDRESS);
     }
 
+    /**
+     * @return ooWP_Query|ouService[]
+     */
     public function services() {
-        return $this->metadata(Fields::SERVICES);
+        return $this->connected(ouService::postType(), false);
     }
 
+    /**
+     * @return ooWP_Query|ouTechnology[]
+     */
     public function technologies() {
-        return $this->metadata(Fields::TECHNOLOGIES);
+        return $this->connected(ouTechnology::postType(), false);
     }
 
+    /**
+     * @return ooWP_Query|ouClient[]
+     */
     public function clients() {
-        return $this->metadata(Fields::CLIENTS);
+        return $this->connected(ouClient::postType(), false);
     }
 
     /**

@@ -11,22 +11,28 @@
 </head>
 
 
-<body>
+<body class="home">
 <?php /** @var tcPost $post */?>
 
-<div id="wrapper">
-    <div id="content" class="row content-<?php print $post->postType(); ?>">
 
-        <div class="small-12 columns">
+<?php echo $this->content; ?>
 
-            <?php echo $this->content; ?>
 
+<footer>
+    <div class="row">
+        <div class="small-6 columns">
+            <ul class="menu">
+                <li>site by CoTech &#64;2016</li>
+            </ul>
         </div>
-        <!--#content div.wrapper end-->
-
+        <div class="small-6 columns">
+            <ul class="menu float-right">
+                <li><a href="join.php">Join CoTech</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
+            </ul>
+        </div>
     </div>
-    <!--#content end-->
-</div>
+</footer>
 
 <?php wp_footer(); ?>
 </body>
