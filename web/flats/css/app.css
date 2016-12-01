@@ -1,4 +1,4 @@
-/* -------------------- HEADER  -------------------- */
+/* ---------------------------------------- HEADER  ---------------------------------------- */
 
 .top-bar {
   padding: 0.5rem 1rem;
@@ -28,12 +28,24 @@
   line-height: 2.4;
 }
 
+/* ---------------------------------------- HOME PAGE  ---------------------------------------- */
 
 /* -------------------- BANNER  -------------------- */
 
 #banner {
-  padding: 8rem 0;
+  padding: 8rem 0 4rem;
   border-bottom: 1px solid #aaa;
+}
+
+/* -------------------- KPI -------------------- */
+
+#kpi {
+  margin-top: 8rem;
+  text-align: center;
+}
+
+#kpi i {
+  font-size: 4rem;
 }
 
 /* -------------------- SECTIONS  -------------------- */
@@ -43,23 +55,65 @@ section {
   border-bottom: 1px solid #aaa;
 }
 
-section h2 span {
-  float: right;
-  font-size: 1rem;
-  line-height: 3;
-}
-
 section h2 {
   text-align: center;
   padding-bottom: 1.6rem;
 }
 
-/* -------------------- KPI -------------------- */
+/* -------------------- WHO WE ARE -------------------- */
 
-#kpi {
+section#who-we-are h2 {
+  text-align: center;
+  padding-bottom: 1.6rem;
+}
+
+/* View */
+
+.view {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  width: 150px;
+}
+
+.view .tabs {
+  display: inline-block;
+}
+
+.tabs-panel {
+  padding: 0;
+}
+
+.tabs-content {
+  border: 0;
+}
+
+/* Coops Thumb */
+
+.coop-thumb img {
+  margin-bottom: 0;
+}
+
+.coop-thumb span {
+  display: block;
+  padding-top: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.coop-thumb span h4 {
+  font-size: 0.9rem;
   text-align: center;
 }
 
+/* -------------------- CLIENTS  -------------------- */
+
+#clients .orbit-previous, #clients .orbit-next {
+  color: #999;
+}
+
+#clients .orbit-container {
+  padding-left: 70px;
+  padding-right: 70px;
+}
 
 /* -------------------- HIRE  -------------------- */
 
@@ -68,18 +122,23 @@ textarea {
 }
 
 
-/* -------------------- COOP  -------------------- */
+/* ---------------------------------------- SINGLE PAGE ---------------------------------------- */
 
-#breadcrumb {
-  padding: 2rem 0;
+.back {
+  padding-left: 2rem;
 }
 
 #page-banner {
   text-align: center;
   margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
-/* -------------------- FOOTER  -------------------- */
+#page-banner h2 {
+  line-height: 1.2;
+}
+
+/* ---------------------------------------- FOOTER  ---------------------------------------- */
 
 footer {
   padding: 2rem 0;
