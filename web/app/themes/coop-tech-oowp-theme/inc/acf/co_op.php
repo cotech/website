@@ -71,7 +71,7 @@ if(function_exists("register_field_group"))
                         'label' => 'Address',
                         'name' => Fields::ADDRESS,
                         'display' => 'row',
-                        'min' => 1,
+                        'min' => 0,
                         'max' => 1,
                         'sub_fields' => array (
                             array (

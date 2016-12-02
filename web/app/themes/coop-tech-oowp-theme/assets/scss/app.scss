@@ -3,10 +3,48 @@
 @import 'font-awesome';
 @include foundation-everything;
 
+/* ---------------------------------------- Typography  ---------------------------------------- */
+
+@font-face {
+  font-family: 'open_sansregular';
+  src: url('../fonts/OpenSans-Regular-webfont.eot');
+  src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+  url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+  url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'open_sansbold';
+  src: url('../fonts/OpenSans-Bold-webfont.eot');
+  src: url('../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/OpenSans-Bold-webfont.woff') format('woff'),
+  url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+  url('../fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,h2,h3,h4,h5,h6,p,li,a {
+  font-family: "open_sansregular", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  color: #1e2637;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "open_sansbold", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+
 /* ---------------------------------------- HEADER  ---------------------------------------- */
 
 .top-bar {
-  padding: 0.5rem 1rem;
+  padding: 1.4rem;
+}
+
+.top-bar, .top-bar ul {
+  background-color: #fff;
 }
 
 .top-bar-right .menu > li {
@@ -15,6 +53,14 @@
 
 .top-bar-right .menu > li > a {
   padding: 0.7rem;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.top-bar-right .menu > li > a.button {
+  margin-left: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  font-weight: bold;
 }
 
 /* Small only - For small screens, make the burger icon align to the right of top bar*/
@@ -38,39 +84,42 @@
 /* -------------------- BANNER  -------------------- */
 
 #banner {
-  padding: 8rem 0 4rem;
-  border-bottom: 1px solid #aaa;
+  padding: 8rem 0;
+  background-color: #d2e9ed;
+  text-align: center;
 }
 
 /* -------------------- KPI -------------------- */
 
 #kpi {
-  margin-top: 8rem;
+  background-color: #fafafa;
   text-align: center;
+  padding: 2rem 0;
 }
 
 #kpi i {
   font-size: 4rem;
+  line-height: 1;
 }
 
 /* -------------------- SECTIONS  -------------------- */
 
 section {
   padding: 6rem 0;
-  border-bottom: 1px solid #aaa;
 }
 
 section h2 {
   text-align: center;
+  padding-bottom: 0;
+}
+
+section p {
+  text-align: center;
   padding-bottom: 1.6rem;
+  color: #9196a2;
 }
 
 /* -------------------- WHO WE ARE -------------------- */
-
-section#who-we-are h2 {
-  text-align: center;
-  padding-bottom: 1.6rem;
-}
 
 /* View */
 
@@ -82,6 +131,7 @@ section#who-we-are h2 {
 
 .view .tabs {
   display: inline-block;
+  border: none;
 }
 
 .tabs-panel {
@@ -92,7 +142,16 @@ section#who-we-are h2 {
   border: 0;
 }
 
+.tabs-title > a:focus, .tabs-title > a[aria-selected='true'] {
+  background-color: #f1f1f1;
+}
+
 /* Coops Thumb */
+
+.coop-thumb {
+  border: solid 1px #f8f8f9;
+  display: block
+}
 
 .coop-thumb img {
   margin-bottom: 0;
@@ -109,7 +168,13 @@ section#who-we-are h2 {
   text-align: center;
 }
 
+
+
 /* -------------------- CLIENTS  -------------------- */
+
+#clients {
+  background-color: #fafafa;
+}
 
 #clients .orbit-previous, #clients .orbit-next {
   color: #999;
@@ -120,12 +185,87 @@ section#who-we-are h2 {
   padding-right: 70px;
 }
 
-/* -------------------- HIRE  -------------------- */
-
-textarea {
-  height: 200px;
+#clients .orbit-bullets button.is-active {
+  background-color: #1d2535;
 }
 
+/* -------------------- SERVICES  -------------------- */
+
+.service-thumb {
+  text-align: center;
+  padding: 1rem 0 1rem;
+  display: block;
+}
+
+.service-thumb:hover {
+  background-color: #fafafa;
+}
+
+/* -------------------- TECHNOLOGIES  -------------------- */
+
+#technologies {
+  background-color: #fafafa;
+}
+
+.technology-thumb {
+  text-align: center;
+  border: 1px solid #7b8290;
+  border-radius: 3px;
+  width: 100%;
+  display: block;
+  padding: 1rem 0;
+  color: #7b8290;
+  margin-bottom: 1rem;
+}
+
+/* -------------------- HIRE  -------------------- */
+
+#hire {
+  background-color: #38aad5;
+}
+
+#hire h2, #hire p {
+  color: #fff;
+}
+
+#hire [type='text'], #hire [type='email'], #hire textarea {
+  background-color: transparent;
+  border-color: #fff;
+  padding: 1.5rem;
+  color: #fff;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+}
+
+#hire textarea {
+  height: 200px;
+  margin: 0.95rem 0 1.7rem;
+  padding: 1.3rem 1.5rem;
+}
+
+/* change the text placeholder colour to white */
+
+#hire [type='text']::-webkit-input-placeholder, #hire [type='email']::-webkit-input-placeholder, #hire textarea::-webkit-input-placeholder {
+  color: #fff;
+}
+
+#hire [type='text']:-moz-placeholder, #hire [type='email']:-moz-placeholder, #hire textarea:-moz-placeholder { /* Firefox 18- */
+  color: #fff;
+}
+
+#hire [type='text']::-moz-placeholder, #hire [type='email']::-moz-placeholder, #hire textarea::-moz-placeholder {  /* Firefox 19+ */
+  color: #fff;
+}
+
+#hire [type='text']:-ms-input-placeholder, #hire [type='email']:-ms-input-placeholder, #hire textarea:-ms-input-placeholder {
+  color: #fff;
+}
+
+#hire .button {
+  background-color: #fff;
+  color: #1e2637;
+  font-family: "open_sansbold", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
 
 /* ---------------------------------------- SINGLE PAGE ---------------------------------------- */
 
@@ -145,15 +285,28 @@ textarea {
 
 /* ---------------------------------------- FOOTER  ---------------------------------------- */
 
-footer {
-  padding: 2rem 0;
+.footer-upper {
+  background-color: #212a3d;
+  padding: 2.8rem 0 2.2rem;
 }
 
-footer p {
-  padding: 0;
-  margin: 0;
+footer .footer-upper .menu > li > a {
+  color: #fff;
+  font-weight: bold;
 }
 
-footer .menu > li > a {
-  display: inline;
+footer .footer-upper .menu > li > a span {
+  color: #fdc441;
+}
+
+.footer-lower {
+  background-color: #1e2637;
+  padding: 5rem 0;
+}
+
+.footer-lower p {
+  color: #7b8290;
+  text-align: center;
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
 }

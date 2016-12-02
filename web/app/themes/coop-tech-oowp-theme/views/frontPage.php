@@ -33,7 +33,7 @@
         <div class="row">
             <div class="small-3 columns">
                 <div class="callout">
-                    <i class="fi-home"></i>
+                    <i class="fi-home"></i> <!-- TODO get icons working -->
                     <h5>Co-ops</h5>
                     <h6>28</h6> <!-- TODO remove hardcoded values -->
                 </div>
