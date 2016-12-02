@@ -16,5 +16,8 @@
     "foundation-sites": "6.2.4",
     "laravel-elixir": "6.0.0-13",
     "what-input": "^4.0.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }
