@@ -143,10 +143,6 @@ section p {
 
 /* Coops Thumb */
 
-.full-width {
-  max-width: 150rem;
-}
-
 .coop-thumb {
   border: solid 1px #f8f8f9;
   display: block
