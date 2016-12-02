@@ -10,9 +10,9 @@ class ouCoOp extends ouPost {
 
     public static function bruv() {
         parent::bruv();
-        self::registerConnection(ouClient::postType());
-        self::registerConnection(ouService::postType());
-        self::registerConnection(ouTechnology::postType());
+        self::registerConnection(ouClient::postType(), ['cardinality' => 'many-to-many']);
+        self::registerConnection(ouService::postType(), ['cardinality' => 'many-to-many']);
+        self::registerConnection(ouTechnology::postType(), ['cardinality' => 'many-to-many']);
     }
 
     public static function friendlyName() {
