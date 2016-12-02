@@ -12,6 +12,7 @@ class Router extends \ooRoutemaster {
         // they will be loaded in functions.php
         $this->routes   = [
             '|co-op/([\w\-]+)/?$|' => 'coOpSingle',
+            '|join|' => 'join', // TODO
             '|service/([\w\-]+)/?$|' => 'service',
             '|technology/([\w\-]+)/?$|' => 'technology',
         ];
@@ -25,6 +26,7 @@ class Router extends \ooRoutemaster {
 
 	protected function preDispatch($action, $args = array()) {
 		parent::preDispatch($action, $args);
+        $this->view->frontPage = ouPage::fetchById(get_option('page_on_front'));
 	}
 
     /****************************************

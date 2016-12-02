@@ -15,33 +15,6 @@
     $technologies = $this->technologies;
 ?>
 
-<header>
-
-    <div data-sticky-container>
-
-        <div class="top-bar" data-sticky data-options="marginTop:0;" style="width:100%">
-            <div class="top-bar-title">
-                <strong><a id="logo" href="#">CoTech</a></strong>
-                <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-          <button class="menu-icon dark" type="button" data-toggle></button>
-        </span>
-            </div>
-            <div id="responsive-menu">
-                <div class="top-bar-right">
-                    <ul class="dropdown menu vertical medium-horizontal" data-magellan>
-                        <li><a href="#who-we-are">Who we are</a></li>
-                        <li><a href="#clients">Clients</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#hire" class="button">Hire Us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-</header>
-
 <div id="banner">
     <div class="row">
         <div class="small-12 columns">
@@ -113,8 +86,7 @@
                         <?php foreach ($coOps as $coOp): ?>
                             <div class="column">
                                 <a href="<?php echo $coOp->permalink() ?>" class="coop-thumb">
-                                    <!-- TODO featuredImageUrl -->
-                                    <img src="http://placehold.it/300x300" class="thumbnail" alt="">
+                                    <img src="<?php echo $coOp->logoUrl() ?>" class="thumbnail" alt="">
                                     <span><h4><?php echo $coOp->name() ?></h4></span>
                                 </a>
                             </div>
@@ -144,7 +116,7 @@
     </div>
 </section>
 
-<!-- TODO Clients section - slideshow or no no? -->
+<!-- TODO no slideshow -->
 <section id="clients" data-magellan-target="clients">
     <div class="row">
         <div class="small-12 columns">
@@ -257,8 +229,7 @@
                 <?php foreach ($services as $service): ?>
                     <div class="column">
                         <a href="<?php echo $service->permalink() ?>">
-                            <!-- TODO featuredImageUrl -->
-                            <img src="http://placehold.it/300x300" class="thumbnail" alt="">
+                            <img src="<?php echo $service->icon ? $service->icon : 'http://placehold.it/300x300' ?>" class="thumbnail" alt="">
                         </a>
                     </div>
                 <?php endforeach ?>
@@ -279,51 +250,6 @@
                         </a>
                     </div>
                 <?php endforeach ?>
-                <div class="column">
-                    <a href="skill.html"><img src="http://placehold.it/300x150" class="thumbnail" alt=""></a>
-                </div>
-                <div class="column">
-                    <a href="skill.html"><img src="http://placehold.it/300x150" class="thumbnail" alt=""></a>
-                </div>
-                <div class="column">
-                    <a href="skill.html"><img src="http://placehold.it/300x150" class="thumbnail" alt=""></a>
-                </div>
-                <div class="column">
-                    <a href="skill.html"><img src="http://placehold.it/300x150" class="thumbnail" alt=""></a>
-                </div>
-                <div class="column">
-                    <a href="skill.html"><img src="http://placehold.it/300x150" class="thumbnail" alt=""></a>
-                </div>
-                <div class="column">
-                    <a href="skill.html"><img src="http://placehold.it/300x150" class="thumbnail" alt=""></a>
-                </div>
-                <div class="column">
-                    <a href="skill.html"><img src="http://placehold.it/300x150" class="thumbnail" alt=""></a>
-                </div>
-                <div class="column">
-                    <a href="skill.html"><img src="http://placehold.it/300x150" class="thumbnail" alt=""></a>
-                </div>
-                <div class="column">
-                    <a href="skill.html"><img src="http://placehold.it/300x150" class="thumbnail" alt=""></a>
-                </div>
-                <div class="column">
-                    <a href="skill.html"><img src="http://placehold.it/300x150" class="thumbnail" alt=""></a>
-                </div>
-                <div class="column">
-                    <a href="skill.html"><img src="http://placehold.it/300x150" class="thumbnail" alt=""></a>
-                </div>
-                <div class="column">
-                    <a href="skill.html"><img src="http://placehold.it/300x150" class="thumbnail" alt=""></a>
-                </div>
-                <div class="column">
-                    <a href="skill.html"><img src="http://placehold.it/300x150" class="thumbnail" alt=""></a>
-                </div>
-                <div class="column">
-                    <a href="skill.html"><img src="http://placehold.it/300x150" class="thumbnail" alt=""></a>
-                </div>
-                <div class="column">
-                    <a href="skill.html"><img src="http://placehold.it/300x150" class="thumbnail" alt=""></a>
-                </div>
             </div>
         </div>
     </div>

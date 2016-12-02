@@ -12,8 +12,43 @@
 
 
 <body class="home">
-<?php /** @var tcPost $post */?>
+<?php /** @var ouPost $post */?>
 
+<header>
+    <?php if ($post && $post->hasFrontPageMenu()): ?>
+        <div data-sticky-container>
+
+            <div class="top-bar" data-sticky data-options="marginTop:0;" style="width:100%">
+                <div class="top-bar-title">
+                    <strong><a id="logo" href="<?php echo $this->frontPage->permalink() ?>">CoTech</a></strong>
+                    <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+                        <button class="menu-icon dark" type="button" data-toggle></button>
+                    </span>
+                </div>
+                <div id="responsive-menu">
+                    <div class="top-bar-right">
+                        <ul class="dropdown menu vertical medium-horizontal" data-magellan>
+                            <li><a href="#who-we-are">Who we are</a></li>
+                            <li><a href="#clients">Clients</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#hire" class="button">Hire Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    <?php else: ?>
+        <div data-sticky-container>
+            <div class="top-bar" data-sticky data-options="marginTop:0;" style="width:100%">
+                <div class="top-bar-title">
+                    <strong><a id="logo" href="<?php echo $this->frontPage->permalink() ?>">CoTech</a></strong>
+                    <a class="back" href="<?php echo $this->frontPage->permalink() ?>">&#8592; Go Back</a>
+                </div>
+            </div>
+        </div>
+    <?php endif ?>
+</header>
 
 <?php echo $this->content; ?>
 

@@ -5,23 +5,12 @@
     $post = $this->post;
 ?>
 
-<header>
-
-    <div data-sticky-container>
-        <div class="top-bar" data-sticky data-options="marginTop:0;" style="width:100%">
-            <div class="top-bar-title">
-                <strong><a id="logo" href="frontPage.php">CoTech</a></strong>
-                <a class="back" href="frontPage.php">&#8592; Go Back</a>
-            </div>
-        </div>
-    </div>
-
-</header>
+<!-- TODO make sure all references to 'skill(s)' are changed to 'technolog(y|ies)' -->
 
 <div id="page-banner">
     <div class="row">
         <div class="small-8 medium-6 large-3 small-centered columns">
-            <img src="<?php echo $post->featuredImageUrl() ?>" class="thumbnail" alt="">
+            <img src="<?php echo $post->logoUrl() ?>" class="thumbnail" alt="">
             <h2>Co-Ops that use:<br><?php echo $post->title() ?></h2>
         </div>
     </div>
@@ -46,7 +35,7 @@
                     <?php foreach ($post->coOps() as $coOp): ?>
                         <div class="column">
                             <a href="<?php echo $coOp->permalink() ?>" class="coop-thumb">
-                                <img src="<?php echo $coOp->featuredImageUrl() ?>" class="thumbnail" alt="">
+                                <img src="<?php echo $coOp->logoUrl() ?>" class="thumbnail" alt="">
                                 <span><h4><?php echo $coOp->name() ?></h4></span>
                             </a>
                         </div>

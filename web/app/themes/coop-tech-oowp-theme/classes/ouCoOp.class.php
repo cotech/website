@@ -47,8 +47,16 @@ class ouCoOp extends ouPost {
      * @param array $attrs
      * @return string
      */
-    public function logoUrl($size = 'thumbnail', $attrs = array()) {
+    public function logoThumbnail($size = 'thumbnail', $attrs = array()) {
         return $this->featuredImage($size, $attrs);
+    }
+
+    public function logoUrl($size = 'thumbnail', $attrs = array()) {
+        if (!$this->logoThumbnail($size, $attrs)) {
+            return 'http://placehold.it/300x300';
+        }
+
+        return $this->featuredImageUrl($size);
     }
 
     /**
@@ -72,7 +80,9 @@ class ouCoOp extends ouPost {
         return $this->metadata(Fields::TURNOVER);
     }
 
-    //TODO doc-ify
+    /**
+     * @return array|string
+     */
     public function address() {
         return $this->metadata(Fields::ADDRESS);
     }

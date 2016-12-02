@@ -29,3 +29,5 @@ add_action('wp_enqueue_scripts', function() {
     wp_enqueue_script('app', get_stylesheet_directory_uri() . '/public/js/app.js', ['vendor']);
     wp_enqueue_style('app', get_stylesheet_directory_uri() . '/public/css/app.css');
 });
+
+add_theme_support('post-thumbnails');

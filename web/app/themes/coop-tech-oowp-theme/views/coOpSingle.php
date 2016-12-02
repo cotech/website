@@ -3,21 +3,10 @@
     $post = $this->post;
 ?>
 
-<header>
-    <div data-sticky-container>
-        <div class="top-bar" data-sticky data-options="marginTop:0;" style="width:100%">
-            <div class="top-bar-title">
-                <strong><a id="logo" href="#">CoTech</a></strong>
-                <a class="back" href="#">&#8592; Go Back</a>
-            </div>
-        </div>
-    </div>
-</header>
-
 <div id="page-banner">
     <div class="row">
         <div class="small-8 medium-6 large-3 small-centered columns">
-            <img src="<?php echo $post->featuredImageUrl() ?>" class="thumbnail" alt="">
+            <img src="<?php echo $post->logoUrl() ?>" class="thumbnail" alt="">
             <h2><?php echo $post->name() ?></h2>
             <a href="<?php echo $post->websiteUrl() ?>" target="_blank"><?php echo $post->websiteUrl() ?></a>
         </div>
@@ -25,7 +14,7 @@
 </div>
 
 <div class="row">
-    <div class="small-4 columns"> <!-- TODO Replace with manifesto et al -->
+    <div class="small-8 columns">
         <p><?php echo $post->about() ?></p>
     </div>
 
