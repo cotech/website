@@ -20,7 +20,9 @@ elixir(function(mix) {
         ]})
 
         .scripts([
-            paths.foundation + 'foundation.js',
+            paths.npm + 'jquery/dist/jquery.js',
+            paths.npm + 'foundation-sites/dist/foundation.js',
+            paths.npm + 'what-input/dist/what-input.js'
             // add other libraries as you need them
             // paths.foundation + 'foundation.topbar.js',
             // paths.foundation + 'foundation.offcanvas.js',

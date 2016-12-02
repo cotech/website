@@ -23,6 +23,11 @@ class ouCoOp extends ouPost {
         return 'Co-Ops';
     }
 
+    public function permalink($leaveName = false) {
+        $parentUrl = get_bloginfo('url') . '/co-op/';
+        return $parentUrl . $this->post_name . '/';
+    }
+
     /**
      * @return string
      */
@@ -42,8 +47,16 @@ class ouCoOp extends ouPost {
      * @param array $attrs
      * @return string
      */
-    public function logoUrl($size = 'thumbnail', $attrs = array()) {
+    public function logoThumbnail($size = 'thumbnail', $attrs = array()) {
         return $this->featuredImage($size, $attrs);
+    }
+
+    public function logoUrl($size = 'thumbnail', $attrs = array()) {
+        if (!$this->logoThumbnail($size, $attrs)) {
+            return 'http://placehold.it/300x300';
+        }
+
+        return $this->featuredImageUrl($size);
     }
 
     /**
@@ -67,21 +80,32 @@ class ouCoOp extends ouPost {
         return $this->metadata(Fields::TURNOVER);
     }
 
-    //TODO doc-ify
+    /**
+     * @return array|string
+     */
     public function address() {
         return $this->metadata(Fields::ADDRESS);
     }
 
+    /**
+     * @return ooWP_Query|ouService[]
+     */
     public function services() {
-        return $this->metadata(Fields::SERVICES);
+        return $this->connected(ouService::postType(), false);
     }
 
+    /**
+     * @return ooWP_Query|ouTechnology[]
+     */
     public function technologies() {
-        return $this->metadata(Fields::TECHNOLOGIES);
+        return $this->connected(ouTechnology::postType(), false);
     }
 
+    /**
+     * @return ooWP_Query|ouClient[]
+     */
     public function clients() {
-        return $this->metadata(Fields::CLIENTS);
+        return $this->connected(ouClient::postType(), false);
     }
 
     /**
