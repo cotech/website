@@ -1,7 +1,7 @@
 {
   "name": "outlandish-starter-theme",
   "private": true,
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "The Outlandish Starter Theme",
   "main": "index.js",
   "scripts": {
