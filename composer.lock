@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4285e77902cc5bba3aa95de700c0b1e7",
+    "hash": "bfcd1aaddf33c1c4b989c47b0b7dcedd",
     "content-hash": "c95b918a4054eb65ff1af99357634a97",
     "packages": [
         {
@@ -287,12 +287,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/outlandishideas/routemaster.git",
-                "reference": "e84c7e1ac0a6d012369f4ae31b89c7fe313f818c"
+                "reference": "8846758a6925c2a5bf5827bef03be0bb2b28e39e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/outlandishideas/routemaster/zipball/e84c7e1ac0a6d012369f4ae31b89c7fe313f818c",
-                "reference": "e84c7e1ac0a6d012369f4ae31b89c7fe313f818c",
+                "url": "https://api.github.com/repos/outlandishideas/routemaster/zipball/8846758a6925c2a5bf5827bef03be0bb2b28e39e",
+                "reference": "8846758a6925c2a5bf5827bef03be0bb2b28e39e",
                 "shasum": ""
             },
             "type": "wordpress-muplugin",
@@ -307,6 +307,10 @@
                 {
                     "name": "Tamlyn Rhodes",
                     "email": "tam@outlandish.com"
+                },
+                {
+                    "name": "Matthew Kendon",
+                    "email": "matt@outlandish.com"
                 }
             ],
             "description": "A routing plugin for WordPress",
@@ -314,7 +318,7 @@
                 "source": "https://github.com/outlandishideas/routemaster/tree/master",
                 "issues": "https://github.com/outlandishideas/routemaster/issues"
             },
-            "time": "2015-09-18 14:49:52"
+            "time": "2016-12-05 09:51:23"
         },
         {
             "name": "vlucas/phpdotenv",

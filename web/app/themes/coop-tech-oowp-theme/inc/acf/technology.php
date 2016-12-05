@@ -10,10 +10,10 @@ if(function_exists("register_field_group"))
         'fields' => array (
             array (
                 'key' => 'field_583ecc9f17ad7',
-                'label' => 'Logo URL',
+                'label' => 'Logo',
                 'name' => Fields::FEATURED_IMAGE,
                 'type' => 'image',
-                'save_format' => 'id',
+                'save_format' => 'object',
                 'preview_size' => 'thumbnail',
                 'library' => 'all',
             ),
