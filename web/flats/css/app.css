@@ -40,6 +40,10 @@ h1,h2,h3,h4,h5,h6 {
   background-color: #40c3f4;
 }
 
+a:hover, a:focus {
+  color: #38aad5;
+}
+
 /* ---------------------------------------- HEADER  ---------------------------------------- */
 
 .top-bar {
@@ -90,14 +94,49 @@ h1,h2,h3,h4,h5,h6 {
   line-height: 2.4;
 }
 
+#logo img {
+  margin-right: 0.5rem;
+}
+
 /* ---------------------------------------- HOME PAGE  ---------------------------------------- */
 
 /* -------------------- BANNER  -------------------- */
 
 #banner {
   padding: 8rem 0;
-  background-color: #d2e9ed;
+  background-color: #38aad5;
   text-align: center;
+   background: url(../img/banner-bg.jpg) no-repeat; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#banner h1, #banner p, #banner li, #banner a {
+  color: #fff;
+}
+
+#banner i {
+  padding-right: 0.5em;
+  font-size: 1.5rem;
+  margin-top: 0.3em;
+}
+
+#banner a {
+  vertical-align: top;
+  line-height: 1.6rem;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  padding: 0.5em 1em;
+  margin-top: 1rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+#banner a:hover {
+  background-color: #fff;
+  color: #38aad5;
 }
 
 /* -------------------- KPI -------------------- */
@@ -137,18 +176,22 @@ h1,h2,h3,h4,h5,h6 {
   letter-spacing: 0.02em;
 }
 
-/* -------------------- SECTIONS  -------------------- */
+/* -------------------- HOME  -------------------- */
 
-section {
+.home section {
   padding: 6rem 0;
 }
 
-section h2 {
+.home section h2 {
   text-align: center;
+  padding-bottom: 3rem;
+}
+
+.home section h2 {
   padding-bottom: 0;
 }
 
-section p {
+.home section p {
   text-align: center;
   padding-bottom: 1.6rem;
   color: #9196a2;
@@ -234,7 +277,7 @@ section p {
 
 /* -------------------- CLIENTS  -------------------- */
 
-#clients {
+.home #clients {
   background-color: #f7f7f5;
 }
 
@@ -258,7 +301,7 @@ section p {
 
 .service-thumb {
   text-align: center;
-  padding: 1rem 0 1rem;
+  padding: 0 0 2rem;
   display: block;
 }
 
@@ -369,18 +412,93 @@ section p {
 
 .back {
   padding-left: 2rem;
+  color: #9196a2;
 }
 
 #page-banner {
+  margin-bottom: 4rem;
   text-align: center;
-  margin-bottom: 3rem;
 }
 
 #page-banner h2 {
   line-height: 1.2;
 }
 
+#page-banner a {
+  letter-spacing: 0.04em;
+  color: #9196a2;
+}
+
+#page-banner a:hover {
+  color: #38aad5;
+}
+
+#page-banner span {
+  color: #38aad5;
+}
+
+/* ---------------------------------------- COOP PAGE ---------------------------------------- */
+
+
+
+.coop .social {
+  margin: 1rem 0 2rem;
+}
+
+.coop .social i {
+  font-size: 2rem;
+}
+
+.coop .social a {
+  padding: 0 1rem 0 0;
+}
+
+.coop section {
+  margin-bottom: 3rem;
+}
+
+.coop .service-thumb {
+  padding-bottom: 0;
+}
+
+.coop section h4 {
+  margin-bottom: 1.2rem;
+}
+
+.coop section h5 {
+ font-size: 1rem; 
+}
+
+.coop section#map {
+  margin: 4rem 0 0 0;
+}
+
+#map iframe {
+  width: 100%;
+  height: 500px;
+}
+
+
+/* ---------------------------------------- SERVICE  ---------------------------------------- */
+
+.service #page-banner img {
+  margin-bottom: 1rem;
+}
+
+.service #page-banner, .technology #page-banner {
+    margin-bottom: 0rem;
+}
+
+
 /* ---------------------------------------- FOOTER  ---------------------------------------- */
+
+footer {
+  margin-top: 6rem;
+}
+
+.home footer, .coop footer {
+  margin-top: 0;
+}
 
 .footer-upper {
   background-color: #212a3d;
