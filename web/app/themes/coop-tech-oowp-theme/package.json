@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "font-awesome": "4.7.0",
+    "foundation-icons": "^1.0.1",
     "foundation-sites": "6.2.4",
     "jquery": "^3.1.1",
     "laravel-elixir": "6.0.0-13",
