@@ -7,6 +7,17 @@ class ouService extends ouPost {
         return $parentUrl . $this->post_name . '/';
     }
 
+    public static function fetchAll($queryArgs = array()) {
+        $defaults = array(
+            'orderby' => 'title',
+            'order' => 'asc'
+        );
+
+        $queryArgs = wp_parse_args($queryArgs, $defaults);
+
+        return parent::fetchAll($queryArgs);
+    }
+
     /**
      * @return string
      */
