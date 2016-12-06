@@ -1,6 +1,4 @@
 <?php
-    use Outlandish\MappingCoTech\Fields\Fields;
-
     /** @var ouCoOp $post */
     $post = $this->post;
 ?>
