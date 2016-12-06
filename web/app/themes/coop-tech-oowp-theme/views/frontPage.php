@@ -13,66 +13,77 @@
 
     /** @var ouTechnology[] | ooWP_Query $technologies */
     $technologies = $this->technologies;
+
+    $imgDir = 'app/themes/coop-tech-oowp-theme/public/img';
+    $iconClients = $imgDir . '/icon-clients.png';
+    $iconCoops = $imgDir . '/icon-coops.png';
+    $iconRevenue = $imgDir . '/icon-revenue.png';
+    $iconStaff = $imgDir . '/icon-staff.png';
 ?>
 
 <div id="banner">
     <div class="row">
         <div class="small-12 columns">
-            <h1>We are nice. We do Tech</h1>
-            <p>We are Co-Operative Technologists, a federation of tech co-operative businesses in the UK committed to the following principles:</p>
-            <ul>
-                <li>You should not exploit your workers</li>
-                <li>We are passionate about tech for good</li>
-                <li>Education and sharing skills are both important for development and growth</li>
-                <li>It is important to create a fun and safe work environment regardless of gender, race or culture</li>
+            <h1>Co-Operative Technologists</h1>
+            <p>We are a network of worker-owned tech businesses who are passionate about:</p>
+            <ul class="no-bullet">
+                <li>Democracy, equality and diversity in the workplace</li>
+                <li>Sharing our skills and knowledge</li>
+                <li>Creating positive social value</li>
             </ul>
+            <a id="video" data-open="video-modal"><i class="fi-play"></i>watch video</a>
+
+            <div class="reveal large" id="video-modal" data-reveal>
+                <div class="flex-video widescreen"> <!-- TODO this is not the video you are looking for -->
+                    <iframe width="420" height="315" src="https://www.youtube.com/embed/V9gkYw35Vws" allowfullscreen style="border:0"></iframe>
+                </div>
+            </div>
+
         </div>
     </div>
-
-    <div id="kpi">
-        <div class="row">
-            <div class="small-3 columns">
-                <div class="callout">
-                    <i class="fi-home"></i> <!-- TODO get icons working -->
-                    <h5>Co-ops</h5>
-                    <h6>28</h6> <!-- TODO remove hardcoded values -->
-                </div>
-            </div>
-            <div class="small-3 columns">
-                <div class="callout">
-                    <i class="fi-torso"></i>
-                    <h5>Staff</h5>
-                    <h6>158</h6>
-                </div>
-            </div>
-            <div class="small-3 columns">
-                <div class="callout">
-                    <i class="fi-pound"></i>
-                    <h5>Revenue</h5>
-                    <h6>£2.8mil p.a.</h6>
-                </div>
-            </div>
-            <div class="small-3 columns">
-                <div class="callout">
-                    <i class="fi-torso-business"></i>
-                    <h5>Clients</h5>
-                    <h6>421</h6>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </div>
 
-<section id="who-we-are" data-magellan-target="who-we-are">
+<div id="kpi">
+    <div class="row">
+        <div class="small-12 medium-10 large-8 small-centered columns">
+
+            <div class="small-6 medium-3 columns">
+                <img src="<?php echo $iconCoops ?>" class="float-center">
+                <h6>Co-ops</h6>
+                <h5>28</h5> <!-- TODO remove hard-coding -->
+            </div>
+            <div class="small-6 medium-3 columns">
+                <img src="<?php echo $iconStaff ?>" class="float-center">
+                <h6>Staff</h6>
+                <h5>158</h5>
+            </div>
+            <div class="small-6 medium-3 columns">
+                <img src="<?php echo $iconRevenue ?>" class="float-center">
+                <h6>Revenue</h6>
+                <h5>£2.8 mil</h5>
+            </div>
+            <div class="small-6 medium-3 columns">
+                <img src="<?php echo $iconClients ?>" class="float-center">
+                <h6>Clients</h6>
+                <h5>421</h5>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<section id="members" data-magellan-target="members">
     <div class="row">
         <div class="small-12 columns">
 
-            <h2>Who we are</h2>
+            <h2>Members</h2>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 
             <div class="view float-center">
                 <ul class="tabs" data-tabs id="coops-view-tabs">
                     <li class="tabs-title is-active"><a href="#grid" aria-selected="true">Grid</a></li>
+                    <li class="separator">|</li>
                     <li class="tabs-title"><a href="#map">Map</a></li>
                 </ul>
             </div>
@@ -81,32 +92,30 @@
 
                 <!-- START Grid View Content -->
                 <div class="tabs-panel is-active" id="grid">
+                    <div class="row small-up-2 medium-up-4 large-up-6 small-collapse">
 
-                    <div class="row small-up-3 medium-up-4 large-up-6">
-                        <?php foreach ($coOps as $coOp): ?>
+                        <?php foreach ($coOps as $coOp): ?> <!-- TODO alphabetical order -->
                             <div class="column">
                                 <a href="<?php echo $coOp->permalink() ?>" class="coop-thumb">
                                     <img src="<?php echo $coOp->logoUrl() ?>" class="thumbnail" alt="">
-                                    <span><h4><?php echo $coOp->name() ?></h4></span>
+                                    <!--<span><h4>--><?php //echo $coOp->name() ?><!--</h4></span>-->
                                 </a>
                             </div>
                         <?php endforeach ?>
-                    </div>
 
+                    </div>
                 </div>
                 <!-- END Grid View Content -->
 
                 <!-- START Map View Content -->
-                <div class="tabs-panel" id="map">
-                    <div class="flex-video">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4776320.894259267!2d-8.549567638277907!3d54.229862435208936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x25a3b1142c791a9%3A0xc4f8a0433288257a!2sUnited+Kingdom!5e0!3m2!1sen!2sus!4v1480518359134"
-                                width="600"
-                                height="450"
-                                frameborder="0"
-                                style="border:0"
-                                allowfullscreen>
-                        </iframe>
-                    </div>
+                <div class="tabs-panel" id="map"> <!-- TODO OpenStreetMaps -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4776320.894259267!2d-8.549567638277907!3d54.229862435208936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x25a3b1142c791a9%3A0xc4f8a0433288257a!2sUnited+Kingdom!5e0!3m2!1sen!2sus!4v1480518359134"
+                            width="600"
+                            height="450"
+                            frameborder="0"
+                            style="border:0"
+                            allowfullscreen>
+                    </iframe>
                 </div>
                 <!-- END Map View Content -->
 
@@ -116,120 +125,40 @@
     </div>
 </section>
 
-<!-- TODO no slideshow -->
+
 <section id="clients" data-magellan-target="clients">
     <div class="row">
         <div class="small-12 columns">
 
             <h2>Clients</h2>
+            <p>Just some of the organisations we've worked with.</p>
 
-            <!-- START Orbit Carousel-->
-            <div class="orbit" role="region" aria-label="Clients we've worked with" data-orbit>
-                <ul class="orbit-container">
-                    <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-                    <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-
-                    <!-- START Slide 1 -->
-                    <li class="is-active orbit-slide">
-                        <div class="row small-up-3 medium-up-4 large-up-6">
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                        </div>
-                    </li>
-                    <!-- END Slide 1 -->
-
-                    <!-- START Slide 2 -->
-                    <li class="orbit-slide">
-                        <div class="row small-up-3 medium-up-4 large-up-6">
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                        </div>
-                    </li>
-                    <!-- END Slide 2 -->
-
-                    <!-- START Slide 3 -->
-                    <li class="orbit-slide">
-                        <div class="row small-up-3 medium-up-4 large-up-6">
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                            <div class="column">
-                                <img src="http://placehold.it/300x200" class="thumbnail" alt="">
-                            </div>
-                        </div>
-                    </li>
-                    <!-- END Slide 3 -->
-
-
-                </ul>
-
-                <nav class="orbit-bullets">
-                    <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-                    <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-                    <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-                    <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-                </nav>
-
+            <div class="row small-up-2 medium-up-3 large-up-6">
+                <?php foreach ($clients as $client): ?> <!-- TODO alphabetical order? -->
+                    <div class="column">
+                        <img src="<?php echo $client->logoUrl() ?>" alt="">
+                    </div>
+                <?php endforeach ?>
             </div>
-            <!-- END Orbit Carousel-->
 
         </div>
     </div>
 </section>
+
 
 <section id="services" data-magellan-target="services">
     <div class="row">
         <div class="small-12 columns">
-            <h2>What we do</h2>
-            <div class="row small-up-3 medium-up-4 large-up-6">
-                <?php foreach ($services as $service): ?>
+
+            <h2>Services</h2>
+            <p>Pellentesque habitant morbi tristique senectus et netus.</p>
+
+            <div class="row small-up-3 medium-up-4 large-up-6 small-collapse">
+                <?php foreach ($services as $service): ?> <!-- TODO alphabetical order -->
                     <div class="column">
-                        <a href="<?php echo $service->permalink() ?>">
-                            <img src="<?php echo $service->icon ? $service->icon : 'http://placehold.it/300x300' ?>" class="thumbnail" alt="">
+                        <a href="<?php echo $service->permalink() ?>" class="service-thumb">
+                            <img src="<?php echo $service->iconUrl() ?>" class="float-center" alt="">
+                            <h5><?php echo $service->name() ?></h5>
                         </a>
                     </div>
                 <?php endforeach ?>
@@ -238,15 +167,19 @@
     </div>
 </section>
 
-<section id="technologies">
+
+<section id="technologies" data-magellan-target="technologies">
     <div class="row">
         <div class="small-12 columns">
-            <h2>Skills we have</h2>
+
+            <h2>Technologies</h2>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
             <div class="row small-up-3 medium-up-4 large-up-8">
-                <?php foreach ($technologies as $technology): ?>
+                <?php foreach ($technologies as $technology): ?> <!-- TODO alphabetical order -->
                     <div class="column">
-                        <a href="<?php $technology->permalink() ?>">
-                            <img src="http://placehold.it/300x150" class="thumbnail" alt="">
+                        <a href="<?php echo $technology->permalink() ?>" class="technology-thumb">
+                            <img src="<?php echo $technology->logoUrl() ?>" alt="">
                         </a>
                     </div>
                 <?php endforeach ?>
@@ -255,32 +188,32 @@
     </div>
 </section>
 
-<section id="hire" data-magellan-target="hire"> <!-- TODO -->
+
+<section id="hire" data-magellan-target="hire">
     <div class="row">
-        <div class="small-12 medium-4 small-centered columns">
+        <div class="small-12 medium-6 small-centered columns">
 
             <h2>Hire Us</h2>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget.</p>
+            <p>If you would like to work with us on a project, please get in touch. You can either find a co-op directly or use the form below and we'll find you the perfect match.</p>
+
             <form>
                 <div class="row">
-                    <div class="small-12 columns">
-                        <label>Name
-                            <input type="text" placeholder="e.g. Jane Smith">
-                        </label>
+                    <div class="small-12 medium-6 columns">
+                        <input type="text" placeholder="Name">
+                    </div>
+                    <div class="small-12 medium-6 columns">
+                        <input type="email" placeholder="Email">
                     </div>
                     <div class="small-12 columns">
-                        <label>Email
-                            <input type="email" placeholder="e.g. jane@email.com">
-                        </label>
-                    </div>
-                    <div class="small-12 columns">
-                        <label>
-                            Tell us about your project
-                            <textarea placeholder="Tell us a bit about who you are and how we could help you. Do you need a website, app, branding, etc."></textarea>
-                        </label>
+                        <textarea placeholder="Tell us about your project"></textarea>
                     </div>
                 </div>
-                <a class="large expanded button" href="#">Send</a> <!-- TODO -->
+                <div class="row">
+                    <div class="small-6 medium-4 small-centered columns">
+                        <a class="large expanded button" href="#">Send</a> <!-- TODO -->
+                    </div>
+                </div>
+
             </form>
 
         </div>
