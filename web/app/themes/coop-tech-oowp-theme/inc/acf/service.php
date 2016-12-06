@@ -11,7 +11,7 @@ if(function_exists("register_field_group"))
             array (
                 'key' => 'field_583ebc5b6443e',
                 'label' => 'Icon',
-                'name' => Fields::ICON,
+                'name' => Fields::FEATURED_IMAGE,
                 'type' => 'image',
                 'save_format' => 'object',
                 'preview_size' => 'thumbnail',

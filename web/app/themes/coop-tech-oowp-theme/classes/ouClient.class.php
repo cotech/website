@@ -16,8 +16,21 @@ class ouClient extends ouPost {
      * @param array $attrs
      * @return string
      */
-    public function logoUrl($size = 'thumbnail', $attrs = array()) {
+    public function logoThumbnail($size = 'thumbnail', $attrs = array()) {
         return $this->featuredImage($size, $attrs);
+    }
+
+    /**
+     * @param string $size
+     * @param array $attrs
+     * @return string
+     */
+    public function logoUrl($size = 'thumbnail', $attrs = array()) {
+        if (!$this->logoThumbnail($size, $attrs)) {
+            return 'http://placehold.it/300x200';
+        }
+
+        return $this->featuredImageUrl($size);
     }
 
     /**
