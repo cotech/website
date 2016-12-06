@@ -30,7 +30,7 @@
 
 <body class="home">
 
-<header> <!-- TODO Not sticking :( Get foundation working -->
+<header>
 
     <div data-sticky-container>
 
@@ -42,9 +42,7 @@
                     </a>
                 </strong>
 <?php if ($post && $post->hasFrontPageMenu()): ?>
-                <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-                    <button class="menu-icon dark" type="button" data-toggle></button>
-                </span>
+                <!--<span data-responsive-toggle="responsive-menu" data-hide-for="medium"><button class="menu-icon dark" type="button" data-toggle></button></span>-->
             </div>
             <div id="responsive-menu">
                 <div class="top-bar-right">
@@ -77,9 +75,9 @@
 
                 <div class="menu-centered">
                     <ul class="menu">
-                        <li><a href="about.php">About <span>&#xbb;</span></a></li>
+                        <li><a href="about">About <span>&#xbb;</span></a></li>
                         <!-- <li><a href="contact.php">Contact <span>&#xbb;</span></a></li> -->
-                        <li><a href="join.php">Join <span>&#xbb;</span></a></li>
+                        <li><a href="join">Join <span>&#xbb;</span></a></li>
                     </ul>
                 </div>
 

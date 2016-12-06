@@ -9,7 +9,7 @@ var paths = {
     npm: '../../node_modules/',
     assets: elixir.config.assetsPath,
     public: elixir.config.publicPath,
-    foundation: '../../node_modules/foundation-sites/js/foundation/',
+    foundation: '../../node_modules/foundation-sites/js/',
     foundationIcons: 'node_modules/foundation-icons/foundation-icons'
 };
 
@@ -22,13 +22,11 @@ elixir(function(mix) {
 
         .scripts([
             paths.npm + 'jquery/dist/jquery.js',
-            paths.npm + 'foundation-sites/dist/foundation.js',
-            paths.npm + 'what-input/dist/what-input.js'
-            // add other libraries as you need them
-            // paths.foundation + 'foundation.topbar.js',
-            // paths.foundation + 'foundation.offcanvas.js',
-            // paths.foundation + 'foundation.equalizer.js',
-            // paths.foundation + 'foundation.accordion.js',
+            paths.npm + 'what-input/dist/what-input.js',
+            paths.foundation + 'foundation.core.js',
+            paths.foundation + 'foundation.util.mediaQuery.js',
+            paths.foundation + 'foundation.sticky.js',
+            paths.foundation + 'foundation.util.triggers.js'
         ], paths.public + 'js/vendor.js')
 
         //todo: webpack this?
