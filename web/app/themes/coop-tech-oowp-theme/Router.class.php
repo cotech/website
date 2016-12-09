@@ -11,10 +11,11 @@ class Router extends \ooRoutemaster {
         // don't add routes here, add them in routes.php.
         // they will be loaded in functions.php
         $this->routes   = [
-            '|co-op/([\w\-]+)/?$|' => 'coOpSingle',
-            '|join|' => 'join', // TODO
-            '|service/([\w\-]+)/?$|' => 'service',
-            '|technology/([\w\-]+)/?$|' => 'technology',
+            '|^co-op/([\w\-]+)/?$|' => 'coOpSingle',
+            '|^service/([\w\-]+)/?$|' => 'service',
+            '|^technology/([\w\-]+)/?$|' => 'technology',
+            '|^about$|' => 'about',
+            '|^join$|' => 'join',
         ];
 
         $this->viewPath = get_template_directory() . '/views/';
@@ -61,6 +62,20 @@ class Router extends \ooRoutemaster {
         $this->querySingle([
             'name' => $slug,
             'post_type' => ouTechnology::postType()
+        ]);
+    }
+
+    protected function join() {
+        $this->querySingle([
+            'name' => 'join',
+            'post_type' => ouPage::postType()
+        ]);
+    }
+
+    protected function about() {
+        $this->querySingle([
+            'name' => 'about',
+            'post_type' => ouPage::postType()
         ]);
     }
 
