@@ -3,6 +3,8 @@
     $post = $this->post;
 ?>
 
+<div class="coop">
+
 <div id="page-banner">
     <div class="row">
         <div class="small-12 small-centered columns">
@@ -28,23 +30,38 @@
                 <section class="row small-up-1 medium-up-4 large-up-1">
                     <div class="column">
                         <ul class="menu social"> <!-- TODO add social media links -->
-                            <?php echo $post->socialMedia() ?>
-                            <li><a href="#" target="_blank"><i class="fi-social-facebook"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fi-social-twitter"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fi-social-google-plus"></i></a></li>
+                            <?php foreach ($post->socialMedia() as $link): ?>
+                                <li><a href="<?php echo $link['social_media_link'] ?>" target="_blank">
+                                    <?php if ($link['social_media_type'] == 'facebook'): ?>
+                                        <i class="fi-social-facebook"></i>
+                                    <?php elseif ($link['social_media_type'] == 'twitter'): ?>
+                                        <i class="fi-social-twitter"></i>
+                                    <?php elseif ($link['social_media_type'] == 'github'): ?>
+                                        <i class="fi-social-github"></i>
+                                    <?php elseif ($link['social_media_type'] == 'google+'): ?>
+                                        <i class="fi-social-google-plus"></i>
+                                    <?php endif ?>
+                                </a></li>
+                            <?php endforeach ?>
                         </ul>
                     </div>
-                    <div class="column"> <!-- TODO -->
+                    <div class="column">
                         <strong>Email:</strong>
-                        <p><a href="mailto:info@workercoop.com">info@workercoop.com</a></p>
+                        <p>
+                            <?php foreach ($post->socialMedia() as $link): ?>
+                                <?php if ($link['social_media_type'] == 'email'): ?><a href="mailto:<?php echo $link['social_media_link'] ?>"><?php echo $link['social_media_link'] ?></a>
+                                    <?php break ?>
+                                <?php endif ?>
+                            <?php endforeach ?>
+                        </p>
                     </div>
-                    <div class="column"> <!-- TODO -->
+                    <div class="column">
                         <strong>Tel:</strong>
-                        <p>0208 888 8888</p>
+                        <p><?php echo $post->phone() ?></p>
                     </div>
-                    <div class="column"> <!-- TODO -->
+                    <div class="column">
                         <strong>Address:</strong>
-                        <p>92 the street <br>London <br>N14 1AB</p>
+                        <p><?php echo implode(',<br>', $post->addressAsArray()) ?></p>
                     </div>
                 </section>
             </div>
@@ -124,3 +141,5 @@
         </iframe>
     </div>
 </section>
+
+</div>
