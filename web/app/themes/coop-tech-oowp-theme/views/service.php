@@ -5,11 +5,13 @@
     $post = $this->post;
 ?>
 
+<div class="service">
+
 <div id="page-banner">
     <div class="row">
         <div class="small-12 small-centered columns">
             <img src="<?php echo $post->iconUrl() ?>" alt="">
-            <h2>Co-ops that do <span><?php echo $post->title() ?></span></h2>
+            <h2>Coops that offer <span><?php echo $post->title() ?></span></h2>
         </div>
     </div>
 </div>
@@ -62,4 +64,6 @@
         </div>
 
     </div>
+</div>
+
 </div>

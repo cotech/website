@@ -28,7 +28,7 @@
 </head>
 
 
-<body class="home">
+<body>
 
 <header>
 

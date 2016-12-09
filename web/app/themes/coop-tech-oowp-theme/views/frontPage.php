@@ -21,10 +21,12 @@
     $iconStaff = $imgDir . '/icon-staff.png';
 ?>
 
+<div class="home">
+
 <div id="banner">
     <div class="row">
         <div class="small-12 columns">
-            <h1>Co-Operative Technologists</h1>
+            <h1>Cooperative Technologists</h1>
             <p>We are a network of worker-owned tech businesses who are passionate about:</p>
             <ul class="no-bullet">
                 <li>Democracy, equality and diversity in the workplace</li>
@@ -97,7 +99,7 @@
                         <?php foreach ($coOps as $coOp): ?> <!-- TODO alphabetical order -->
                             <div class="column">
                                 <a href="<?php echo $coOp->permalink() ?>" class="coop-thumb">
-                                    <img src="<?php echo $coOp->logoUrl() ?>" class="thumbnail" alt="">
+                                    <img src="<?php echo $coOp->logoUrl() ?>" alt="">
                                     <!--<span><h4>--><?php //echo $coOp->name() ?><!--</h4></span>-->
                                 </a>
                             </div>
@@ -219,3 +221,5 @@
         </div>
     </div>
 </section>
+
+</div>

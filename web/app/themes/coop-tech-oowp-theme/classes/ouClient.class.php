@@ -4,6 +4,17 @@ use Outlandish\MappingCoTech\Fields\Fields;
 
 class ouClient extends ouPost {
 
+    public static function fetchAll($queryArgs = array()) {
+        $defaults = array(
+            'orderby' => 'title',
+            'order' => 'asc'
+        );
+
+        $queryArgs = wp_parse_args($queryArgs, $defaults);
+
+        return parent::fetchAll($queryArgs);
+    }
+
     /**
      * @return string
      */

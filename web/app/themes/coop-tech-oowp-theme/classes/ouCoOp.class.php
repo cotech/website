@@ -28,6 +28,17 @@ class ouCoOp extends ouPost {
         return $parentUrl . $this->post_name . '/';
     }
 
+    public static function fetchAll($queryArgs = array()) {
+        $defaults = array(
+            'orderby' => 'title',
+            'order' => 'asc'
+        );
+
+        $queryArgs = wp_parse_args($queryArgs, $defaults);
+
+        return parent::fetchAll($queryArgs);
+    }
+
     /**
      * @return string
      */
@@ -56,9 +67,9 @@ class ouCoOp extends ouPost {
      * @param array $attrs
      * @return string
      */
-    public function logoUrl($size = 'thumbnail', $attrs = array()) {
+    public function logoUrl($size = 'full', $attrs = array()) {
         if (!$this->logoThumbnail($size, $attrs)) {
-            return 'http://placehold.it/300x300';
+            return 'http://placehold.it/300x184';
         }
 
         return $this->featuredImageUrl($size);
@@ -89,7 +100,31 @@ class ouCoOp extends ouPost {
      * @return array|string
      */
     public function address() {
-        return $this->metadata(Fields::ADDRESS);
+        return $this->metadata(Fields::ADDRESS)[0];
+    }
+
+    public function addressAsArray() {
+        $array = array();
+        $address = $this->address();
+        if ($address['address_line_1']) {
+            array_push($array, $address['address_line_1']);
+        }
+        if ($address['address_line_2']) {
+            array_push($array, $address['address_line_2']);
+        }
+        if ($address['address_line_3']) {
+            array_push($array, $address['address_line_3']);
+        }
+        if ($address['city']) {
+            array_push($array, $address['city']);
+        }
+        if ($address['country']) {
+            array_push($array, $address['country']);
+        }
+        if ($address['postcode']) {
+            array_push($array, $address['postcode']);
+        }
+        return $array;
     }
 
     /**
@@ -111,6 +146,13 @@ class ouCoOp extends ouPost {
      */
     public function clients() {
         return $this->connected(ouClient::postType(), false);
+    }
+
+    /**
+     * @return string
+     */
+    public function phone() {
+        return $this->metadata(Fields::PHONE);
     }
 
     /**

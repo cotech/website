@@ -9,6 +9,7 @@ class Fields {
     const ICON = 'icon';
     const TURNOVER = 'turnover';
     const WEBSITE_URL = 'website_url';
+    const PHONE = 'phone';
 
     // ACF
     const CLIENTS = 'clients';

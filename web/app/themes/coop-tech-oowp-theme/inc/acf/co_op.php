@@ -170,6 +170,18 @@ if(function_exists("register_field_group"))
                 'max' => '',
             ),
             array (
+                'key' => 'field_584aa93e9dce4',
+                'label' => 'Phone',
+                'name' => Fields::PHONE,
+                'type' => 'text',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'none',
+                'maxlength' => '',
+            ),
+            array (
                 'key' => 'field_583eb71346c95',
                 'label' => 'Social Media',
                 'name' => Fields::SOCIAL_MEDIA,
