@@ -39,9 +39,9 @@ class ouService extends ouPost {
      * @param array $attrs
      * @return string
      */
-    public function iconUrl($size = 'thumbnail', $attrs = array()) {
+    public function iconUrl($size = 'full', $attrs = array()) {
         if (!$this->iconThumbnail($size, $attrs)) {
-            return 'http://placehold.it/300x200';
+            return 'http://placehold.it/65x40';
         }
 
         return $this->featuredImageUrl($size);
