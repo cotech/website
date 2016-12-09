@@ -67,9 +67,9 @@ class ouCoOp extends ouPost {
      * @param array $attrs
      * @return string
      */
-    public function logoUrl($size = 'thumbnail', $attrs = array()) {
+    public function logoUrl($size = 'full', $attrs = array()) {
         if (!$this->logoThumbnail($size, $attrs)) {
-            return 'http://placehold.it/300x300';
+            return 'http://placehold.it/300x184';
         }
 
         return $this->featuredImageUrl($size);

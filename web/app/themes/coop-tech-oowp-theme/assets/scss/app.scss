@@ -247,6 +247,11 @@ a:hover, a:focus {
 /* Coops Thumb */
 
 .coop-thumb {
+  width: 200px;
+  height: 123px;
+  line-height: 123px;
+  text-align: center;
+  vertical-align: middle;
   border: solid 1px #e6e5e1;
   background-color: #fff;
   display: block;

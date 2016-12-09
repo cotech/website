@@ -99,7 +99,7 @@
                         <?php foreach ($coOps as $coOp): ?> <!-- TODO alphabetical order -->
                             <div class="column">
                                 <a href="<?php echo $coOp->permalink() ?>" class="coop-thumb">
-                                    <img src="<?php echo $coOp->logoUrl() ?>" class="thumbnail" alt="">
+                                    <img src="<?php echo $coOp->logoUrl() ?>" alt="">
                                     <!--<span><h4>--><?php //echo $coOp->name() ?><!--</h4></span>-->
                                 </a>
                             </div>
