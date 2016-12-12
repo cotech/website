@@ -69,7 +69,7 @@ class ouCoOp extends ouPost {
      */
     public function logoUrl($size = 'full', $attrs = array()) {
         if (!$this->logoThumbnail($size, $attrs)) {
-            return 'http://placehold.it/300x184';
+            return 'http://placehold.it/300x185';
         }
 
         return $this->featuredImageUrl($size);
@@ -131,21 +131,21 @@ class ouCoOp extends ouPost {
      * @return ooWP_Query|ouService[]
      */
     public function services() {
-        return $this->connected(ouService::postType(), false);
+        return $this->connected(ouService::postType(), false, $this->getQueryArgs());
     }
 
     /**
      * @return ooWP_Query|ouTechnology[]
      */
     public function technologies() {
-        return $this->connected(ouTechnology::postType(), false);
+        return $this->connected(ouTechnology::postType(), false, $this->getQueryArgs());
     }
 
     /**
      * @return ooWP_Query|ouClient[]
      */
     public function clients() {
-        return $this->connected(ouClient::postType(), false);
+        return $this->connected(ouClient::postType(), false, $this->getQueryArgs());
     }
 
     /**
@@ -160,6 +160,16 @@ class ouCoOp extends ouPost {
      */
     public function socialMedia() {
         return $this->metadata(Fields::SOCIAL_MEDIA);
+    }
+
+    /**
+     * @return array
+     */
+    private function getQueryArgs() {
+        return array(
+            'orderby' => 'title',
+            'order' => 'asc'
+        );
     }
 
 }

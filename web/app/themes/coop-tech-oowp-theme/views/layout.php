@@ -68,32 +68,34 @@
 <?php echo $this->content; ?>
 
 
-<footer>
-    <div class="footer-upper">
-        <div class="row">
-            <div class="small-12 columns">
+<div class="home">
+    <footer>
+        <div class="footer-upper">
+            <div class="row">
+                <div class="small-12 columns">
 
-                <div class="menu-centered">
-                    <ul class="menu">
-                        <li><a href="about">About <span>&#xbb;</span></a></li>
-                        <!-- <li><a href="contact.php">Contact <span>&#xbb;</span></a></li> -->
-                        <li><a href="join">Join <span>&#xbb;</span></a></li>
-                    </ul>
+                    <div class="menu-centered">
+                        <ul class="menu">
+                            <li><a href="about">About <span>&#xbb;</span></a></li>
+                            <!-- <li><a href="contact.php">Contact <span>&#xbb;</span></a></li> -->
+                            <li><a href="join">Join <span>&#xbb;</span></a></li>
+                        </ul>
+                    </div>
+
                 </div>
-
             </div>
         </div>
-    </div>
 
-    <div class="footer-lower">
-        <div class="row">
-            <div class="small-12 columns">
-                <img src="<?php echo $coopLogo ?>" class="float-center" />
-                <p>Site by Glowbox Designs & Outlandish for CoTech &#xa9;2016</p>
+        <div class="footer-lower">
+            <div class="row">
+                <div class="small-12 columns">
+                    <img src="<?php echo $coopLogo ?>" class="float-center" />
+                    <p>Site by Glowbox Designs & Outlandish for CoTech &#xa9;2016</p>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+</div>
 
 <?php wp_footer(); ?>
 </body>
