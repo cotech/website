@@ -16,6 +16,7 @@ class Router extends \ooRoutemaster {
             '|^technology/([\w\-]+)/?$|' => 'technology',
             '|^about$|' => 'about',
             '|^join$|' => 'join',
+            '|^manifesto$|' => 'manifesto',
         ];
 
         $this->viewPath = get_template_directory() . '/views/';
@@ -65,13 +66,6 @@ class Router extends \ooRoutemaster {
         ]);
     }
 
-    protected function join() {
-        $this->querySingle([
-            'name' => 'join',
-            'post_type' => ouPage::postType()
-        ]);
-    }
-
     protected function about() {
         $this->querySingle([
             'name' => 'about',
@@ -79,5 +73,18 @@ class Router extends \ooRoutemaster {
         ]);
     }
 
-}
+    protected function join() {
+        $this->querySingle([
+            'name' => 'join',
+            'post_type' => ouPage::postType()
+        ]);
+    }
 
+    protected function manifesto() {
+        $this->querySingle([
+            'name' => 'manifesto',
+            'post_type' => ouPage::postType()
+        ]);
+    }
+
+}

@@ -77,8 +77,8 @@
                     <div class="menu-centered">
                         <ul class="menu">
                             <li><a href="about">About <span>&#xbb;</span></a></li>
-                            <!-- <li><a href="contact.php">Contact <span>&#xbb;</span></a></li> -->
                             <li><a href="join">Join <span>&#xbb;</span></a></li>
+                            <li><a href="manifesto">Manifesto <span>&#xbb;</span></a></li>
                         </ul>
                     </div>
 
