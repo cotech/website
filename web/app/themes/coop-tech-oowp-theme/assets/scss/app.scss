@@ -612,8 +612,39 @@ footer {
 }
 
 
-/* ---------------------------------------- ABOUT/JOIN ---------------------------------------- */
+/* ---------------------------------------- ABOUT/JOIN/MANIFESTO ---------------------------------------- */
 
 .page-content {
   margin-bottom: 6rem;
+
+  a {
+    font-style: italic;
+  }
+
+  ol,
+  ul {
+    margin: 1.5rem;
+  }
+
+  ol {
+    list-style-position: inside;
+  }
+
+  #join-form {
+    margin-top: 1rem;
+
+    textarea {
+      height: 200px;
+      margin: 0.95rem 0 1.7rem;
+      padding: 1.3rem 1.5rem;
+    }
+
+    [type='text'],
+    [type='email'],
+    textarea {
+      padding: 1.5rem;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+    }
+  }
 }
