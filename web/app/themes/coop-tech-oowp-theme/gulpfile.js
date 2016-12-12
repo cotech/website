@@ -40,7 +40,7 @@ elixir(function(mix) {
         //move fonts to public folder
         .copy([
             paths.assets + 'fonts',
-            'node_modules/font-awesome/fonts/'
+            'node_modules/font-awesome/fonts'
         ], paths.public + 'fonts/')
 
         //move foundation-icons to public folder

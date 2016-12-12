@@ -33,11 +33,14 @@
                 <li>Sharing our skills and knowledge</li>
                 <li>Creating positive social value</li>
             </ul>
-            <a id="video" data-open="video-modal"><i class="fi-play"></i>watch video</a>
+            <span>
+                <a id="our-manifesto" href="about">See our manifesto</a>
+                <a id="video" data-open="video-modal"><i class="fi-play"></i>Watch video</a>
+            </span>
 
             <div class="reveal large" id="video-modal" data-reveal>
-                <div class="flex-video widescreen"> <!-- TODO this is not the video you are looking for -->
-                    <iframe width="420" height="315" src="https://www.youtube.com/embed/V9gkYw35Vws" allowfullscreen style="border:0"></iframe>
+                <div class="flex-video widescreen"> <!-- TODO placeholder video -->
+                    <iframe width="420" height="315" src="https://www.youtube.com/embed/WbJB9HKJ6fE" allowfullscreen style="border:0"></iframe>
                 </div>
             </div>
 
@@ -52,22 +55,22 @@
             <div class="small-6 medium-3 columns">
                 <img src="<?php echo $iconCoops ?>" class="float-center">
                 <h6>Co-ops</h6>
-                <h5>28</h5> <!-- TODO remove hard-coding -->
+                <h5><?php echo count($coOps) ?></h5>
             </div>
             <div class="small-6 medium-3 columns">
                 <img src="<?php echo $iconStaff ?>" class="float-center">
                 <h6>Staff</h6>
-                <h5>158</h5>
+                <h5>158+</h5> <!-- TODO remove hard-coding -->
             </div>
             <div class="small-6 medium-3 columns">
                 <img src="<?php echo $iconRevenue ?>" class="float-center">
                 <h6>Revenue</h6>
-                <h5>£2.8 mil</h5>
+                <h5>£2.8 mil</h5> <!-- TODO remove hard-coding -->
             </div>
             <div class="small-6 medium-3 columns">
                 <img src="<?php echo $iconClients ?>" class="float-center">
                 <h6>Clients</h6>
-                <h5>421</h5>
+                <h5><?php echo count($clients) ?>+</h5>
             </div>
 
         </div>
@@ -96,7 +99,7 @@
                 <div class="tabs-panel is-active" id="grid">
                     <div class="row small-up-2 medium-up-4 large-up-6 small-collapse">
 
-                        <?php foreach ($coOps as $coOp): ?> <!-- TODO alphabetical order -->
+                        <?php foreach ($coOps as $coOp): ?>
                             <div class="column">
                                 <a href="<?php echo $coOp->permalink() ?>" class="coop-thumb">
                                     <img src="<?php echo $coOp->logoUrl() ?>" alt="">
@@ -105,6 +108,11 @@
                             </div>
                         <?php endforeach ?>
 
+                        <div class="column">
+                            <a href="join" class="coop-thumb">
+                                <h5 id="join-us">Find out how to join the collective</h5>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <!-- END Grid View Content -->
@@ -136,9 +144,11 @@
             <p>Just some of the organisations we've worked with.</p>
 
             <div class="row small-up-2 medium-up-3 large-up-6">
-                <?php foreach ($clients as $client): ?> <!-- TODO alphabetical order? -->
+                <?php foreach ($clients as $client): ?>
                     <div class="column">
-                        <img src="<?php echo $client->logoUrl() ?>" alt="">
+                        <div class="client-thumb">
+                            <img src="<?php echo $client->logoUrl() ?>" alt="">
+                        </div>
                     </div>
                 <?php endforeach ?>
             </div>
@@ -156,7 +166,7 @@
             <p>Pellentesque habitant morbi tristique senectus et netus.</p>
 
             <div class="row small-up-3 medium-up-4 large-up-6 small-collapse">
-                <?php foreach ($services as $service): ?> <!-- TODO alphabetical order -->
+                <?php foreach ($services as $service): ?>
                     <div class="column">
                         <a href="<?php echo $service->permalink() ?>" class="service-thumb">
                             <img src="<?php echo $service->iconUrl() ?>" class="float-center" alt="">
@@ -178,10 +188,11 @@
             <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 
             <div class="row small-up-3 medium-up-4 large-up-8">
-                <?php foreach ($technologies as $technology): ?> <!-- TODO alphabetical order -->
+                <?php foreach ($technologies as $technology): ?>
                     <div class="column">
                         <a href="<?php echo $technology->permalink() ?>" class="technology-thumb">
                             <img src="<?php echo $technology->logoUrl() ?>" alt="">
+                            <h5><?php echo $technology->name() ?></h5>
                         </a>
                     </div>
                 <?php endforeach ?>
