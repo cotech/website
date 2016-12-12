@@ -34,7 +34,7 @@
                 <li>Creating positive social value</li>
             </ul>
             <span>
-                <a id="our-manifesto" href="about">See our manifesto</a>
+                <a id="our-manifesto" href="manifesto">See our manifesto</a>
                 <a id="video" data-open="video-modal"><i class="fi-play"></i>Watch video</a>
             </span>
 
