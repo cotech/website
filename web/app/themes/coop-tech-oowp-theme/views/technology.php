@@ -21,7 +21,7 @@
     <div class="small-12 columns">
 
         <div class="view float-center">
-            <ul class="tabs" data-tabs id="coops-view-tabs"> <!-- TODO should this be here? -->
+            <ul class="tabs" data-tabs id="coops-view-tabs">
                 <li class="tabs-title is-active"><a href="#grid" aria-selected="true">Grid</a></li>
                 <li class="separator">|</li>
                 <li class="tabs-title"><a href="#map">Map</a></li>

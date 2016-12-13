@@ -17,6 +17,7 @@
     "foundation-sites": "6.2.4",
     "jquery": "^3.1.1",
     "laravel-elixir": "6.0.0-13",
+    "leaflet": "^1.0.2",
     "what-input": "^4.0.3"
   },
   "devDependencies": {

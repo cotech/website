@@ -1,6 +1,7 @@
 @import 'settings';
 @import 'foundation';
 @import 'font-awesome';
+@import 'leaflet';
 @include foundation-everything;
 
 
@@ -534,14 +535,20 @@ a:focus {
     h5 {
       font-size: 1rem;
     }
+  }
 
-    #map {
-      margin: 4rem 0 0 0;
+  .map {
+    margin-top: 4rem;
 
-      iframe {
-        width: 100%;
-        height: 500px;
-      }
+    #map-single {
+      margin: 0 16.66667%;
+      width: 66.66667%;
+      height: 480px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
     }
   }
 

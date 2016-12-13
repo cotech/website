@@ -17,11 +17,13 @@ elixir(function(mix) {
     mix
         .sass('app.scss', null, null, { includePaths: [
             'node_modules/foundation-sites/scss/',
-            'node_modules/font-awesome/scss/'
+            'node_modules/font-awesome/scss/',
+            'node_modules/leaflet/dist/'
         ]})
 
         .scripts([
             paths.npm + 'jquery/dist/jquery.js',
+            paths.npm + 'leaflet/dist/leaflet.js',
             paths.npm + 'what-input/dist/what-input.js',
             paths.foundation + 'foundation.core.js',
             paths.foundation + 'foundation.util.mediaQuery.js',
@@ -36,6 +38,9 @@ elixir(function(mix) {
 
         //images to public folder
         .copy(paths.assets + 'img', paths.public + 'img/')
+
+        //leaflet images to css/images
+        .copy('node_modules/leaflet/dist/images', paths.public + 'css/images/')
 
         //move fonts to public folder
         .copy([
