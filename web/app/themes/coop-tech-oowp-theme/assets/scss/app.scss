@@ -596,6 +596,13 @@ a:focus {
   .row {
     margin-bottom: 3rem;
   }
+
+  #map-services,
+  #map-technologies {
+    height: 800px;
+    width: 66.666667%;
+    margin: 0 16.666667%;
+  }
 }
 
 
