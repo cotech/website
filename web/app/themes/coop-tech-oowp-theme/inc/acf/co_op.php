@@ -154,7 +154,7 @@ if(function_exists("register_field_group"))
                             ),
                             array (
                                 'key' => 'field_583edd92cca6c',
-                                'label' => 'location',
+                                'label' => 'Location',
                                 'name' => Fields::LOCATION,
                                 'type' => 'google_map',
                                 'center_lat' => '51',

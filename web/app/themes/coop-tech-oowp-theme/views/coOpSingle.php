@@ -1,6 +1,10 @@
 <?php
+    use Outlandish\MappingCoTech\Fields\Fields;
+
     /** @var ouCoOp $post */
     $post = $this->post;
+
+    $formattedAddress = implode(',<br>', $post->addressAsArray());
 ?>
 
 <div class="coop">
@@ -29,16 +33,16 @@
 
                 <section class="row small-up-1 medium-up-4 large-up-1">
                     <div class="column">
-                        <ul class="menu social"> <!-- TODO add social media links -->
+                        <ul class="menu social"> <!-- TODO Instagram, YouTube, Pinterest? -->
                             <?php foreach ($post->socialMedia() as $link): ?>
-                                <li><a href="<?php echo $link['social_media_link'] ?>" target="_blank">
-                                    <?php if ($link['social_media_type'] == 'facebook'): ?>
+                                <li><a href="<?php echo $link[Fields::SOCIAL_MEDIA_LINK] ?>" target="_blank">
+                                    <?php if ($link[Fields::SOCIAL_MEDIA_TYPE] == Fields::FACEBOOK): ?>
                                         <i class="fi-social-facebook"></i>
-                                    <?php elseif ($link['social_media_type'] == 'twitter'): ?>
+                                    <?php elseif ($link[Fields::SOCIAL_MEDIA_TYPE] == Fields::TWITTER): ?>
                                         <i class="fi-social-twitter"></i>
-                                    <?php elseif ($link['social_media_type'] == 'github'): ?>
+                                    <?php elseif ($link[Fields::SOCIAL_MEDIA_TYPE] == Fields::GITHUB): ?>
                                         <i class="fi-social-github"></i>
-                                    <?php elseif ($link['social_media_type'] == 'google+'): ?>
+                                    <?php elseif ($link[Fields::SOCIAL_MEDIA_TYPE] == Fields::GOOGLE_PLUS): ?>
                                         <i class="fi-social-google-plus"></i>
                                     <?php endif ?>
                                 </a></li>
@@ -49,7 +53,10 @@
                         <strong>Email:</strong>
                         <p>
                             <?php foreach ($post->socialMedia() as $link): ?>
-                                <?php if ($link['social_media_type'] == 'email'): ?><a href="mailto:<?php echo $link['social_media_link'] ?>"><?php echo $link['social_media_link'] ?></a>
+                                <?php if ($link[Fields::SOCIAL_MEDIA_TYPE] == Fields::EMAIL): ?>
+                                    <a href="mailto:<?php echo $link[Fields::SOCIAL_MEDIA_LINK] ?>">
+                                        <?php echo $link[Fields::SOCIAL_MEDIA_LINK] ?>
+                                    </a>
                                     <?php break ?>
                                 <?php endif ?>
                             <?php endforeach ?>
@@ -61,7 +68,7 @@
                     </div>
                     <div class="column">
                         <strong>Address:</strong>
-                        <p><?php echo implode(',<br>', $post->addressAsArray()) ?></p>
+                        <p><?php echo $formattedAddress ?></p>
                     </div>
                 </section>
             </div>
@@ -130,16 +137,21 @@
 
 </div>
 
-<section id="map"> <!-- TODO OSM -->
-    <div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4960.510954307493!2d-0.11217526651326998!3d51.56354991441681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b9aff08fe37%3A0xcbf79572ab07c98b!2sOutlandish!5e0!3m2!1sen!2sus!4v1480950828548"
-                width="400"
-                height="200"
-                frameborder="0"
-                style="border:0"
-                allowfullscreen>
-        </iframe>
-    </div>
+<section class="map">
+    <?php if ($post->address()[Fields::LOCATION]): ?>
+        <div id="map-single"></div>
+        <script type="text/javascript">
+
+            var latitude = '<?php echo $post->address()[Fields::LOCATION][Fields::LATITUDE]; ?>';
+            var longitude = '<?php echo $post->address()[Fields::LOCATION][Fields::LONGITUDE]; ?>';
+            var markerText = '<?php echo "<b>" . $post->name() . "</b><br><br>" . $formattedAddress ?>';
+
+            $(document).ready(function() {
+                window.app.createMapSingleMarker('map-single', latitude, longitude, 16, markerText);
+            });
+
+        </script>
+    <?php endif ?>
 </section>
 
 </div>

@@ -25,6 +25,8 @@ class Fields {
     const COUNTRY = 'country';
     const POSTCODE = 'postcode';
     const LOCATION = 'location';
+    const LATITUDE = 'lat';
+    const LONGITUDE = 'lng';
 
     // Social Media
     const SOCIAL_MEDIA = 'social_media';

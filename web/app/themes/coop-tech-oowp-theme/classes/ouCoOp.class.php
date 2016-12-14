@@ -103,26 +103,29 @@ class ouCoOp extends ouPost {
         return $this->metadata(Fields::ADDRESS)[0];
     }
 
+    /**
+     * @return array
+     */
     public function addressAsArray() {
         $array = array();
         $address = $this->address();
-        if ($address['address_line_1']) {
-            array_push($array, $address['address_line_1']);
+        if ($address[Fields::ADDRESS_LINE_1]) {
+            array_push($array, $address[Fields::ADDRESS_LINE_1]);
         }
-        if ($address['address_line_2']) {
-            array_push($array, $address['address_line_2']);
+        if ($address[Fields::ADDRESS_LINE_2]) {
+            array_push($array, $address[Fields::ADDRESS_LINE_2]);
         }
-        if ($address['address_line_3']) {
-            array_push($array, $address['address_line_3']);
+        if ($address[Fields::ADDRESS_LINE_3]) {
+            array_push($array, $address[Fields::ADDRESS_LINE_3]);
         }
-        if ($address['city']) {
-            array_push($array, $address['city']);
+        if ($address[Fields::CITY]) {
+            array_push($array, $address[Fields::CITY]);
         }
-        if ($address['country']) {
-            array_push($array, $address['country']);
+        if ($address[Fields::COUNTRY]) {
+            array_push($array, $address[Fields::COUNTRY]);
         }
-        if ($address['postcode']) {
-            array_push($array, $address['postcode']);
+        if ($address[Fields::POSTCODE]) {
+            array_push($array, $address[Fields::POSTCODE]);
         }
         return $array;
     }
