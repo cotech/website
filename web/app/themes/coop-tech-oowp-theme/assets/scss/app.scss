@@ -4,6 +4,21 @@
 @import 'leaflet';
 @include foundation-everything;
 
+$cotech-black: #000000;
+$cotech-grey-1: #555a64;
+$cotech-grey-2: #7b8290;
+$cotech-grey-3: #9196a2;
+$cotech-grey-4: #999999;
+$cotech-grey-5: #e6e5e1;
+$cotech-grey-6: #f7f7f5;
+$cotech-white: #ffffff;
+
+$cotech-blue-1: #1e2637;
+$cotech-blue-2: #212a3d;
+$cotech-blue-3: #38aad5;
+$cotech-blue-4: #40c3f4;
+$cotech-yellow: #fdc441;
+
 
 /* ---------------------------------------- Typography  ---------------------------------------- */
 
@@ -31,7 +46,7 @@
 
 h1, h2, h3, h4, h5, h6, p, li, a {
   font-family: "open_sansregular", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  color: #1e2637;
+  color: $cotech-blue-1;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,37 +54,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .button {
-  background-color: #38aad5;
+  background-color: $cotech-blue-3;
   transition: all 0.2s ease;
 
   &:hover,
   &:focus {
-    background-color: #40c3f4;
+    background-color: $cotech-blue-4;
   }
 }
 
 a:hover,
 a:focus {
-  color: #38aad5;
+  color: $cotech-blue-3;
 }
 
 
 /* ---------------------------------------- HEADER  ---------------------------------------- */
 
 .top-bar {
-  background-color: #fff;
+  background-color: $cotech-white;
   padding: 1.4rem;
 
   ul {
-    background-color: #fff;
+    background-color: $cotech-white;
   }
 
   a:hover {
-    color: #38aad5;
+    color: $cotech-blue-3;
   }
 
   a.button:hover {
-    color: #fff;
+    color: $cotech-white;
   }
 }
 
@@ -117,7 +132,7 @@ a:focus {
 
 #banner {
   padding: 8rem 0;
-  background-color: #38aad5;
+  background-color: $cotech-blue-3;
   text-align: center;
   background: url(../img/banner-bg.jpg) no-repeat;
   -webkit-background-size: cover;
@@ -126,7 +141,7 @@ a:focus {
   background-size: cover;
 
   h1, p, li, a {
-    color: #fff;
+    color: $cotech-white;
   }
 
   i {
@@ -138,7 +153,7 @@ a:focus {
   a {
     vertical-align: top;
     line-height: 1.6rem;
-    border: 1px solid #fff;
+    border: 1px solid $cotech-white;
     border-radius: 3px;
     padding: 0.5em 1em;
     margin-top: 1rem;
@@ -147,8 +162,8 @@ a:focus {
   }
 
   a:hover {
-    background-color: #fff;
-    color: #38aad5;
+    background-color: $cotech-white;
+    color: $cotech-blue-3;
   }
 }
 
@@ -161,7 +176,7 @@ a:focus {
 /* -------------------- KPI -------------------- */
 
 #kpi {
-  background-color: #f7f7f5;
+  background-color: $cotech-grey-6;
   text-align: center;
   padding: 2rem 0;
 
@@ -169,7 +184,7 @@ a:focus {
   i {
     font-size: 4rem;
     line-height: 1;
-    color: #7b8290;
+    color: $cotech-grey-1;
   }
   */
 
@@ -183,7 +198,7 @@ a:focus {
     font-size: 0.95rem;
     letter-spacing: 0.02em;
     margin-bottom: 0.2rem;
-    color: #7b8290;
+    color: $cotech-grey-2;
   }
 
   h5 {
@@ -211,7 +226,7 @@ a:focus {
     p {
       text-align: center;
       padding-bottom: 1.6rem;
-      color: #9196a2;
+      color: $cotech-grey-3;
     }
   }
 }
@@ -250,13 +265,13 @@ a:focus {
 }
 
 .tabs-title > a {
-  color: #999;
+  color: $cotech-grey-4;
   font-size: 1rem;
 
   &:focus,
   &[aria-selected='true'] {
     background-color: transparent;
-    color: #1e2637;
+    color: $cotech-blue-1;
   }
 }
 
@@ -268,8 +283,8 @@ a:focus {
   line-height: 123px;
   text-align: center;
   vertical-align: middle;
-  border: solid 1px #e6e5e1;
-  background-color: #fff;
+  border: solid 1px $cotech-grey-5;
+  background-color: $cotech-white;
   display: block;
   transition: box-shadow 200ms ease-out;
   -webkit-transition-duration: 0.3s;
@@ -302,17 +317,24 @@ a:focus {
   }
 }
 
+#map-coops {
+  height: 800px;
+  width: 66.666667%;
+  margin: 0 16.666667%;
+}
+
 #join-us {
-  //vertical-align: middle;
-  //line-height: inherit;
+  color: $cotech-white;
+  background-color: $cotech-blue-3;
   font-style: italic;
+  padding: 16.666667% 0;
 }
 
 
 /* -------------------- CLIENTS  -------------------- */
 
 .home #clients {
-  background-color: #f7f7f5;
+  background-color: $cotech-grey-6;
 
   img {
     filter: grayscale(100%); /* Standard CSS */
@@ -351,7 +373,7 @@ a:focus {
   h5 {
     font-family: "open_sansregular", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     margin-top: 0.3rem;
-    color: #555a64;
+    color: $cotech-grey-1;
   }
 
   &:hover,
@@ -362,7 +384,7 @@ a:focus {
     }
 
     h5 {
-      color: #000;
+      color: $cotech-black;
     }
   }
 }
@@ -371,7 +393,7 @@ a:focus {
 /* -------------------- TECHNOLOGIES  -------------------- */
 
 #technologies {
-  background-color: #f7f7f5;
+  background-color: $cotech-grey-6;
 }
 
 .technology-thumb {
@@ -380,7 +402,7 @@ a:focus {
   text-align: center;
   padding: 0 0 3rem;
   display: block;
-  color: #555a64;
+  color: $cotech-grey-1;
   margin-bottom: 1rem;
   transition: all 0.2s ease;
 
@@ -396,14 +418,14 @@ a:focus {
   h5 {
     font-family: "open_sansregular", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     margin-top: 0.3rem;
-    color: #555a64;
+    color: $cotech-grey-1;
   }
 
   /*
   &:hover {
-    background-color: #fdc441;
-    color: #fff;
-    border-color: #fdc441;
+    background-color: $yellow;
+    color: $grey-2;
+    border-color: $yellow;
   }
   */
 
@@ -415,7 +437,7 @@ a:focus {
     }
 
     h5 {
-      color: #000;
+      color: $cotech-black;
     }
   }
 }
@@ -424,10 +446,10 @@ a:focus {
 /* -------------------- HIRE  -------------------- */
 
 #hire {
-  background-color: #38aad5;
+  background-color: $cotech-blue-3;
 
   h2, p {
-    color: #fff;
+    color: $cotech-white;
   }
 
   textarea {
@@ -437,15 +459,15 @@ a:focus {
   }
 
   .button {
-    background-color: #fff;
-    color: #38aad5;
+    background-color: $cotech-white;
+    color: $cotech-blue-3;
     font-family: "open_sansbold", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     transition: all 0.2s ease;
 
     &:hover {
-      background-color: #fdc441;
-      color: #fff;
-      border-color: #fdc441;
+      background-color: $cotech-yellow;
+      color: $cotech-white;
+      border-color: $cotech-yellow;
     }
   }
 
@@ -453,28 +475,28 @@ a:focus {
   [type='email'],
   textarea {
     background-color: transparent;
-    border-color: #fff;
+    border-color: $cotech-white;
     padding: 1.5rem;
-    color: #fff;
+    color: $cotech-white;
     font-size: 1.1rem;
     letter-spacing: 0.02em;
 
     /* change the text placeholder colour to white */
 
     &::-webkit-input-placeholder {
-      color: #fff;
+      color: $cotech-white;
     }
 
     &:-moz-placeholder { /* Firefox 18- */
-      color: #fff;
+      color: $cotech-white;
     }
 
     &::-moz-placeholder {  /* Firefox 19+ */
-      color: #fff;
+      color: $cotech-white;
     }
 
     &:-ms-input-placeholder {
-      color: #fff;
+      color: $cotech-white;
     }
   }
 }
@@ -484,7 +506,7 @@ a:focus {
 
 .back {
   padding-left: 2rem;
-  color: #9196a2;
+  color: $cotech-grey-3;
 }
 
 #page-banner {
@@ -497,15 +519,15 @@ a:focus {
 
   a {
     letter-spacing: 0.04em;
-    color: #9196a2;
+    color: $cotech-grey-3;
 
     &:hover {
-      color: #38aad5;
+      color: $cotech-blue-3;
     }
   }
 
   span {
-    color: #38aad5;
+    color: $cotech-blue-3;
   }
 }
 
@@ -583,11 +605,11 @@ footer {
   margin-top: 0;
 
   .footer-upper {
-    background-color: #212a3d;
+    background-color: $cotech-blue-2;
     padding: 2.8rem 0 2.2rem;
 
     .menu > li > a {
-      color: #fff;
+      color: $cotech-white;
       font-weight: bold;
       padding-left: 0;
       padding-right: 0;
@@ -596,22 +618,22 @@ footer {
       transition: all 0.2s ease;
 
       span {
-        color: #fdc441;
+        color: $cotech-yellow;
       }
 
       &:hover {
-        border-bottom: 1px solid #fdc441;
+        border-bottom: 1px solid $cotech-yellow;
       }
     }
   }
 }
 
 .footer-lower {
-  background-color: #1e2637;
+  background-color: $cotech-blue-1;
   padding: 5rem 0;
 
   p {
-    color: #7b8290;
+    color: $cotech-grey-2;
     text-align: center;
     margin: 1rem 0 0;
     font-size: 0.9rem;

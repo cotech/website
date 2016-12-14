@@ -138,20 +138,20 @@
 </div>
 
 <section class="map">
-    <div id="map-single"></div>
-    <script type="text/javascript">
+    <?php if ($post->address()[Fields::LOCATION]): ?>
+        <div id="map-single"></div>
+        <script type="text/javascript">
 
-        var latitude = '<?php echo $post->address()[Fields::LOCATION][Fields::LATITUDE]; ?>';
-        var longitude = '<?php echo $post->address()[Fields::LOCATION][Fields::LONGITUDE]; ?>';
-        var markerText = '<?php echo "<b>" . $post->name()
-            . "</b><br><br>"
-            . $formattedAddress ?>';
+            var latitude = '<?php echo $post->address()[Fields::LOCATION][Fields::LATITUDE]; ?>';
+            var longitude = '<?php echo $post->address()[Fields::LOCATION][Fields::LONGITUDE]; ?>';
+            var markerText = '<?php echo "<b>" . $post->name() . "</b><br><br>" . $formattedAddress ?>';
 
-        $(document).ready(function() {
-            window.app.createMapSingleMarker('map-single', latitude, longitude, 16, markerText);
-        });
+            $(document).ready(function() {
+                window.app.createMapSingleMarker('map-single', latitude, longitude, 16, markerText);
+            });
 
-    </script>
+        </script>
+    <?php endif ?>
 </section>
 
 </div>

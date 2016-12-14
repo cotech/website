@@ -12,23 +12,25 @@ window.app = {
   },
 
   createMapSingleMarker: function(mapId, lat, lng, zoom, markerText) {
-    var mymap = L.map(mapId).setView([lat, lng], zoom);
+    var myMap = L.map(mapId).setView([lat, lng], zoom);
 
-    L.tileLayer(window.app.apiUrl, window.app.tileLayerOptions).addTo(mymap);
+    L.tileLayer(window.app.apiUrl, window.app.tileLayerOptions).addTo(myMap);
 
-    var marker = L.marker([lat, lng]).addTo(mymap);
-    marker.bindPopup(markerText);
+    var marker = L.marker([lat - 0.0005, lng]).addTo(myMap);
+    marker.bindPopup(markerText).openPopup();
   },
 
   createMapMultiMarker: function(mapId, lat, lng, zoom, markersArray) {
-    var mymap = L.map(mapId).setView([lat, lng], zoom);
+    var myMap = L.map(mapId).setView([lat, lng], zoom);
 
-    L.tileLayer(window.app.apiUrl, window.app.tileLayerOptions).addTo(mymap);
+    L.tileLayer(window.app.apiUrl, window.app.tileLayerOptions).addTo(myMap);
 
     markersArray.forEach(function(markerVar) {
-      var marker = L.marker([markerVar.lat, markerVar.lng]).addTo(mymap);
+      var marker = L.marker([markerVar.lat, markerVar.lng]).addTo(myMap);
       marker.bindPopup(markerVar.markerText);
     });
+
+    // myMap.invalidateSize(false);
   }
 
 };
