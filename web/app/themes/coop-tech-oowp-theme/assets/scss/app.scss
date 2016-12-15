@@ -4,6 +4,13 @@
 @import 'leaflet';
 @include foundation-everything;
 
+@mixin transition() {
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
 $cotech-black: #000000;
 $cotech-grey-1: #555a64;
 $cotech-grey-2: #7b8290;
@@ -19,6 +26,11 @@ $cotech-blue-3: #38aad5;
 $cotech-blue-4: #40c3f4;
 $cotech-yellow: #fdc441;
 
+$one-sixth: 16.666667%;
+$one-third: 33.333333%;
+$half: 50%;
+$two-thirds: 66.666667%;
+$full: 100%;
 
 /* ---------------------------------------- Typography  ---------------------------------------- */
 
@@ -107,7 +119,7 @@ a:focus {
 /* Small only - For small screens, make the burger icon align to the right of top bar*/
 @media screen and (max-width: 39.9375em) {
   .top-bar-title {
-    width: 100%;
+    width: $full;
 
     /* Burger Icon */
     span {
@@ -278,24 +290,21 @@ a:focus {
 /* Coops Thumb */
 
 .coop-thumb {
-  width: 200px;
   height: 123px;
-  line-height: 123px;
   text-align: center;
-  vertical-align: middle;
   border: solid 1px $cotech-grey-5;
   background-color: $cotech-white;
   display: block;
-  transition: box-shadow 200ms ease-out;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
   margin-right: -1px;
   margin-bottom: -1px;
+  transition: box-shadow 200ms ease-out;
+  @include transition;
 
-  img {
-    margin-bottom: 0;
+  .coop-thumb-img {
+    width: $full;
+    height: $full;
+    background: center center no-repeat;
+    background-size: contain;
   }
 
   span {
@@ -317,17 +326,17 @@ a:focus {
   }
 }
 
-#map-coops {
-  height: 800px;
-  width: 66.666667%;
-  margin: 0 16.666667%;
-}
-
 #join-us {
   color: $cotech-white;
   background-color: $cotech-blue-3;
   font-style: italic;
-  padding: 16.666667% 0;
+  padding: $one-sixth 5px;
+}
+
+#map-coops {
+  height: 800px;
+  width: $two-thirds;
+  margin: 0 $one-sixth;
 }
 
 
@@ -336,21 +345,34 @@ a:focus {
 .home #clients {
   background-color: $cotech-grey-6;
 
-  img {
-    filter: grayscale(100%); /* Standard CSS */
-    -webkit-filter: grayscale(100%); /* CSS for Webkit Browsers */
-    filter: url(/elements/grayscale.svg#desaturate); /* Firefox 4-34 */
-    filter: gray;  /* Internet Explorer IE6-9 */
-    -webkit-filter: grayscale(1); /* Old WebKit Browsers */
-    margin: 0 0 3rem;
-    transition: all 0.6s ease;
+  .client-thumb {
+    width: $full;
+    height: 150px;
+    background: center center no-repeat;
+    background-size: contain;
+    opacity: 0.5;
   }
 
-  img:hover {
-    filter: grayscale(0%);
-    filter: none;
-    -webkit-filter: grayscale(0); /* Old WebKit */
+  .client-thumb:hover {
+    opacity: 1;
+    @include transition;
   }
+
+  //img {
+  //  filter: grayscale($full); /* Standard CSS */
+  //  -webkit-filter: grayscale($full); /* CSS for Webkit Browsers */
+  //  filter: url(/elements/grayscale.svg#desaturate); /* Firefox 4-34 */
+  //  filter: gray;  /* Internet Explorer IE6-9 */
+  //  -webkit-filter: grayscale(1); /* Old WebKit Browsers */
+  //  margin: 0 0 3rem;
+  //  transition: all 0.6s ease;
+  //}
+  //
+  //img:hover {
+  //  filter: grayscale(0%);
+  //  filter: none;
+  //  -webkit-filter: grayscale(0); /* Old WebKit */
+  //}
 }
 
 
@@ -398,7 +420,7 @@ a:focus {
 
 .technology-thumb {
   height: 120px;
-  width: 100%;
+  width: $full;
   text-align: center;
   padding: 0 0 3rem;
   display: block;
@@ -406,9 +428,12 @@ a:focus {
   margin-bottom: 1rem;
   transition: all 0.2s ease;
 
-  img {
-    max-height: 100%;
-    max-width: 100%;
+  .technology-thumb-img {
+    height: $full;
+    width: $full;
+    background: center center no-repeat;
+    background-size: contain;
+
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
     -webkit-transition-property: transform;
@@ -556,6 +581,7 @@ a:focus {
 
     h5 {
       font-size: 1rem;
+      text-align: center;
     }
   }
 
@@ -563,19 +589,26 @@ a:focus {
     margin-top: 4rem;
 
     #map-single {
-      margin: 0 16.66667%;
-      width: 66.66667%;
+      margin: 0 $one-sixth;
+      width: $two-thirds;
       height: 480px;
     }
 
     iframe {
-      width: 100%;
+      width: $full;
       height: 500px;
     }
   }
 
   .service-thumb {
     padding-bottom: 0;
+
+    .service-thumb-img {
+      height: 42px;
+      width: $full;
+      background: center center no-repeat;
+      background-size: contain;
+    }
   }
 }
 
@@ -595,6 +628,13 @@ a:focus {
 
   .row {
     margin-bottom: 3rem;
+  }
+
+  #map-services,
+  #map-technologies {
+    height: 800px;
+    width: $two-thirds;
+    margin: 0 $one-sixth;
   }
 }
 

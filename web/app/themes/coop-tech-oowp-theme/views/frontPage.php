@@ -103,8 +103,9 @@
 
                         <?php foreach ($coOps as $coOp): ?>
                             <div class="column">
-                                <a href="<?php echo $coOp->permalink() ?>" class="coop-thumb">
-                                    <img src="<?php echo $coOp->logoUrl() ?>" alt="">
+                                <a class="coop-thumb"
+                                   href="<?php echo $coOp->permalink() ?>">
+                                    <div class="coop-thumb-img" style="background-image: url(<?php echo $coOp->logoUrl() ?>)" ></div>
                                     <!--<span><h4>--><?php //echo $coOp->name() ?><!--</h4></span>-->
                                 </a>
                             </div>
@@ -170,8 +171,8 @@
             <div class="row small-up-2 medium-up-3 large-up-6">
                 <?php foreach ($clients as $client): ?>
                     <div class="column">
-                        <div class="client-thumb">
-                            <img src="<?php echo $client->logoUrl() ?>" alt="">
+                        <div class="client-thumb" style="background-image: url(<?php echo $client->logoUrl() ?>)" >
+                            <!--<img src="<?php /*echo $client->logoUrl() */?>" alt="">-->
                         </div>
                     </div>
                 <?php endforeach ?>
@@ -215,7 +216,8 @@
                 <?php foreach ($technologies as $technology): ?>
                     <div class="column">
                         <a href="<?php echo $technology->permalink() ?>" class="technology-thumb">
-                            <img src="<?php echo $technology->logoUrl() ?>" alt="">
+                            <!--<img src="<?php /*echo $technology->logoUrl() */?>" alt="">-->
+                            <div class="technology-thumb-img" style="background-image: url(<?php echo $technology->logoUrl() ?>)" ></div>
                             <h5><?php echo $technology->name() ?></h5>
                         </a>
                     </div>

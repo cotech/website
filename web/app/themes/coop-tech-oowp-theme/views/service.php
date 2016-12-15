@@ -1,7 +1,7 @@
 <?php
-    /**
-     * @var ouService $post
-     */
+    use Outlandish\MappingCoTech\Fields\Fields;
+
+    /** @var ouService $post */
     $post = $this->post;
 ?>
 
@@ -48,15 +48,34 @@
 
             <!-- START Map View Content -->
             <div class="tabs-panel" id="map">
-                <div class="flex-video">
-                    <!-- TODO OSM -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4776320.894259267!2d-8.549567638277907!3d54.229862435208936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x25a3b1142c791a9%3A0xc4f8a0433288257a!2sUnited+Kingdom!5e0!3m2!1sen!2sus!4v1480518359134"
-                            width="600"
-                            height="450"
-                            frameborder="0"
-                            style="border:0"
-                            allowfullscreen >
-                    </iframe>
+                <div class="row small-up-2 medium-up-4 large-up-6 small-collapse">
+                    <div id="map-services"></div>
+                    <?php
+                        $mapEntries = [];
+                        foreach ($post->coOps() as $coOp) {
+                            if ($coOp->address()[Fields::LOCATION]) {
+                                array_push($mapEntries, array(
+                                    'lat' => $coOp->address()[Fields::LOCATION][Fields::LATITUDE],
+                                    'lng' => $coOp->address()[Fields::LOCATION][Fields::LONGITUDE],
+                                    'markerText' => '<b><a href=\"' . $coOp->permalink() . '\">' . $coOp->name()
+                                        . '</a></b><br><br>' . implode(',<br>', $coOp->addressAsArray())
+                                ));
+                            }
+                        }
+                        $encodedMapEntries = json_encode($mapEntries);
+                    ?>
+                    <script type="text/javascript">
+
+                        var mapEntries = '<?php echo $encodedMapEntries; ?>';
+                        var parsedMapEntries = JSON.parse(mapEntries);
+
+                        $(document).ready(function() {
+                            window.app.createMapMultiMarker('map-services', 54.7, -4.2, 6, parsedMapEntries);
+                        });
+
+                        // TODO fix bug with tiles not displaying properly until window resized
+
+                    </script>
                 </div>
             </div>
             <!-- END Map View Content -->
