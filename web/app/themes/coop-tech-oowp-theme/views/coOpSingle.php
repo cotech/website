@@ -89,7 +89,8 @@
                         <?php foreach ($post->services() as $service): ?>
                             <div class="column">
                                 <a href="<?php echo $service->permalink() ?>" class="service-thumb">
-                                    <img src="<?php echo $service->iconUrl() ?>" alt="" class="float-center">
+                                    <div class="service-thumb-img" style="background-image: url(<?php echo $service->iconUrl() ?>)" ></div>
+                                    <!--<img src="<?php /*echo $service->iconUrl() */?>" alt="" class="float-center">-->
                                     <h5><?php echo $service->name() ?></h5>
                                 </a>
                             </div>
@@ -107,7 +108,7 @@
                             <div class="column">
                                 <a href="<?php echo $technology->permalink() ?>" class="technology-thumb">
                                     <img src="<?php echo $technology->logoUrl() ?>" alt="">
-                                    <?php echo $technology->title() ?>
+                                    <h5><?php echo $technology->title() ?></h5>
                                 </a>
                             </div>
                         <?php endforeach ?>
@@ -116,14 +117,14 @@
                 <!-- /Technologies -->
 
                 <!-- Clients -->
-                <section id="clients">
+                <section>
                     <h4>Clients</h4>
 
                     <div class="row small-up-2 medium-up-3 large-up-3">
                         <?php foreach ($post->clients() as $client): ?>
                             <div class="column">
-                                <?php echo $client->title() ?>
                                 <img src="<?php echo $client->logoUrl() ?>" alt="">
+                                <h5><?php echo $client->title() ?></h5>
                             </div>
                         <?php endforeach ?>
                     </div>
