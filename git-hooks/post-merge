@@ -1,0 +1,5 @@
+composer install
+cd ./web/app/themes/coop-tech-oowp-theme
+composer install
+npm install
+./node_modules/gulp/bin/gulp.js
