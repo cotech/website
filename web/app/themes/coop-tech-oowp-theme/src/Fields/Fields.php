@@ -36,6 +36,10 @@ class Fields {
     const FACEBOOK = 'facebook';
     const GITHUB = 'github';
     const GOOGLE_PLUS = 'google+';
+    const INSTAGRAM = 'instagram';
+    const PINTEREST = 'pinterest';
+    const SNAPCHAT = 'snapchat';
     const TWITTER = 'twitter';
+    const YOUTUBE = 'youtube';
 
 }

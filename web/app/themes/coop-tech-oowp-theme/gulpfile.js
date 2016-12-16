@@ -26,10 +26,6 @@ elixir(function(mix) {
             paths.npm + 'leaflet/dist/leaflet.js',
             paths.npm + 'what-input/dist/what-input.js',
             paths.foundation + 'dist/foundation.js'
-            // paths.foundation + 'js/foundation.core.js',
-            // paths.foundation + 'js/foundation.util.mediaQuery.js',
-            // paths.foundation + 'js/foundation.sticky.js',
-            // paths.foundation + 'js/foundation.util.triggers.js'
         ], paths.public + 'js/vendor.js')
 
         //todo: webpack this?
