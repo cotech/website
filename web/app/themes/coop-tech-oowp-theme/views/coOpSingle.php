@@ -33,17 +33,25 @@
 
                 <section class="row small-up-1 medium-up-4 large-up-1">
                     <div class="column">
-                        <ul class="menu social"> <!-- TODO Instagram, YouTube, Pinterest? -->
+                        <ul class="menu social">
                             <?php foreach ($post->socialMedia() as $link): ?>
                                 <li><a href="<?php echo $link[Fields::SOCIAL_MEDIA_LINK] ?>" target="_blank">
                                     <?php if ($link[Fields::SOCIAL_MEDIA_TYPE] == Fields::FACEBOOK): ?>
                                         <i class="fi-social-facebook"></i>
-                                    <?php elseif ($link[Fields::SOCIAL_MEDIA_TYPE] == Fields::TWITTER): ?>
-                                        <i class="fi-social-twitter"></i>
                                     <?php elseif ($link[Fields::SOCIAL_MEDIA_TYPE] == Fields::GITHUB): ?>
                                         <i class="fi-social-github"></i>
                                     <?php elseif ($link[Fields::SOCIAL_MEDIA_TYPE] == Fields::GOOGLE_PLUS): ?>
                                         <i class="fi-social-google-plus"></i>
+                                    <?php elseif ($link[Fields::SOCIAL_MEDIA_TYPE] == Fields::INSTAGRAM): ?>
+                                        <i class="fi-social-instagram"></i>
+                                    <?php elseif ($link[Fields::SOCIAL_MEDIA_TYPE] == Fields::PINTEREST): ?>
+                                        <i class="fi-social-pinterest"></i>
+                                    <?php elseif ($link[Fields::SOCIAL_MEDIA_TYPE] == Fields::SNAPCHAT): ?>
+                                        <i class="fi-social-snapchat"></i>
+                                    <?php elseif ($link[Fields::SOCIAL_MEDIA_TYPE] == Fields::TWITTER): ?>
+                                        <i class="fi-social-twitter"></i>
+                                    <?php elseif ($link[Fields::SOCIAL_MEDIA_TYPE] == Fields::YOUTUBE): ?>
+                                        <i class="fi-social-youtube"></i>
                                     <?php endif ?>
                                 </a></li>
                             <?php endforeach ?>

@@ -16,11 +16,30 @@
     /** @var ouTechnology[] | ooWP_Query $technologies */
     $technologies = $this->technologies;
 
+    /* Images */
     $imgDir = 'app/themes/coop-tech-oowp-theme/public/img';
     $iconClients = $imgDir . '/icon-clients.png';
     $iconCoops = $imgDir . '/icon-coops.png';
     $iconRevenue = $imgDir . '/icon-revenue.png';
     $iconStaff = $imgDir . '/icon-staff.png';
+
+    /* KPI Logic */
+    $kpiClients = count($clients) . '+';
+    $kpiCoOps = count($coOps);
+    $kpiRevenueNum = 0;
+    $kpiStaffNum = 0;
+    foreach ($coOps as $coOp) {
+        $kpiRevenueNum += $coOp->turnover() ?: 0;
+        $firstExplosion = explode('+', $coOp->employeeCount());
+        $secondExplosion = explode('-', $firstExplosion[0]);
+        $kpiStaffNum += intval($secondExplosion[0]);
+    }
+    $kpiRevenue = $kpiRevenueNum >= 1000000000
+        ? '~£' . number_format($kpiRevenueNum / 1000000000, 2) . 'bil'
+        : $kpiRevenueNum >= 1000000
+            ? '~£' . number_format($kpiRevenueNum / 1000000, 1) . 'mil'
+            : '~£' . number_format($kpiRevenueNum, 0, '.', ',');
+    $kpiStaff = $kpiStaffNum . '+';
 ?>
 
 <div class="home">
@@ -57,22 +76,22 @@
             <div class="small-6 medium-3 columns">
                 <img src="<?php echo $iconCoops ?>" class="float-center">
                 <h6>Co-ops</h6>
-                <h5><?php echo count($coOps) ?></h5>
+                <h5><?php echo $kpiCoOps ?></h5>
             </div>
             <div class="small-6 medium-3 columns">
                 <img src="<?php echo $iconStaff ?>" class="float-center">
                 <h6>Staff</h6>
-                <h5>158+</h5> <!-- TODO remove hard-coding -->
+                <h5><?php echo $kpiStaff ?></h5>
             </div>
             <div class="small-6 medium-3 columns">
                 <img src="<?php echo $iconRevenue ?>" class="float-center">
                 <h6>Revenue</h6>
-                <h5>£2.8 mil</h5> <!-- TODO remove hard-coding -->
+                <h5><?php echo $kpiRevenue ?></h5>
             </div>
             <div class="small-6 medium-3 columns">
                 <img src="<?php echo $iconClients ?>" class="float-center">
                 <h6>Clients</h6>
-                <h5><?php echo count($clients) ?>+</h5>
+                <h5><?php echo $kpiClients ?></h5>
             </div>
 
         </div>

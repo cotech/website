@@ -94,6 +94,7 @@ a:focus {
   background-color: $cotech-white;
   padding: 1.4rem;
   width: 100%;
+  z-index: 9999;
 
   ul {
     background-color: $cotech-white;
@@ -244,7 +245,7 @@ a:focus {
   padding-bottom: 0;
 }
 
-/* View */
+/* ------- Tiles ------- */
 
 .view {
   font-size: 1rem;
@@ -330,6 +331,8 @@ a:focus {
   font-style: italic;
   padding: $one-sixth 5px;
 }
+
+/* ------- Map ------- */
 
 #map-coops {
   height: 800px;
