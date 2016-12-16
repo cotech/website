@@ -6,7 +6,7 @@ composer update
 cd ./web/app/themes/coop-tech-oowp-theme
 composer update
 npm install
-./node_modules/gulp/bin/gulp.js
+gulp
 
 git fetch && git log ORIG_HEAD..origin/master --pretty=format:"%s - %ar by %an (%h)"
 
