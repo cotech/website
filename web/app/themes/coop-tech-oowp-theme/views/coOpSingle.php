@@ -89,8 +89,7 @@
                         <?php foreach ($post->services() as $service): ?>
                             <div class="column">
                                 <a href="<?php echo $service->permalink() ?>" class="service-thumb">
-                                    <div class="service-thumb-img" style="background-image: url(<?php echo $service->iconUrl() ?>)" ></div>
-                                    <!--<img src="<?php /*echo $service->iconUrl() */?>" alt="" class="float-center">-->
+                                    <div class="service-thumb-img float-center" style="background-image: url(<?php echo $service->iconUrl() ?>)" ></div>
                                     <h5><?php echo $service->name() ?></h5>
                                 </a>
                             </div>
@@ -103,11 +102,11 @@
                 <section>
                     <h4>Technologies</h4>
 
-                    <div class="row small-up-3 medium-up-4 large-up-6">
+                    <div class="row small-up-3 medium-up-4 large-up-4 small-collapse">
                         <?php foreach ($post->technologies() as $technology): ?>
                             <div class="column">
                                 <a href="<?php echo $technology->permalink() ?>" class="technology-thumb">
-                                    <img src="<?php echo $technology->logoUrl() ?>" alt="">
+                                    <div class="technology-thumb-img float-center" style="background-image: url(<?php echo $technology->logoUrl() ?>)" ></div>
                                     <h5><?php echo $technology->title() ?></h5>
                                 </a>
                             </div>
@@ -122,9 +121,9 @@
 
                     <div class="row small-up-2 medium-up-3 large-up-3">
                         <?php foreach ($post->clients() as $client): ?>
-                            <div class="column">
-                                <img src="<?php echo $client->logoUrl() ?>" alt="">
-                                <h5><?php echo $client->title() ?></h5>
+                            <div class="column client-thumb-container">
+                                <div class="client-thumb" style="background-image: url(<?php echo $client->logoUrl() ?>)" ></div>
+                                <h5 class="client-thumb-header"><?php echo $client->title() ?></h5>
                             </div>
                         <?php endforeach ?>
                     </div>

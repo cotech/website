@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="<?php echo $publicDir . 'foundation-icons/foundation-icons.css' ?>">
     <link rel="icon" type="image/x-icon" href="<?php echo $coTechLogo ?>">
     <!-- TODO what is this? vv -->
-    <link rel="alternate" type="application/rss+xml" title="Latest Trafficking Culture Updates" href="<?php bloginfo('url'); ?>/feed.rss" />
+    <!--<link rel="alternate" type="application/rss+xml" title="Latest Trafficking Culture Updates" href="<?php /*bloginfo('url'); */?>/feed.rss" />-->
 </head>
 
 
@@ -34,7 +34,7 @@
 
     <div data-sticky-container>
 
-        <div class="top-bar" data-sticky data-options="marginTop:0;" style="width:100%">
+        <div class="top-bar" data-sticky data-options="marginTop:0;">
             <div class="top-bar-title">
                 <strong>
                     <a id="logo" href="<?php echo $frontPageLink ?>">
@@ -51,7 +51,7 @@
                         <li><a href="#clients">Clients</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#technologies">Technologies</a></li>
-                        <li><a href="#hire" class="button">Hire Us</a></li>
+                        <li><a href="#contact" class="button">Get In Touch</a></li>
                     </ul>
                 </div>
 <?php else: ?>

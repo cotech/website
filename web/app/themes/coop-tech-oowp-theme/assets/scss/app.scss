@@ -4,11 +4,18 @@
 @import 'leaflet';
 @include foundation-everything;
 
-@mixin transition() {
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
+@mixin transition($property, $duration, $function:ease-in) {
+  -moz-transition: $property $duration $function;
+  -o-transition: $property $duration $function;
+  -webkit-transition: $property $duration $function;
+  transition: $property $duration $function;
+}
+
+@mixin backgroundSize($size) {
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;
 }
 
 $cotech-black: #000000;
@@ -86,45 +93,43 @@ a:focus {
 .top-bar {
   background-color: $cotech-white;
   padding: 1.4rem;
+  width: 100%;
 
   ul {
     background-color: $cotech-white;
   }
 
-  a:hover {
-    color: $cotech-blue-3;
-  }
+  a {
+    &:hover {
+      color: $cotech-blue-3;
+    }
 
-  a.button:hover {
-    color: $cotech-white;
+    &.button:hover {
+      color: $cotech-white;
+    }
   }
 }
 
 .top-bar-right .menu > li {
   padding-right: 0.5rem;
-}
 
-.top-bar-right .menu > li > a {
-  padding: 0.7rem;
-  font-size: 1rem;
-  letter-spacing: 0.05em;
-}
+  > a {
+    padding: 0.7rem;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
 
-.top-bar-right .menu > li > a.button {
-  margin-left: 0.5rem;
-  padding: 0.7rem 1.2rem;
-  font-weight: bold;
+    &.button {
+      margin-left: 0.5rem;
+      padding: 0.7rem 1.2rem;
+      font-weight: bold;
+    }
+  }
 }
 
 /* Small only - For small screens, make the burger icon align to the right of top bar*/
 @media screen and (max-width: 39.9375em) {
   .top-bar-title {
     width: $full;
-
-    /* Burger Icon */
-    span {
-      float:right;
-    }
   }
 }
 
@@ -146,11 +151,8 @@ a:focus {
   padding: 8rem 0;
   background-color: $cotech-blue-3;
   text-align: center;
-  background: url(../img/banner-bg.jpg) no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url(../img/banner-collage.jpg) center center no-repeat;
+  @include backgroundSize(cover);
 
   h1, p, li, a {
     color: $cotech-white;
@@ -191,14 +193,6 @@ a:focus {
   background-color: $cotech-grey-6;
   text-align: center;
   padding: 2rem 0;
-
-  /*
-  i {
-    font-size: 4rem;
-    line-height: 1;
-    color: $cotech-grey-1;
-  }
-  */
 
   img {
     padding-bottom: 0.6em;
@@ -297,14 +291,13 @@ a:focus {
   display: block;
   margin-right: -1px;
   margin-bottom: -1px;
-  transition: box-shadow 200ms ease-out;
-  @include transition;
+  @include transition(all, 0.3s, ease);
 
   .coop-thumb-img {
     width: $full;
     height: $full;
     background: center center no-repeat;
-    background-size: contain;
+    @include backgroundSize(contain);
   }
 
   span {
@@ -326,6 +319,11 @@ a:focus {
   }
 }
 
+.has-tip {
+  cursor: pointer;
+  cursor: hand;
+}
+
 #join-us {
   color: $cotech-white;
   background-color: $cotech-blue-3;
@@ -344,52 +342,37 @@ a:focus {
 
 .home #clients {
   background-color: $cotech-grey-6;
+}
 
-  .client-thumb {
-    width: $full;
-    height: 150px;
-    background: center center no-repeat;
-    background-size: contain;
-    opacity: 0.5;
-  }
+.client-thumb {
+  height: 150px;
+  width: $full;
+  background: center center no-repeat;
+  @include backgroundSize(contain);
+  opacity: 0.5;
+  @include transition(opacity, 0.6s, ease);
 
-  .client-thumb:hover {
+  &:hover {
     opacity: 1;
-    @include transition;
   }
-
-  //img {
-  //  filter: grayscale($full); /* Standard CSS */
-  //  -webkit-filter: grayscale($full); /* CSS for Webkit Browsers */
-  //  filter: url(/elements/grayscale.svg#desaturate); /* Firefox 4-34 */
-  //  filter: gray;  /* Internet Explorer IE6-9 */
-  //  -webkit-filter: grayscale(1); /* Old WebKit Browsers */
-  //  margin: 0 0 3rem;
-  //  transition: all 0.6s ease;
-  //}
-  //
-  //img:hover {
-  //  filter: grayscale(0%);
-  //  filter: none;
-  //  -webkit-filter: grayscale(0); /* Old WebKit */
-  //}
 }
 
 
 /* -------------------- SERVICES  -------------------- */
 
 .service-thumb {
+  height: 74px;
   text-align: center;
   padding: 0 0 2rem;
+  margin: 0 0 3.5rem;
   display: block;
 
-  img {
-    height: 42px;
-    width: 65px;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
+  .service-thumb-img {
+    height: $full;
+    width: $full;
+    background: center center no-repeat;
+    @include backgroundSize(contain);
+    @include transition(all, 0.3s, ease);
   }
 
   h5 {
@@ -400,7 +383,7 @@ a:focus {
 
   &:hover,
   &:focus {
-    img {
+    .service-thumb-img {
       -webkit-transform: scale(1.2);
       transform: scale(1.2);
     }
@@ -426,37 +409,25 @@ a:focus {
   display: block;
   color: $cotech-grey-1;
   margin-bottom: 1rem;
-  transition: all 0.2s ease;
 
   .technology-thumb-img {
     height: $full;
     width: $full;
     background: center center no-repeat;
-    background-size: contain;
-
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
+    @include backgroundSize(contain);
+    @include transition(all, 0.3s, ease);
   }
 
   h5 {
     font-family: "open_sansregular", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     margin-top: 0.3rem;
     color: $cotech-grey-1;
+    @include transition(all, 0.3s, ease);
   }
-
-  /*
-  &:hover {
-    background-color: $yellow;
-    color: $grey-2;
-    border-color: $yellow;
-  }
-  */
 
   &:hover,
   &:focus {
-    img {
+    .technology-thumb-img {
       -webkit-transform: scale(1.2);
       transform: scale(1.2);
     }
@@ -468,9 +439,9 @@ a:focus {
 }
 
 
-/* -------------------- HIRE  -------------------- */
+/* -------------------- CONTACT  -------------------- */
 
-#hire {
+#contact {
   background-color: $cotech-blue-3;
 
   h2, p {
@@ -489,7 +460,8 @@ a:focus {
     font-family: "open_sansbold", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     transition: all 0.2s ease;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $cotech-yellow;
       color: $cotech-white;
       border-color: $cotech-yellow;
@@ -546,7 +518,8 @@ a:focus {
     letter-spacing: 0.04em;
     color: $cotech-grey-3;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $cotech-blue-3;
     }
   }
@@ -600,14 +573,21 @@ a:focus {
     }
   }
 
-  .service-thumb {
-    padding-bottom: 0;
+  .client-thumb-container {
+    .client-thumb {
+      height: 120px;
+    }
 
-    .service-thumb-img {
-      height: 42px;
-      width: $full;
-      background: center center no-repeat;
-      background-size: contain;
+    .client-thumb-header {
+      font-family: "open_sansregular", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      color: $cotech-grey-1;
+    }
+
+    &:hover,
+    &:focus {
+      .client-thumb-header {
+        color: $cotech-black;
+      }
     }
   }
 }
@@ -646,7 +626,7 @@ footer {
 
   .footer-upper {
     background-color: $cotech-blue-2;
-    padding: 2.8rem 0 2.2rem;
+    padding: 1.8rem 0 1.2rem;
 
     .menu > li > a {
       color: $cotech-white;
@@ -661,7 +641,8 @@ footer {
         color: $cotech-yellow;
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         border-bottom: 1px solid $cotech-yellow;
       }
     }
@@ -670,7 +651,7 @@ footer {
 
 .footer-lower {
   background-color: $cotech-blue-1;
-  padding: 5rem 0;
+  padding: 3rem 0;
 
   p {
     color: $cotech-grey-2;
@@ -687,7 +668,8 @@ footer {
   margin-bottom: 6rem;
 
   a {
-    font-style: italic;
+    font-weight: bold;
+    color: $cotech-blue-2;
   }
 
   ol,
@@ -705,7 +687,6 @@ footer {
     textarea {
       height: 200px;
       margin: 0.95rem 0 1.7rem;
-      padding: 1.3rem 1.5rem;
     }
 
     [type='text'],
@@ -714,6 +695,17 @@ footer {
       padding: 1.5rem;
       font-size: 1.1rem;
       letter-spacing: 0.02em;
+    }
+
+    a {
+      background-color: $cotech-white;
+      border: 1px $cotech-grey-4 solid;
+
+      &:hover,
+      &:focus {
+        background-color: $cotech-blue-3;
+        color: $cotech-white;
+      }
     }
   }
 }

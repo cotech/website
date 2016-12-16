@@ -5,7 +5,7 @@
 <div id="page-banner">
     <div class="row">
         <div class="small-centered small-12 medium-10 large-8 columns">
-            <h2>Join Co-Tech</h2>
+            <h2>Join CoTech</h2>
         </div>
     </div>
 </div>
