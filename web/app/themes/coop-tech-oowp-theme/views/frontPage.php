@@ -34,11 +34,16 @@
         $secondExplosion = explode('-', $firstExplosion[0]);
         $kpiStaffNum += intval($secondExplosion[0]);
     }
-    $kpiRevenue = $kpiRevenueNum >= 1000000000
-        ? '~£' . number_format($kpiRevenueNum / 1000000000, 2) . 'bil'
-        : $kpiRevenueNum >= 1000000
-            ? '~£' . number_format($kpiRevenueNum / 1000000, 1) . 'mil'
-            : '~£' . number_format($kpiRevenueNum, 0, '.', ',');
+    $kpiRevenue = '';
+    if ($kpiRevenueNum >= 1000000000) {
+        $kpiRevenue = '£' . number_format($kpiRevenueNum / 1000000000, 2) . 'b';
+    } else if ($kpiRevenueNum >= 1000000) {
+        $kpiRevenue = '£' . number_format($kpiRevenueNum / 1000000, 1) . 'm';
+    } else if ($kpiRevenueNum >= 1000) {
+        $kpiRevenue = '£' . number_format($kpiRevenueNum / 1000, 0) . 'k';
+    } else {
+        $kpiRevenue = '£' . number_format($kpiRevenueNum, 0, '.', ',');
+    }
     $kpiStaff = $kpiStaffNum . '+';
 ?>
 

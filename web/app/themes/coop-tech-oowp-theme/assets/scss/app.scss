@@ -108,7 +108,7 @@ a:focus {
   background-color: $cotech-white;
   padding: 1.4rem;
   width: 100%;
-  z-index: 9999;
+  z-index: 9999 !important;
 
   ul {
     background-color: $cotech-white;
@@ -124,9 +124,17 @@ a:focus {
     }
   }
 
-  #logo:hover img {
-    @include transform(rotate(144deg));
-    @include transition(all, 1s, ease);
+  #logo {
+    img {
+      @include transition(all, 0.4s, ease-in);
+    }
+
+    &:hover,
+    &:focus {
+      img {
+        @include transform(rotate(144deg));
+      }
+    }
   }
 }
 
@@ -171,10 +179,10 @@ a:focus {
   padding: 8rem 0;
   text-align: center;
   background-image: url(../img/banner-collage.jpg);
-  background-color: $cotech-blue-4;
+  //background-color: $cotech-blue-4;
   background-position: center center;
   background-repeat: no-repeat;
-  background-blend-mode: luminosity;
+  //background-blend-mode: luminosity;
   @include backgroundSize(cover);
 
   h1, p, li, a {
