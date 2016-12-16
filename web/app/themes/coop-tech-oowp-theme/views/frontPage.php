@@ -272,7 +272,7 @@
                 </div>
                 <div class="row">
                     <div class="small-6 medium-4 small-centered columns">
-                        <a class="large expanded button" href="#">Send</a> <!-- TODO send to ...? -->
+                        <a class="large expanded button" href="mailto:contact@coops.tech">Send</a>
                     </div>
                 </div>
 
