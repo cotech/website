@@ -4,6 +4,13 @@
 @import 'leaflet';
 @include foundation-everything;
 
+@mixin backgroundSize($size) {
+  -webkit-background-size: $size;
+  -moz-background-size:    $size;
+  -o-background-size:      $size;
+  background-size:         $size;
+}
+
 @mixin transition($property, $duration, $function:ease-in) {
   -webkit-transition: $property $duration $function;
   -moz-transition:    $property $duration $function;
@@ -11,11 +18,11 @@
   transition:         $property $duration $function;
 }
 
-@mixin backgroundSize($size) {
-  -webkit-background-size: $size;
-  -moz-background-size:    $size;
-  -o-background-size:      $size;
-  background-size:         $size;
+@mixin transform($transformation) {
+  -webkit-transform: $transformation;
+  -moz-transform:    $transformation;
+  -o-transform:      $transformation;
+  transform:         $transformation;
 }
 
 @mixin filter($effect) {
@@ -115,6 +122,11 @@ a:focus {
     &.button:hover {
       color: $cotech-white;
     }
+  }
+
+  #logo:hover img {
+    @include transform(rotate(144deg));
+    @include transition(all, 1s, ease);
   }
 }
 
