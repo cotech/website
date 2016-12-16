@@ -28,7 +28,7 @@
 <div id="banner">
     <div class="row">
         <div class="small-12 columns">
-            <h1>Cooperative Technologists</h1>
+            <h1>Cooperative Technologists</h1> <!-- TODO edit text below -->
             <p>We are a network of worker-owned tech businesses who are passionate about:</p>
             <ul class="no-bullet">
                 <li>Democracy, equality and diversity in the workplace</li>
@@ -85,7 +85,7 @@
         <div class="small-12 columns">
 
             <h2>Members</h2>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <p>Take a look at who is part of the CoTech network</p>
 
             <div class="view float-center">
                 <ul class="tabs" data-tabs id="coops-view-tabs">
@@ -105,8 +105,11 @@
                             <div class="column">
                                 <a class="coop-thumb"
                                    href="<?php echo $coOp->permalink() ?>">
-                                    <div class="coop-thumb-img" style="background-image: url(<?php echo $coOp->logoUrl() ?>)" ></div>
-                                    <!--<span><h4>--><?php //echo $coOp->name() ?><!--</h4></span>-->
+                                    <div class="coop-thumb-img has-tip tip-bottom radius"
+                                         style="background-image: url(<?php echo $coOp->logoUrl() ?>)"
+                                         data-tooltip
+                                         aria-haspopup="true"
+                                         title="<?php echo $coOp->name() ?>"></div>
                                 </a>
                             </div>
                         <?php endforeach ?>
@@ -166,14 +169,12 @@
         <div class="small-12 columns">
 
             <h2>Clients</h2>
-            <p>Just some of the organisations we've worked with.</p>
+            <p>Here are some of the amazing clients we have worked with so far</p>
 
             <div class="row small-up-2 medium-up-3 large-up-6">
                 <?php foreach ($clients as $client): ?>
                     <div class="column">
-                        <div class="client-thumb" style="background-image: url(<?php echo $client->logoUrl() ?>)" >
-                            <!--<img src="<?php /*echo $client->logoUrl() */?>" alt="">-->
-                        </div>
+                        <div class="client-thumb" style="background-image: url(<?php echo $client->logoUrl() ?>)" ></div>
                     </div>
                 <?php endforeach ?>
             </div>
@@ -188,13 +189,13 @@
         <div class="small-12 columns">
 
             <h2>Services</h2>
-            <p>Pellentesque habitant morbi tristique senectus et netus.</p>
+            <p>Here are the services the network are able to offer</p>
 
             <div class="row small-up-3 medium-up-4 large-up-6 small-collapse">
                 <?php foreach ($services as $service): ?>
                     <div class="column">
                         <a href="<?php echo $service->permalink() ?>" class="service-thumb">
-                            <img src="<?php echo $service->iconUrl() ?>" class="float-center" alt="">
+                            <div class="service-thumb-img float-center" style="background-image: url(<?php echo $service->iconUrl() ?>)" ></div>
                             <h5><?php echo $service->name() ?></h5>
                         </a>
                     </div>
@@ -210,13 +211,12 @@
         <div class="small-12 columns">
 
             <h2>Technologies</h2>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <p>Here are some of the technologies we are currently using - the list continues to grow!</p>
 
             <div class="row small-up-3 medium-up-4 large-up-8">
                 <?php foreach ($technologies as $technology): ?>
                     <div class="column">
                         <a href="<?php echo $technology->permalink() ?>" class="technology-thumb">
-                            <!--<img src="<?php /*echo $technology->logoUrl() */?>" alt="">-->
                             <div class="technology-thumb-img" style="background-image: url(<?php echo $technology->logoUrl() ?>)" ></div>
                             <h5><?php echo $technology->name() ?></h5>
                         </a>
@@ -228,12 +228,16 @@
 </section>
 
 
-<section id="hire" data-magellan-target="hire">
+<section id="contact" data-magellan-target="contact">
     <div class="row">
         <div class="small-12 medium-6 small-centered columns">
 
-            <h2>Hire Us</h2>
-            <p>If you would like to work with us on a project, please get in touch. You can either find a co-op directly or use the form below and we'll find you the perfect match.</p>
+            <h2>Get In Touch</h2>
+            <p>
+                If you would to work with us, or find out more you can get in touch below.
+                <br/>
+                If you are not sure which tech coop, or coops, are right for you, drop us a message and we will help find the perfect match.
+            </p>
 
             <form>
                 <div class="row">
@@ -244,12 +248,12 @@
                         <input type="email" placeholder="Email">
                     </div>
                     <div class="small-12 columns">
-                        <textarea placeholder="Tell us about your project"></textarea>
+                        <textarea placeholder="Type your message here"></textarea>
                     </div>
                 </div>
                 <div class="row">
                     <div class="small-6 medium-4 small-centered columns">
-                        <a class="large expanded button" href="#">Send</a> <!-- TODO -->
+                        <a class="large expanded button" href="#">Send</a> <!-- TODO send to ...? -->
                     </div>
                 </div>
 

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bfcd1aaddf33c1c4b989c47b0b7dcedd",
-    "content-hash": "c95b918a4054eb65ff1af99357634a97",
+    "hash": "625acf4fd9882aab94b551fb5736d203",
+    "content-hash": "9894cb341fa68ff70ad0af8e6d33d41c",
     "packages": [
         {
             "name": "composer/installers",
@@ -449,6 +449,46 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wordpress-importer/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-fail2ban",
+            "version": "3.5.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-fail2ban/",
+                "reference": "tags/3.5.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-fail2ban.3.5.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-fail2ban/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-piwik",
+            "version": "1.0.14",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-piwik/",
+                "reference": "tags/1.0.14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-piwik.1.0.14.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-piwik/"
         }
     ],
     "packages-dev": [
