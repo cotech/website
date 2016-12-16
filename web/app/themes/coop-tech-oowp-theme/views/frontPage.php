@@ -52,13 +52,8 @@
 <div id="banner">
     <div class="row">
         <div class="small-12 columns">
-            <h1>Cooperative Technologists</h1> <!-- TODO edit text below -->
-            <p>We are a network of worker-owned tech businesses who are passionate about:</p>
-            <ul class="no-bullet">
-                <li>Democracy, equality and diversity in the workplace</li>
-                <li>Sharing our skills and knowledge</li>
-                <li>Creating positive social value</li>
-            </ul>
+            <h1>Cooperative Technologists</h1>
+            <p>Strengthening the cooperative movement by working together through local, national, regional and international structures.</p>
             <span>
                 <a id="our-manifesto" href="manifesto"><i class="fi-page"></i>Our manifesto</a>
                 <a id="video" data-open="video-modal"><i class="fi-play"></i>Watch video</a>
