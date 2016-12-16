@@ -38,7 +38,7 @@
             <div class="top-bar-title">
                 <strong>
                     <a id="logo" href="<?php echo $frontPageLink ?>">
-                        <img src="<?php echo $coTechLogo ?>">CoTech<!-- TODO hover animation -->
+                        <img src="<?php echo $coTechLogo ?>">CoTech
                     </a>
                 </strong>
 <?php if ($post && $post->hasFrontPageMenu()): ?>

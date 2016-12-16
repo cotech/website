@@ -61,7 +61,7 @@
 
             <div class="reveal large" id="video-modal" data-reveal>
                 <div class="flex-video widescreen">
-                    <iframe width="420" height="315" src="https://www.youtube.com/embed/WbJB9HKJ6fE" allowfullscreen style="border:0"></iframe>
+                    <iframe width="420" height="315" src="https://www.youtube.com/embed/PeT4kyJxtnk" allowfullscreen style="border:0"></iframe>
                 </div>
             </div>
 
