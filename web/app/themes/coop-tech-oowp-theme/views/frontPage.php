@@ -61,7 +61,7 @@
 
             <div class="reveal large" id="video-modal" data-reveal>
                 <div class="flex-video widescreen">
-                    <iframe width="420" height="315" src="https://www.youtube.com/embed/PeT4kyJxtnk" allowfullscreen style="border:0"></iframe>
+                    <iframe width="420" height="315" src="https://player.vimeo.com/video/196080655" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
             </div>
 
@@ -253,7 +253,7 @@
 
             <h2>Get In Touch</h2>
             <p>
-                If you would to work with us, or find out more you can get in touch below.
+                If you would like to work with us, or find out more you can get in touch below.
                 <br/>
                 If you are not sure which tech coop, or coops, are right for you, drop us a message and we will help find the perfect match.
             </p>
