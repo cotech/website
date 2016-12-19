@@ -42,7 +42,7 @@
                     </a>
                 </strong>
 <?php if ($post && $post->hasFrontPageMenu()): ?>
-                <!--<span data-responsive-toggle="responsive-menu" data-hide-for="medium"><button class="menu-icon dark" type="button" data-toggle></button></span>-->
+                <span data-responsive-toggle="responsive-menu" data-hide-for="medium"><button class="menu-icon dark" type="button" data-toggle></button></span>
             </div>
             <div id="responsive-menu">
                 <div class="top-bar-right">
