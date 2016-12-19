@@ -158,6 +158,11 @@ a:focus {
 @media screen and (max-width: 39.9375em) {
   .top-bar-title {
     width: $full;
+
+    /* Burger Icon */
+    span {
+      float:right;
+    }
   }
 }
 

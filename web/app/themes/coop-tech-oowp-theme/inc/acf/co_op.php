@@ -16,6 +16,7 @@ if(function_exists("register_field_group"))
                 'save_format' => 'object',
                 'preview_size' => 'thumbnail',
                 'library' => 'all',
+                'required' => 'true',
             ),
             array (
                 'key' => 'field_583eb589febea',
@@ -71,7 +72,7 @@ if(function_exists("register_field_group"))
                         'label' => 'Address',
                         'name' => Fields::ADDRESS,
                         'display' => 'row',
-                        'min' => 0,
+                        'min' => 1,
                         'max' => 1,
                         'sub_fields' => array (
                             array (
