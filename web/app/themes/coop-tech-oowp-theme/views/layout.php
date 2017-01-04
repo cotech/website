@@ -89,7 +89,9 @@
         <div class="row">
             <div class="small-12 columns">
                 <img src="<?php echo $coopLogo ?>" class="float-center" />
-                <p>Site by Glowbox Designs & Outlandish for CoTech &#xa9;2016</p>
+                <p>Site developed by <a href="http://www.glowboxdesign.co.uk/">Glowbox Designs</a> &amp; 
+                   <a href="http://outlandish.com/">Outlandish</a>, hosted by 
+                   <a href="https://www.webarchitects.coop/">Webarchitects</a> for CoTech &#xa9;2017</p>
             </div>
         </div>
     </div>
