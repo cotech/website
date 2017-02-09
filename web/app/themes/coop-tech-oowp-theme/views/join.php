@@ -21,7 +21,10 @@
         <div class="row">
             <div class="small-12 medium-6 small-centered columns">
 
-                <form>
+                <script src='https://www.google.com/recaptcha/api.js'></script>
+                <?php echo do_shortcode( '[contact-form-7 id="1484" title="contact-form"]' ); ?>
+
+                <!-- form>
                     <div class="row">
                         <div class="small-12 medium-6 columns">
                             <input type="text" placeholder="Name">
@@ -39,7 +42,7 @@
                         </div>
                     </div>
 
-                </form>
+                </form -->
 
             </div>
         </div>
