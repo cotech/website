@@ -259,6 +259,7 @@
             </p>
 
             <script src='https://www.google.com/recaptcha/api.js'></script>
+            <?php echo do_shortcode( '[wpcf7_add_form_tag id="1463" title="contact-form"]' ); ?>
 
             <!-- form>
                 <div class="row">

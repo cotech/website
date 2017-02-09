@@ -22,7 +22,7 @@
             <div class="small-12 medium-6 small-centered columns">
 
                 <script src='https://www.google.com/recaptcha/api.js'></script>
-                <?php echo do_shortcode( '[contact-form-7 id="1484" title="contact-form"]' ); ?>
+                <?php echo do_shortcode( '[wpcf7_add_form_tag id="1484" title="contact-form"]' ); ?>
 
                 <!-- form>
                     <div class="row">
