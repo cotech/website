@@ -21,7 +21,6 @@
         <div class="row">
             <div class="small-12 medium-6 small-centered columns">
 
-                <script src='https://www.google.com/recaptcha/api.js'></script>
                 <?php echo do_shortcode( '[contact-form-7 id="1484" title="join-form"]' ); ?>
 
                 <!-- form>

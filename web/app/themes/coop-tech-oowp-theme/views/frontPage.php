@@ -258,7 +258,6 @@
                 If you are not sure which tech coop, or coops, are right for you, drop us a message and we will help find the perfect match.
             </p>
 
-            <script src='https://www.google.com/recaptcha/api.js'></script>
             <?php echo do_shortcode( '[contact-form-7 id="1463" title="contact-form"]' ); ?>
 
             <!-- form>
