@@ -88,4 +88,17 @@ class Router extends \ooRoutemaster {
         ]);
     }
 
+    protected function show404() {
+        global $post;
+        $post = new ouFakePost(array('post_title' => 'Page not found'));
+        header('HTTP/1.0 404 Not Found');
+        if ($this->viewExists('404')) {
+            $this->viewName = '404';
+        } else {
+            die('404 File not found');
+        }
+    }
+
+
+
 }
