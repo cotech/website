@@ -25,6 +25,7 @@
     <link rel="icon" type="image/x-icon" href="<?php echo $coTechLogo ?>">
     <!-- TODO what is this? vv -->
     <!--<link rel="alternate" type="application/rss+xml" title="Latest Trafficking Culture Updates" href="<?php /*bloginfo('url'); */?>/feed.rss" />-->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 

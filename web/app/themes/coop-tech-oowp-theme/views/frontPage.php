@@ -258,7 +258,9 @@
                 If you are not sure which tech coop, or coops, are right for you, drop us a message and we will help find the perfect match.
             </p>
 
-            <form>
+            <?php echo do_shortcode( '[contact-form-7 id="1463" title="contact-form"]' ); ?>
+
+            <!-- form>
                 <div class="row">
                     <div class="small-12 medium-6 columns">
                         <input type="text" placeholder="Name">
@@ -276,7 +278,7 @@
                     </div>
                 </div>
 
-            </form>
+            </form !-->
 
         </div>
     </div>
