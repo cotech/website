@@ -33,7 +33,7 @@
 
 <header>
 
-    <div data-sticky-container>
+    <div data-sticky-container style="height: 82.7812px;">
 
         <div class="top-bar sticky iss-stuck is-at-top" data-sticky data-margin-top=0>
             <div class="top-bar-title">
