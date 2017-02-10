@@ -35,7 +35,7 @@
 
     <div data-sticky-container>
 
-        <div class="top-bar" data-sticky data-options="marginTop:0;">
+        <div class="top-bar sticky iss-stuck is-at-top" data-sticky data-margin-top=0>
             <div class="top-bar-title">
                 <strong>
                     <a id="logo" href="<?php echo $frontPageLink ?>">
