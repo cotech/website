@@ -1,36 +1,48 @@
 $(document).foundation();
 
+$('#coops-view-tabs').on('change.zf.tabs', function() {
+      window.app.createMapMultiMarker('map-coops', 54.7, -4.2, 6, window.app.mapEntries);
+});
+
 var elem = new Foundation.Sticky($('.top-bar'));
+var app = window.app || {};
 
-window.app = {
-  apiUrl: 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw',
+app.apiUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw';
 
-  tileLayerOptions: {
+app.tileLayerOptions = {
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' + '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imagery © <a href="http://mapbox.com">Mapbox</a>',
     id: 'mapbox.streets'
-  },
+};
 
-  createMapSingleMarker: function(mapId, lat, lng, zoom, markerText) {
-    var myMap = L.map(mapId).setView([lat, lng], zoom);
+app.map = null;
 
-    L.tileLayer(window.app.apiUrl, window.app.tileLayerOptions).addTo(myMap);
+app.createMap = function(mapId, lat, lng, zoom) {
+  window.app.map = L.map(mapId).setView([lat, lng], zoom);
+}
 
-    var marker = L.marker([lat - 0.0005, lng]).addTo(myMap);
-    marker.bindPopup(markerText).openPopup();
-  },
+app.createMapSingleMarker = function(mapId, lat, lng, zoom, markerText) {
+    if (!window.app.map) {
+        window.app.createMap(mapId, lat, lng, zoom);
+        var myMap = window.app.map;
 
-  createMapMultiMarker: function(mapId, lat, lng, zoom, markersArray) {
-    var myMap = L.map(mapId).setView([lat, lng], zoom);
+        L.tileLayer(window.app.apiUrl, window.app.tileLayerOptions).addTo(myMap);
 
-    L.tileLayer(window.app.apiUrl, window.app.tileLayerOptions).addTo(myMap);
+        var marker = L.marker([lat - 0.0005, lng]).addTo(myMap);
+        marker.bindPopup(markerText).openPopup();
+    }
+}
 
-    markersArray.forEach(function(markerVar) {
-      var marker = L.marker([markerVar.lat, markerVar.lng]).addTo(myMap);
-      marker.bindPopup(markerVar.markerText);
-    });
+app.createMapMultiMarker = function(mapId, lat, lng, zoom, markersArray) {
+  if (!window.app.map) {
+      window.app.createMap(mapId, lat, lng, zoom);
+      var myMap = window.app.map;
 
-    // myMap.invalidateSize(false);
+      L.tileLayer(window.app.apiUrl, window.app.tileLayerOptions).addTo(myMap);
+
+      markersArray.forEach(function (markerVar) {
+          var marker = L.marker([markerVar.lat, markerVar.lng]).addTo(myMap);
+          marker.bindPopup(markerVar.markerText);
+      });
   }
-
 };
