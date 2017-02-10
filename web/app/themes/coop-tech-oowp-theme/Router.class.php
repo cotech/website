@@ -39,8 +39,9 @@ class Router extends \ooRoutemaster {
 	 ***************************************/
 
     protected function frontPage() {
-        parent::frontPage();
-        $this->view->clients = ouClient::fetchAll();
+        $post = $this->querySingle(array('page_id' => get_option('page_on_front')), true);
+
+        $this->view->clients = $post->clients();
         $this->view->coOps = ouCoOp::fetchAll();
         $this->view->services = ouService::fetchAll();
         $this->view->technologies = ouTechnology::fetchAll();
