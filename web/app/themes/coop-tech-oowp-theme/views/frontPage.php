@@ -164,10 +164,8 @@
 
                             var mapEntries = '<?php echo $encodedMapEntries; ?>';
                             var parsedMapEntries = JSON.parse(mapEntries);
-
-                            $(document).ready(function() {
-                                window.app.createMapMultiMarker('map-coops', 54.7, -4.2, 6, parsedMapEntries);
-                            });
+                            var app = window.app || {};
+                            app.mapEntries = parsedMapEntries;
 
                             // TODO fix bug with tiles not displaying properly until window resized
 
