@@ -1,5 +1,7 @@
 <?php
-if(function_exists("register_field_group"))
+
+//turn off this functionality for now
+if(function_exists("register_field_group") && 1 == 0)
 {
     register_field_group(array (
         'id' => 'acf_homepage-sections',
