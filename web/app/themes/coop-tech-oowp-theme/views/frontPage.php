@@ -53,7 +53,7 @@
     <div class="row">
         <div class="small-12 columns">
             <h1>Cooperative Technologists</h1>
-            <p>Strengthening the cooperative movement by working together through local, national, regional and international structures.</p>
+            <p>Building a tech industry that's better for it's workers and customers through co-operation, democracy and worker ownership.</p>
             <span>
                 <a id="our-manifesto" href="manifesto"><i class="fi-page"></i>Our manifesto</a>
                 <a id="video" data-open="video-modal"><i class="fi-play"></i>Watch video</a>
