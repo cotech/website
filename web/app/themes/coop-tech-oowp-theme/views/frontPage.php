@@ -55,8 +55,8 @@
             <h1>Cooperative Technologists</h1>
             <p>Building a tech industry that's better for it's workers and customers through co-operation, democracy and worker ownership.</p>
             <span>
-                <a id="our-manifesto" href="manifesto"><i class="fi-page"></i>Our manifesto</a>
                 <a id="video" data-open="video-modal"><i class="fi-play"></i>Watch video</a>
+                <a id="our-manifesto" href="manifesto">Our manifesto</a>
             </span>
 
             <div class="reveal large" id="video-modal" data-reveal>
@@ -73,22 +73,22 @@
     <div class="row">
         <div class="small-12 medium-10 large-8 small-centered columns">
 
-            <div class="small-6 medium-3 columns">
+            <div class="small-3 columns">
                 <img src="<?php echo $iconCoops ?>" class="float-center">
                 <h6>Co-ops</h6>
                 <h5><?php echo $kpiCoOps ?></h5>
             </div>
-            <div class="small-6 medium-3 columns">
+            <div class="small-3 columns">
                 <img src="<?php echo $iconStaff ?>" class="float-center">
                 <h6>Staff</h6>
                 <h5><?php echo $kpiStaff ?></h5>
             </div>
-            <div class="small-6 medium-3 columns">
+            <div class="small-3 columns">
                 <img src="<?php echo $iconRevenue ?>" class="float-center">
                 <h6>Revenue</h6>
                 <h5><?php echo $kpiRevenue ?></h5>
             </div>
-            <div class="small-6 medium-3 columns">
+            <div class="small-3 columns">
                 <img src="<?php echo $iconClients ?>" class="float-center">
                 <h6>Clients</h6>
                 <h5><?php echo $kpiClients ?></h5>
@@ -135,7 +135,7 @@
 
                         <div class="column">
                             <a href="join" class="coop-thumb">
-                                <h5 id="join-us">Find out how to join the collective</h5>
+                                <h5 id="join-us">Join CoTech</h5>
                             </a>
                         </div>
                     </div>
@@ -230,7 +230,7 @@
             <h2>Technologies</h2>
             <p>Here are some of the technologies we are currently using - the list continues to grow!</p>
 
-            <div class="row small-up-3 medium-up-4 large-up-8">
+            <div class="row small-up-3 medium-up-4 large-up-6">
                 <?php foreach ($technologies as $technology): ?>
                     <div class="column">
                         <a href="<?php echo $technology->permalink() ?>" class="technology-thumb">
@@ -251,9 +251,9 @@
 
             <h2>Get In Touch</h2>
             <p>
-                If you would like to work with us, or find out more you can get in touch below.
+                If you would like to work with us, or find out more, get in touch below.
                 <br/>
-                If you are not sure which tech coop, or coops, are right for you, drop us a message and we will help find the perfect match.
+                Not sure which tech coop, or coops, are right for you? Drop us a message and we will help you find the perfect match.
             </p>
 
             <?php echo do_shortcode( '[contact-form-7 id="1463" title="contact-form"]' ); ?>

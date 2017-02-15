@@ -49,6 +49,7 @@ $cotech-yellow: #fdc441;
 
 $one-sixth: 16.666667%;
 $one-third: 33.333333%;
+$one-quarter: 25%;
 $half: 50%;
 $two-thirds: 66.666667%;
 $full: 100%;
@@ -86,9 +87,17 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "open_sansbold", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 }
 
+h5 {
+  font-size: 1rem;
+}
+
 .button {
   background-color: $cotech-blue-3;
   transition: all 0.2s ease;
+  border-radius: 3px;
+  padding: 1em 3em;
+  font-size: 1.1rem;
+  font-family: "open_sansbold";
 
   &:hover,
   &:focus {
@@ -123,6 +132,10 @@ a:focus {
       color: $cotech-white;
     }
   }
+  
+  a.active:not(.button) {
+    color: $cotech-blue-3;
+  }
 
   #logo {
     img {
@@ -149,7 +162,6 @@ a:focus {
     &.button {
       margin-left: 0.5rem;
       padding: 0.7rem 1.2rem;
-      font-weight: bold;
     }
   }
 }
@@ -164,6 +176,16 @@ a:focus {
       float:right;
     }
   }
+  
+  
+  .top-bar-right .dropdown.menu  {
+    padding-top: 1em;
+  }
+  
+  .top-bar-right .button {
+    margin-top: 0.7em;
+  }
+  
 }
 
 #logo,
@@ -202,11 +224,11 @@ a:focus {
 
   a {
     vertical-align: top;
-    line-height: 1.6rem;
+    line-height: 1.8rem;
     border: 1px solid $cotech-white;
     border-radius: 3px;
-    padding: 0.5em 1em;
-    margin-top: 1rem;
+    padding: 0.5em 1.3em;
+    margin: 1rem 0.5rem 0;
     display: inline-block;
     transition: all 0.3s ease;
   }
@@ -232,7 +254,7 @@ a:focus {
 #kpi {
   background-color: $cotech-grey-6;
   text-align: center;
-  padding: 2rem 0;
+  padding: 2rem 0 1.5rem;
 
   img {
     padding-bottom: 0.6em;
@@ -250,7 +272,13 @@ a:focus {
   h5 {
     font-size: 2.2rem;
     letter-spacing: 0.02em;
+    margin: 0;
   }
+}
+
+@media screen and (max-width: 39.9375em) {
+    #kpi h5 {
+    font-size: 1.4rem; }
 }
 
 
@@ -329,8 +357,8 @@ a:focus {
   border: solid 1px $cotech-grey-5;
   background-color: $cotech-white;
   display: block;
-  margin-right: -1px;
   margin-bottom: -1px;
+  margin-left: -1px;
   @include transition(all, 0.3s, ease);
 
   .coop-thumb-img {
@@ -362,21 +390,31 @@ a:focus {
 .has-tip {
   cursor: pointer;
   cursor: hand;
+  border-bottom: none;
 }
 
-#join-us {
-  color: $cotech-white;
-  background-color: $cotech-blue-3;
-  font-style: italic;
-  padding: $one-sixth 5px;
+h5#join-us {
+  color: $cotech-blue-3;
+  background-color: $cotech-grey-6;
+  padding: $one-quarter 5px;
+  letter-spacing: 0.03em;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+  
+  &:hover,
+  &:focus {
+  color: #fff;
+  background-color: $cotech-blue-3; 
+  }
+  
 }
 
 /* ------- Map ------- */
 
 #map-coops {
-  height: 800px;
-  width: $two-thirds;
-  margin: 0 $one-sixth;
+  height: 600px;
+  width: $full;
+  margin: 0;
 }
 
 
@@ -419,7 +457,7 @@ a:focus {
 
   h5 {
     font-family: "open_sansregular", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-    margin-top: 0.3rem;
+    margin-top: 0.5rem;
     color: $cotech-grey-1;
   }
 
@@ -492,13 +530,13 @@ a:focus {
 
   textarea {
     height: 200px;
-    margin: 0.95rem 0 1.7rem;
+    margin: 0.5rem 0 1.7rem;
     padding: 1.3rem 1.5rem;
   }
 
   .button {
     background-color: $cotech-white;
-    color: $cotech-blue-3;
+    color: $cotech-blue-2;
     font-family: "open_sansbold", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     transition: all 0.2s ease;
 
@@ -519,6 +557,7 @@ a:focus {
     color: $cotech-white;
     font-size: 1.1rem;
     letter-spacing: 0.02em;
+    border-radius: 3px;
 
     /* change the text placeholder colour to white */
 
@@ -537,8 +576,20 @@ a:focus {
     &:-ms-input-placeholder {
       color: $cotech-white;
     }
+    
+    &:focus {
+      background-color: #339dc5;
+    }
+    
   }
 }
+
+.home section form {
+    p {
+      padding-bottom: 0;
+      text-align: left;
+    }
+} 
 
 
 /* ---------------------------------------- SINGLE PAGE ---------------------------------------- */
@@ -602,10 +653,11 @@ a:focus {
 
   .map {
     margin-top: 4rem;
+    margin-bottom: 0;
 
     #map-single {
-      margin: 0 $one-sixth;
-      width: $two-thirds;
+      margin: 0;
+      width: $full;
       height: 480px;
     }
 
@@ -655,8 +707,8 @@ a:focus {
   #map-services,
   #map-technologies {
     height: 800px;
-    width: $two-thirds;
-    margin: 0 $one-sixth;
+    width: $full;
+    margin: 0;
   }
 }
 
@@ -693,13 +745,26 @@ footer {
 
 .footer-lower {
   background-color: $cotech-blue-1;
-  padding: 3rem 0;
+  padding: 6rem 0;
+  
+  img {
+    margin-bottom: 1rem;
+  }
 
   p {
     color: $cotech-grey-2;
     text-align: center;
-    margin: 1rem 0 0;
+    margin: 0;
     font-size: 0.9rem;
+  }
+  
+  a {
+    color: inherit;
+    transition: all 0.2s ease;
+  }
+  
+  a:hover {
+    color: #fff;
   }
 }
 
@@ -712,6 +777,11 @@ footer {
   a {
     font-weight: bold;
     color: $cotech-blue-2;
+    
+    &:hover,
+      &:focus {
+        color: $cotech-blue-3;
+      }
   }
 
   ol,
@@ -724,7 +794,7 @@ footer {
   }
 
   #join-form {
-    margin-top: 1rem;
+    margin-top: 4rem;
 
     textarea {
       height: 200px;
@@ -737,6 +807,8 @@ footer {
       padding: 1.5rem;
       font-size: 1.1rem;
       letter-spacing: 0.02em;
+      border-radius: 3px;
+      border-color: $cotech-blue-3;
     }
 
     a {
