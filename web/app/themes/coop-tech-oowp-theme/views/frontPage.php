@@ -53,7 +53,7 @@
     <div class="row">
         <div class="small-12 columns">
             <h1>Cooperative Technologists</h1>
-            <p>Building a tech industry that's better for it's workers and customers through co-operation, democracy and worker ownership.</p>
+            <p>Building a tech industry that's better for its workers and customers through co-operation, democracy and worker ownership.</p>
             <span>
                 <a id="video" data-open="video-modal"><i class="fi-play"></i>Watch video</a>
                 <a id="our-manifesto" href="manifesto">Our manifesto</a>
