@@ -3,6 +3,7 @@
 ## Requirements
 
 * PHP >= 5.4
+* Node & NPM
 * Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
 
 
@@ -24,3 +25,4 @@ composer install
 npm install
 ./node_modules/gulp/bin/gulp.js
 ```
+
