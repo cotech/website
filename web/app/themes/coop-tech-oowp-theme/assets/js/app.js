@@ -7,12 +7,15 @@ $('#coops-view-tabs').on('change.zf.tabs', function() {
 var elem = new Foundation.Sticky($('.top-bar'));
 var app = window.app || {};
 
-app.apiUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw';
+var mapboxAccessToken = window.mapboxAccessToken || '';
+
+app.apiUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + mapboxAccessToken;
 
 app.tileLayerOptions = {
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' + '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    id: 'mapbox.streets'
+    id: 'mapbox.streets',
+    token: window.mapboxAccessToken
 };
 
 app.map = null;

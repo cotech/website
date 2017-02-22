@@ -23,8 +23,9 @@
     <?php wp_head(); ?>
     <link rel="stylesheet" href="<?php echo $publicDir . 'foundation-icons/foundation-icons.css' ?>">
     <link rel="icon" type="image/x-icon" href="<?php echo $coTechLogo ?>">
-    <!-- TODO what is this? vv -->
-    <!--<link rel="alternate" type="application/rss+xml" title="Latest Trafficking Culture Updates" href="<?php /*bloginfo('url'); */?>/feed.rss" />-->
+    <script type="text/javascript">
+        window.mapboxAccessToken = '<?php echo constant('MAPBOX_API_ACCESS_TOKEN') ?>';
+    </script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
