@@ -251,12 +251,16 @@
 
             <h2>Get In Touch</h2>
             <p>
-                If you would like to work with us, or find out more, get in touch below.
+		If you would like to work with us, or find out more, 
+                <a href="mailto:contact@coops.tech">get in touch</a>.
                 <br/>
-                Not sure which tech coop, or coops, are right for you? Drop us a message and we will help you find the perfect match.
+		Not sure which tech coop, or coops, are right for you? Drop 
+                us a message at 
+                <a href="mailto:contact@coops.tech">contact@coops.tech</a>, 
+                and we will help you find the perfect match.
             </p>
 
-            <?php echo do_shortcode( '[contact-form-7 id="1463" title="contact-form"]' ); ?>
+            <!-- ?php echo do_shortcode( '[contact-form-7 id="1463" title="contact-form"]' ); ? -->
 
             <!-- form>
                 <div class="row">
