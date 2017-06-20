@@ -44,7 +44,7 @@
     }
   ],
   "require": {
-    "php": ">=5.4.45",
+    "php": ">=5.4",
     "composer/installers": "~1.0.12",
     "vlucas/phpdotenv": "^2.0.1",
     "johnpbloch/wordpress": "4.7.5",
