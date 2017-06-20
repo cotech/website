@@ -1,7 +1,5 @@
 <?php
-/**
- * Require theme specific autoloader
- */
+
 //Loads the ACF files in inc/acf/
 require_once('inc/acf/loader.php');
 add_action('init', 'load_acf');
