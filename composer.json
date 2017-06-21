@@ -73,7 +73,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Outlandish\\MappingCoTech\\": "src/"
+      "Outlandish\\MappingCoTech\\": "web/app/themes/coop-tech-oowp-theme/src/"
     }
   },
   "extra": {
@@ -86,8 +86,8 @@
   },
   "scripts": {
     "test": [
-      "vendor/bin/phpcs src",
-      "vendor/bin/phpmd src text cleancode,codesize,controversial,design,naming,unusedcode"
+      "vendor/bin/phpcs web/app/themes/coop-tech-oowp-theme/src",
+      "vendor/bin/phpmd web/app/themes/coop-tech-oowp-theme/src text cleancode,codesize,controversial,design,naming,unusedcode"
     ]
   }
 }
