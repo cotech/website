@@ -2,6 +2,8 @@
 
 set -e
 
+echo "Starting up entrypoint script"
+
 cd /var/www/html
 
 composer update --no-interaction
@@ -98,3 +100,7 @@ echo >&2
 echo >&2 "========================================================================"
 
 exec "$@"
+
+cd /var/www/html/web/app/themes/coop-tech-oowp-theme
+npm install
+gulp
