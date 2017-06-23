@@ -2,6 +2,18 @@ version: '2'
 
 services:
 
+  db:
+    image: mariadb:10.1
+    expose:
+      - 3306
+    ports:
+      - 13306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
   wordpress:
     build:
       context: .
@@ -22,23 +34,13 @@ services:
       WP_HOME: http://localhost:18080
       WP_SITEURL: http://localhost:18080/wp
 
-  db:
-   image: mysql:5.7.18
-   ports:
-     - 13306:3306
-   environment:
-     MYSQL_ROOT_PASSWORD: root
-     MYSQL_DATABASE: wordpress
-     MYSQL_USER: wordpress
-     MYSQL_PASSWORD: wordpress
-
   phpmyadmin:
-   image: phpmyadmin/phpmyadmin:4.6
-   links:
-     - db:db
-   ports:
-     - 18081:80
-   environment:
-     PMA_HOST: db
-     PMA_USER: wordpress
-     PMA_PASSWORD: wordpress
+    image: phpmyadmin/phpmyadmin:4.6
+    links:
+      - db:db
+    ports:
+      - 18081:80
+    environment:
+      PMA_HOST: db
+      PMA_USER: wordpress
+      PMA_PASSWORD: wordpress
