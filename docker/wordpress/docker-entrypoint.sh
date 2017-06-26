@@ -83,6 +83,16 @@ else
 
 fi
 
+echo "Compiling WordPress theme"
+
+cd /var/www/html/web/app/themes/coop-tech-oowp-theme
+composer install
+yarn
+gulp
+./node_modules/gulp/bin/gulp.js
+
+echo "Assets compiled"
+
 # change nginx port...
 
 sed -i 's/listen 80/listen 18080/g' /etc/nginx/sites-enabled/bedrock
@@ -100,7 +110,3 @@ echo >&2
 echo >&2 "========================================================================"
 
 exec "$@"
-
-cd /var/www/html/web/app/themes/coop-tech-oowp-theme
-npm install
-gulp
