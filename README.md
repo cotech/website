@@ -6,6 +6,25 @@
 * Node & NPM
 * Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
 
+## Development
+
+For an easy to use development environment run we use Docker Compose.
+
+0. Make sure you have [downloaded Docker](https://www.docker.com/community-edition#/download) and have it installed on your machine and running.
+1. On your command line of choice kickstart it all with `docker-compose up -d` run from inside this directory. You can follow the logs with `docker-compose logs -f`.
+2. It will take some time, especially for the first run.
+
+Then you can access:
+
+| URL | Description |
+| --- | --- |
+| [localhost:18080](http://localhost:18080) | WordPress URL (dev:dev) |
+| [localhost:18081](http://localhost:18081) | PHPMyAdmin |
+
+## Doing Things While Developing
+
+Composer, gulp and so on can be run on your local machine. The directory is synced inside the containers.
+
 
 ## Deployment
 
@@ -16,7 +35,7 @@
 
 **NOTE:** a git hook has been created to run deployment automatically so that following should not be necessary.
 
-From the base directory, once the latest changes have been pulled from Git, run the following series of commands in order: 
+From the base directory, once the latest changes have been pulled from Git, run the following series of commands in order:
 
 ```
 composer install
@@ -25,4 +44,3 @@ composer install
 npm install
 ./node_modules/gulp/bin/gulp.js
 ```
-
