@@ -95,6 +95,7 @@ cd /var/www/html/web/app/themes/coop-tech-oowp-theme
 composer install
 yarn
 ./node_modules/gulp/bin/gulp.js
+tar -zxf /var/www/html/docker/wordpress/uploads/uploads.tgz  -C /var/www/html/web/app
 
 echo "Assets compiled"
 
