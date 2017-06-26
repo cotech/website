@@ -8,6 +8,8 @@ services:
       - 3306
     ports:
       - 13306:3306
+    volumes:
+      - ./docker/db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: wordpress
@@ -33,6 +35,7 @@ services:
       WP_ENV: development
       WP_HOME: http://localhost:18080
       WP_SITEURL: http://localhost:18080/wp
+      COMPOSER_ALLOW_SUPERUSER: 1
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:4.6

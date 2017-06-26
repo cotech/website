@@ -94,7 +94,6 @@ echo "Compiling WordPress theme"
 cd /var/www/html/web/app/themes/coop-tech-oowp-theme
 composer install
 yarn
-gulp
 ./node_modules/gulp/bin/gulp.js
 
 echo "Assets compiled"
