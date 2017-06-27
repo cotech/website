@@ -16,6 +16,15 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
 
+  assets:
+    build:
+      context: .
+      dockerfile: docker/assets/Dockerfile
+    command: sh -c "yarn && yarn remove node-sass && yarn add node-sass@latest && gulp watch"
+    volumes:
+      - ./web/app/themes/coop-tech-oowp-theme:/app
+    working_dir: /app
+
   wordpress:
     build:
       context: .
