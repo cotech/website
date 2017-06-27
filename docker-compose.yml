@@ -9,7 +9,7 @@ services:
     ports:
       - 13306:3306
     volumes:
-      - ./docker/db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - ./docker/db/data:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: wordpress
