@@ -21,7 +21,6 @@
     "what-input": "^4.0.3"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "node-sass": "^3.13.1"
+    "gulp": "^3.9.1"
   }
 }

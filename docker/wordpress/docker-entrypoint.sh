@@ -87,18 +87,10 @@ else
 
 fi
 
-echo "Compiling WordPress theme"
-
-cd /var/www/html/web/app/themes/coop-tech-oowp-theme
-composer install
-yarn
-./node_modules/gulp/bin/gulp.js
-
-cd /var/www/html
+echo "Download WordPress images"
 curl https://www.coops.tech/cotech-images.tgz > cotech-images.tgz
 tar -zxf cotech-images.tgz  -C web
 rm cotech-images.tgz
-
 echo "Assets compiled"
 
 # change nginx port...
