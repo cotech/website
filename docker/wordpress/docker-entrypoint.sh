@@ -7,8 +7,6 @@ echo "Starting up entrypoint script"
 # Composer acts as if --no-interaction was passed
 export COMPOSER_NO_INTERACTION=1
 
-# Composer does not warn when we are superuser inside the Docker container
-export COMPOSER_ALLOW_SUPERUSER=1
 
 cd /var/www/html
 

@@ -35,7 +35,6 @@ services:
       WP_ENV: development
       WP_HOME: http://localhost:18080
       WP_SITEURL: http://localhost:18080/wp
-      COMPOSER_ALLOW_SUPERUSER: 1
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:4.6

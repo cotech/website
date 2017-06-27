@@ -1,5 +1,9 @@
 FROM adamyeats/docker-nginx-hhvm-bedrock
 
+# Allow Composer to run as superuser inside the container
+# https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
+ENV COMPOSER_ALLOW_SUPERUSER 1
+
 RUN apt-get update && apt-get install -y vim mysql-client
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
