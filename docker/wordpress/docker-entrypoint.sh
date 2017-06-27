@@ -10,7 +10,7 @@ export COMPOSER_NO_INTERACTION=1
 
 cd /var/www/html
 
-composer update
+composer install
 
 if [ -z "$WORDPRESS_ROOT" ]; then
   # assume bedrock wordpress location
