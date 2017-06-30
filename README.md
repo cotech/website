@@ -21,11 +21,6 @@ Then you can access:
 | [localhost:18080](http://localhost:18080) | WordPress URL (dev:dev) |
 | [localhost:18081](http://localhost:18081) | PHPMyAdmin |
 
-## Doing Things While Developing
-
-Composer, gulp and so on can be run on your local machine. The directory is synced inside the containers.
-
-
 ## Deployment
 
 `~/git-hooks` contains all files required for deployment - copy all files into the `~/.git/hooks` directory
