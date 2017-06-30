@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 URL="https://www.coops.tech/cotech-images.tgz"
 DEST="/app/web"
 
