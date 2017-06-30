@@ -8,3 +8,6 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 RUN apt-get update && apt-get install -y yarn
 
 RUN yarn global add gulp
+
+ADD download-images.sh /download-images.sh
+RUN chmod +x /download-images.sh
