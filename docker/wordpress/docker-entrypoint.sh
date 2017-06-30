@@ -87,12 +87,6 @@ else
 
 fi
 
-echo "Download WordPress images"
-curl https://www.coops.tech/cotech-images.tgz > cotech-images.tgz
-tar -zxf cotech-images.tgz  -C web
-rm cotech-images.tgz
-echo "Assets compiled"
-
 # change nginx port...
 
 sed -i 's/listen 80/listen 18080/g' /etc/nginx/sites-enabled/bedrock
