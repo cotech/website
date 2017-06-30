@@ -7,7 +7,6 @@ echo "Starting up entrypoint script"
 # Composer acts as if --no-interaction was passed
 export COMPOSER_NO_INTERACTION=1
 
-
 cd /var/www/html
 
 composer install
@@ -15,6 +14,17 @@ composer install
 if [ -z "$WORDPRESS_ROOT" ]; then
   # assume bedrock wordpress location
   WORDPRESS_ROOT="/var/www/html/web/wp"
+fi
+
+WORDPRESS_THEME_DIR="$WORDPRESS_ROOT/../app/themes"
+WORDPRESS_THEME=$(ls $WORDPRESS_THEME_DIR | head -n1)
+WORDPRESS_THEME_PATH=$WORDPRESS_THEME_DIR/$WORDPRESS_THEME
+
+# composer install for theme if composer.json is present
+
+if [ -f $WORDPRESS_THEME_PATH/composer.json ]; then
+  echo "Running composer install for $WORDPRESS_THEME theme"
+  (cd $WORDPRESS_THEME_PATH && composer install)
 fi
 
 chown -R www-data:www-data $WORDPRESS_ROOT /var/www/html/vendor
@@ -60,8 +70,6 @@ else
     || true # allow error, the world will keep turning if some don't activate...
 
   # activate theme
-
-  WORDPRESS_THEME=$(ls $WORDPRESS_ROOT/../app/themes | head -n1)
 
   wp theme activate $WORDPRESS_THEME \
     --path=$WORDPRESS_ROOT \
