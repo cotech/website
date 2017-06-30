@@ -21,6 +21,15 @@ Then you can access:
 | [localhost:18080](http://localhost:18080) | WordPress URL (dev:dev) |
 | [localhost:18081](http://localhost:18081) | PHPMyAdmin |
 
+### Images
+
+Images used on the cotech website (go in `web/app/uploads`) will be downloaded when you
+first setup your environment. If you want to update them again, you can run:
+
+```
+docker-compose exec assets /download-images.sh --force
+```
+
 ## Deployment
 
 `~/git-hooks` contains all files required for deployment - copy all files into the `~/.git/hooks` directory
