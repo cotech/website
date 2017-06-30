@@ -17,18 +17,19 @@ services:
       MYSQL_PASSWORD: wordpress
 
   assets:
-    build:
-      context: .
-      dockerfile: docker/assets/Dockerfile
-    command: sh -c "yarn && yarn remove node-sass && yarn add node-sass@latest && gulp watch"
+    build: docker/assets
+    command: |
+      sh -c "/download-images.sh &&
+             yarn &&
+             yarn add --force node-sass &&
+             gulp watch"
     volumes:
-      - ./web/app/themes/coop-tech-oowp-theme:/app
-    working_dir: /app
+      - .:/app
+      - /app/web/app/themes/coop-tech-oowp-theme/node_modules
+    working_dir: /app/web/app/themes/coop-tech-oowp-theme
 
   wordpress:
-    build:
-      context: .
-      dockerfile: docker/wordpress/Dockerfile
+    build: docker/wordpress
     ports:
       - 18080:18080
     links:
