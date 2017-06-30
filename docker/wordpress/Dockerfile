@@ -6,7 +6,7 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 
 RUN apt-get update && apt-get install -y vim mysql-client
 
-COPY docker/wordpress/docker-entrypoint.sh /entrypoint.sh
+COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
