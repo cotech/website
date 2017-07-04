@@ -1,0 +1,5 @@
+# let git auto detect everything by default
+* text=auto
+
+# these run inside docker containers so should be LF
+docker/** eol=lf

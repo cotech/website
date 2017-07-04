@@ -1,0 +1,58 @@
+version: '2'
+
+services:
+
+  db:
+    image: mariadb:10.1
+    expose:
+      - 3306
+    ports:
+      - 13306:3306
+    volumes:
+      - ./docker/db/data:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  assets:
+    build: docker/assets
+    command: |
+      sh -c "/download-images.sh &&
+             yarn &&
+             yarn add --force node-sass &&
+             gulp watch"
+    volumes:
+      - .:/app
+      - /app/web/app/themes/coop-tech-oowp-theme/node_modules
+    working_dir: /app/web/app/themes/coop-tech-oowp-theme
+
+  wordpress:
+    build: docker/wordpress
+    ports:
+      - 18080:18080
+    links:
+      - db:db
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    environment:
+      DB_HOST: db
+      DB_NAME: wordpress
+      DB_USER: wordpress
+      DB_PASSWORD: wordpress
+      WP_ENV: development
+      WP_HOME: http://localhost:18080
+      WP_SITEURL: http://localhost:18080/wp
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.6
+    links:
+      - db:db
+    ports:
+      - 18081:80
+    environment:
+      PMA_HOST: db
+      PMA_USER: wordpress
+      PMA_PASSWORD: wordpress
