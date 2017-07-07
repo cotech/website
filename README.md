@@ -32,19 +32,12 @@ docker-compose exec assets /download-images.sh --force
 
 ## Deployment
 
-`~/git-hooks` contains all files required for deployment - copy all files into the `~/.git/hooks` directory
+Changes to the **dev** branch are automatically applied to the [dev site](https://dev.cops.tech/). This works via a [crontab](https://git.coop/cotech/ansible/blob/master/roles/live2dev/tasks/main.yml#L29) which runs [a script](https://git.coop/cotech/ansible/blob/master/roles/live2dev/templates/cron.j2) which checks for changes and if there are any then it runs the [update script](https://git.coop/cotech/ansible/blob/master/roles/live2dev/templates/update.j2).
 
+The [live site](https://www.coops.tech/) is set up exactly the same way but tracking the **master** branch.
+
+If the [dev site](https://dev.cops.tech/) images and database needs syncing from the [live site](https://www.coops.tech/) then please contact `chris@webarchitects.coop` and ask him to run the [live2dev Ansible playbook](https://git.coop/cotech/ansible/blob/master/live2dev.yml).
 
 ## Deployment (manual)
 
-**NOTE:** a git hook has been created to run deployment automatically so that following should not be necessary.
-
-From the base directory, once the latest changes have been pulled from Git, run the following series of commands in order:
-
-```
-composer install
-cd ./web/app/themes/coop-tech-oowp-theme
-composer install
-npm install
-./node_modules/gulp/bin/gulp.js
-```
+Currently the [live](https://www.coops.tech/) and [dev](https://dev.cops.tech/) sites are running on [Werbarchitects shared hosting](https://webarch.net/wp) and although SFTP/SSHFS and phpMyAdmin access is to available to any developers who need it (ask `chris@webarchitects.coop` to add your SSH public keys to the server and to email you the MySQL login details), `ssh` access is only availabe to Webarchitects sysadmins, see [the wiki](https://wiki.coops.tech/wiki/CoTech_WordPress#Updating_the_code) for the steps to manually update the code.
