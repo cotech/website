@@ -32,6 +32,8 @@ docker-compose exec assets /download-images.sh --force
 
 ## Deployment
 
+Testing deployment via a script... WIP
+
 `~/git-hooks` contains all files required for deployment - copy all files into the `~/.git/hooks` directory
 
 
