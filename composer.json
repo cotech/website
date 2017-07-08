@@ -60,7 +60,7 @@
     "wpackagist-plugin/flamingo": "1.6",
     "wpackagist-plugin/contact-form-7-recaptcha": "1.2.0",
     "outlandish/oowp": "dev-master",
-    "outlandish/routemaster": "dev-master",
+    "outlandish/routemaster": "dev-wp-json-fix",
     "wp-sync-db/wp-sync-db-media-files": "^1.1"
   },
   "require-dev": {
