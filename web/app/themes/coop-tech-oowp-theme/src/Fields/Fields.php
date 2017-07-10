@@ -41,5 +41,6 @@ class Fields {
     const SNAPCHAT = 'snapchat';
     const TWITTER = 'twitter';
     const YOUTUBE = 'youtube';
+    const LINKED_IN = 'linkedin';
 
 }
