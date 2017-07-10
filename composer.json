@@ -59,8 +59,9 @@
     "wpackagist-plugin/database-sync": "^0.5.1",
     "wpackagist-plugin/flamingo": "1.6",
     "wpackagist-plugin/contact-form-7-recaptcha": "1.2.0",
+    "wpackagist-plugin/acf-to-rest-api": "1.4.0",
     "outlandish/oowp": "dev-master",
-    "outlandish/routemaster": "dev-wp-json-fix",
+    "outlandish/routemaster": "dev-master",
     "wp-sync-db/wp-sync-db-media-files": "^1.1"
   },
   "require-dev": {
