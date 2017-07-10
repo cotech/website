@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d82394a01183847536e3db33dbaa83b",
+    "content-hash": "6802754530bf53af632595fb8c63d7ea",
     "packages": [
         {
             "name": "composer/installers",
@@ -440,6 +440,26 @@
                 "wp-sync-db"
             ],
             "time": "2015-01-17T02:23:40+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/acf-to-rest-api",
+            "version": "2.2.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/acf-to-rest-api/",
+                "reference": "tags/2.2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/acf-to-rest-api.2.2.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/acf-to-rest-api/"
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields",
