@@ -52,6 +52,8 @@
                                         <i class="fi-social-twitter"></i>
                                     <?php elseif ($link[Fields::SOCIAL_MEDIA_TYPE] == Fields::YOUTUBE): ?>
                                         <i class="fi-social-youtube"></i>
+                                    <?php elseif ($link[Fields::SOCIAL_MEDIA_TYPE] == Fields::LINKED_IN): ?>
+                                        <i class="fi-social-linkedin"></i>
                                     <?php endif ?>
                                 </a></li>
                             <?php endforeach ?>
