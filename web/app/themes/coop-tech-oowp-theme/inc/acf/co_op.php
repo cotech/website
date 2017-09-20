@@ -204,6 +204,7 @@ if(function_exists("register_field_group"))
                             Fields::SNAPCHAT => 'Snapchat',
                             Fields::TWITTER => 'Twitter',
                             Fields::YOUTUBE => 'YouTube',
+                            Fields::LINKED_IN => 'LinkedIn',
                         ),
                         'default_value' => '',
                         'allow_null' => 0,
