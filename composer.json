@@ -60,7 +60,7 @@
     "wpackagist-plugin/flamingo": "1.7",
     "wpackagist-plugin/contact-form-7-recaptcha": "1.2.0",
     "wpackagist-plugin/acf-to-rest-api": "2.2.1",
-    "outlandish/oowp": "1.2.3",
+    "outlandish/oowp": "0.9.1",
     "outlandish/routemaster": "dev-wp-json-fix",
     "wp-sync-db/wp-sync-db-media-files": "^1.1"
   },
