@@ -47,7 +47,7 @@
     "php": ">=5.4",
     "composer/installers": "~1.0.12",
     "vlucas/phpdotenv": "^2.0.1",
-    "johnpbloch/wordpress": "4.8.1",
+    "johnpbloch/wordpress": "4.8.2",
     "oscarotero/env": "^1.0",
     "wpackagist-plugin/advanced-custom-fields": "4.4.11",
     "wpackagist-plugin/custom-post-type-ui": "1.5.5",
@@ -59,8 +59,9 @@
     "wpackagist-plugin/database-sync": "^0.5.1",
     "wpackagist-plugin/flamingo": "1.7",
     "wpackagist-plugin/contact-form-7-recaptcha": "1.2.0",
-    "outlandish/oowp": "dev-master",
-    "outlandish/routemaster": "dev-master",
+    "wpackagist-plugin/acf-to-rest-api": "2.2.1",
+    "outlandish/oowp": "0.9.1",
+    "outlandish/routemaster": "dev-wp-json-fix",
     "wp-sync-db/wp-sync-db-media-files": "^1.1"
   },
   "require-dev": {
