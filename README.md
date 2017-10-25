@@ -41,3 +41,21 @@ If the [dev site](https://dev.cops.tech/) images and database needs syncing from
 ## Deployment (manual)
 
 Currently the [live](https://www.coops.tech/) and [dev](https://dev.cops.tech/) sites are running on [Werbarchitects shared hosting](https://webarch.net/wp) and although SFTP/SSHFS and phpMyAdmin access is to available to any developers who need it (ask `chris@webarchitects.coop` to add your SSH public keys to the server and to email you the MySQL login details), `ssh` access is only availabe to Webarchitects sysadmins, see [the wiki](https://wiki.coops.tech/wiki/CoTech_WordPress#Updating_the_code) for the steps to manually update the code.
+
+
+## Querying the WordPress database directly
+
+Even though the format of the WordPress database is pretty horrible you can perform analytics queries on a local copy of the database which can be downloaded from the admin section of the site if you have Admin permissions. 
+
+e.g. to get the names and email addresses of co-ops that have not entered a turnover so you can nag them: 
+
+```
+SELECT * FROM (
+    SELECT post_id,  post_title, meta_value as turnover 
+    FROM `wp_postmeta` LEFT JOIN wp_posts on post_id = ID
+    where meta_key = 'turnover'
+    and post_status = 'publish'
+    and meta_value = "") as noturnover
+LEFT JOIN wp_postmeta on noturnover.post_id = wp_postmeta.post_id
+where meta_value REGEXP  '^[^@]+@[^@]+\.[^@]{2,}$'
+```
