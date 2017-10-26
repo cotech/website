@@ -29,10 +29,10 @@
     $kpiRevenueNum = 0;
     $kpiStaffNum = 0;
     foreach ($coOps as $coOp) {
-        $kpiRevenueNum += $coOp->turnover() ?: 0;
-        $firstExplosion = explode('+', $coOp->employeeCount());
-        $secondExplosion = explode('-', $firstExplosion[0]);
-        $kpiStaffNum += intval($secondExplosion[0]);
+        $kpiRevenueNum += $coOp->turnover();
+        $kpiStaffNum += $coOp->employeeCount();
+
+
     }
     $kpiRevenue = '';
     if ($kpiRevenueNum >= 1000000000) {

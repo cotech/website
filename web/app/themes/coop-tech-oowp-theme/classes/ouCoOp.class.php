@@ -86,14 +86,28 @@ class ouCoOp extends ouPost {
      * @return int
      */
     public function employeeCount() {
-        return $this->metadata(Fields::EMPLOYEE_COUNT);
+
+        //todo - this code should be removed once the new employee data has been populated in the WP admin
+        //this is odd but leaving it as it is as it's getting deleted
+            $deprecatedEmployeeCountString =$this->metadata(Fields::EMPLOYEE_COUNT);
+            $firstExplosion = explode('+', $deprecatedEmployeeCountString);
+            $secondExplosion = explode('-', $firstExplosion[0]);
+            $deprecatedEmployees = ceil(intval($secondExplosion[0]) + intval(isset($secondExplosion[1]) ? $secondExplosion[1] : 0) /2) ;
+
+
+        return  $this->metadata(Fields::CURRENT_TOTAL_WORKERS) ?: $deprecatedEmployees ?: 0 ;
     }
 
     /**
      * @return int
+     *
      */
     public function turnover() {
-        return $this->metadata(Fields::TURNOVER);
+        $deprecatedTurnover = $this->metadata(Fields::TURNOVER);
+        //if the turnover is not set assume the employees earn the average UK income (£27,200)
+        $turnover = $this->metadata(Fields::CURRENT_TURNOVER);
+
+        return $turnover ?: $deprecatedTurnover ?: $this->employeeCount() * 27200 ?: 0;
     }
 
     /**
