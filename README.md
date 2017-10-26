@@ -4,10 +4,32 @@
 
 * PHP >= 5.4
 * Node & NPM
+* Gulp
 * Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
+* MySQL
 
 ## Development
 
+1. Check out this repository
+2. Install the dependencies
+3. From the root run 
+    ```
+    composer install 
+    cd ./web/app/themes/coop-tech-oowp-theme
+    composer update
+    npm install
+    gulp
+    ```
+
+4. Download a copy of the [CoTech database](https://www.coops.tech/wp/wp-admin/tools.php?page=dbs_options) from the CoTech site (you'll need admin permissions)
+5. Load the copy of the database into a local database e.g. `mysql -u root cotech_db < cotech_data.sql`
+6. Copy `./.env.example` to `./.env`
+7. Edit `./.env` and enter the credentials of your database and the path to your local website
+8. Visit the path you entered in Step 7 e.g. http://localhost/cotech/web
+9. Enjoy playing with your new local copy of the site
+
+
+### Using docker
 For an easy to use development environment run we use Docker Compose.
 
 0. Make sure you have [downloaded Docker](https://www.docker.com/community-edition#/download) and have it installed on your machine and running.
