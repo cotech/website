@@ -36,11 +36,11 @@ Changes to the **dev** branch are automatically applied to the [dev site](https:
 
 The [live site](https://www.coops.tech/) is set up exactly the same way but tracking the **master** branch.
 
-If the [dev site](https://dev.cops.tech/) images and database needs syncing from the [live site](https://www.coops.tech/) then please contact `chris@webarchitects.coop` and ask him to run the [live2dev Ansible playbook](https://git.coop/cotech/ansible/blob/master/live2dev.yml).
+If the [dev site](https://dev.coops.tech/) images and database needs syncing from the [live site](https://www.coops.tech/) then please contact `chris@webarchitects.coop` and ask him to run the [live2dev Ansible playbook](https://git.coop/cotech/ansible/blob/master/live2dev.yml).
 
 ## Deployment (manual)
 
-Currently the [live](https://www.coops.tech/) and [dev](https://dev.cops.tech/) sites are running on [Werbarchitects shared hosting](https://webarch.net/wp) and although SFTP/SSHFS and phpMyAdmin access is to available to any developers who need it (ask `chris@webarchitects.coop` to add your SSH public keys to the server and to email you the MySQL login details), `ssh` access is only availabe to Webarchitects sysadmins, see [the wiki](https://wiki.coops.tech/wiki/CoTech_WordPress#Updating_the_code) for the steps to manually update the code.
+Currently the [live](https://www.coops.tech/) and [dev](https://dev.coops.tech/) sites are running on [Werbarchitects shared hosting](https://webarch.net/wp) and although SFTP/SSHFS and phpMyAdmin access is to available to any developers who need it (ask `chris@webarchitects.coop` to add your SSH public keys to the server and to email you the MySQL login details), `ssh` access is only availabe to Webarchitects sysadmins, see [the wiki](https://wiki.coops.tech/wiki/CoTech_WordPress#Updating_the_code) for the steps to manually update the code.
 
 ## Querying the WordPress database directly
 
