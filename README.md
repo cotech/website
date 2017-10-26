@@ -32,7 +32,7 @@ docker-compose exec assets /download-images.sh --force
 
 ## Deployment
 
-Changes to the **dev** branch are automatically applied to the [dev site](https://dev.cops.tech/). This works via a [crontab](https://git.coop/cotech/ansible/blob/master/roles/live2dev/tasks/main.yml#L29) which runs [a script](https://git.coop/cotech/ansible/blob/master/roles/live2dev/templates/cron.j2) which checks for changes and if there are any then it runs the [update script](https://git.coop/cotech/ansible/blob/master/roles/live2dev/templates/update.j2).
+Changes to the **dev** branch are automatically applied to the [dev site](https://dev.coops.tech/). This works via a [crontab](https://git.coop/cotech/ansible/blob/master/roles/live2dev/tasks/main.yml#L29) which runs [a script](https://git.coop/cotech/ansible/blob/master/roles/live2dev/templates/cron.j2) which checks for changes and if there are any then it runs the [update script](https://git.coop/cotech/ansible/blob/master/roles/live2dev/templates/update.j2).
 
 The [live site](https://www.coops.tech/) is set up exactly the same way but tracking the **master** branch.
 
