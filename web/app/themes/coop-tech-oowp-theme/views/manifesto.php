@@ -12,8 +12,9 @@
 
 <div class="page-content">
     <div class="row">
+
         <div class="small-centered small-12 medium-10 large-8 columns">
-            <?php echo $post->content(); ?>
+            <?php include dirname(__FILE__)."/../../../../manifesto.include.html"; ?>
         </div>
     </div>
 </div>
