@@ -13,8 +13,8 @@
 <div class="page-content">
     <div class="row">
         <div class="small-centered small-12 medium-10 large-8 columns">
-            1
-            <?php //include dirname(__FILE__)."/../../../../join.include.html"; ?>
+
+            <?php  include dirname(__FILE__)."/../../../../join.include.html"; ?>
         </div>
     </div>
 
