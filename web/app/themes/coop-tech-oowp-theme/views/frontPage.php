@@ -252,11 +252,12 @@
             <h2>Get In Touch</h2>
             <p>
 		If you would like to work with us, or find out more, 
-                <a href="mailto:contact@coops.tech">get in touch</a>.
+                <a href="mailto:contact@coops.tech">email us</a> or join our <a href="https://community.coops.tech">online forum</a>.
                 <br/>
-		Not sure which tech coop, or coops, are right for you? Drop 
-                us a message at 
-                <a href="mailto:contact@coops.tech">contact@coops.tech</a>, 
+                <br/>
+                Not sure which tech coop, or coops, are right for you? Drop
+                us a message at
+                <a href="mailto:contact@coops.tech">contact@coops.tech</a>,
                 and we will help you find the perfect match.
             </p>
 
