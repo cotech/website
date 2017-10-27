@@ -54,7 +54,7 @@
     "wpackagist-plugin/posts-to-posts": "1.6.5",
     "wpackagist-plugin/wordpress-importer": "0.6.3",
     "wpackagist-plugin/wp-fail2ban": "3.5.3",
-    "wpackagist-plugin/wp-piwik": "1.0.17",
+    "wpackagist-plugin/wp-piwik": "1.0.19",
     "wpackagist-plugin/contact-form-7": "4.9",
     "wpackagist-plugin/database-sync": "^0.5.1",
     "wpackagist-plugin/flamingo": "1.7",

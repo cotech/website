@@ -5,9 +5,11 @@ namespace Outlandish\MappingCoTech\Fields;
 class Fields {
 
     const EMPLOYEE_COUNT = 'employee_count';
+    const CURRENT_TOTAL_WORKERS = 'current_total_workers';
     const FEATURED_IMAGE = 'featured_image';
     const ICON = 'icon';
     const TURNOVER = 'turnover';
+    const CURRENT_TURNOVER = 'current_turnover';
     const WEBSITE_URL = 'website_url';
     const PHONE = 'phone';
 

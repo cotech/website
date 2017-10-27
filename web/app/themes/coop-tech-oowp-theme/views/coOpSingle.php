@@ -109,6 +109,7 @@
                 <!-- /Services -->
 
                 <!-- Technologies -->
+                <?php if ($post->technologies()->posts): ?>
                 <section>
                     <h4>Technologies</h4>
 
@@ -124,7 +125,8 @@
                     </div>
                 </section>
                 <!-- /Technologies -->
-
+                <?php endif; ?>
+                <?php if ($post->clients()->posts): ?>
                 <!-- Clients -->
                 <section>
                     <h4>Clients</h4>
@@ -139,7 +141,7 @@
                     </div>
                 </section>
                 <!-- /Clients -->
-
+                <?php endif; ?>
             </div>
 
         </div>
