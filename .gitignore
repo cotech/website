@@ -26,5 +26,8 @@ vendor/*
 # Editors
 /.idea
 
+# Git commit id
+commit.txt
+
 \.DS_Store
 .gitignore
