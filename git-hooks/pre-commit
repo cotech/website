@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo "pre-commit"
 set -e
 
 #=== 'prev-commit' solution by o_O Tync
