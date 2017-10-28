@@ -153,8 +153,8 @@
                                     array_push($mapEntries, array(
                                         'lat' => $coOp->address()[Fields::LOCATION][Fields::LATITUDE],
                                         'lng' => $coOp->address()[Fields::LOCATION][Fields::LONGITUDE],
-                                        'markerText' => '<b><a href=\"' . $coOp->permalink() . '\">' . $coOp->name()
-                                            . '</a></b><br><br>' . implode(',<br>', $coOp->addressAsArray())
+                                        'markerText' => '<b><a href=\"' . $coOp->permalink() . '\">' . htmlspecialchars($coOp->name())
+                                            . '</a></b><br><br>' . htmlspecialchars(implode(',<br>', $coOp->addressAsArray()))
                                     ));
                                 }
                             }
