@@ -28,6 +28,7 @@ vendor/*
 
 # Git commit id
 commit.txt
+gitcommit.txt
 
 \.DS_Store
 .gitignore
