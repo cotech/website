@@ -1,4 +1,4 @@
---temp change to test git functionality
+--temp change to test git functionalit
 # Cooperative Technologists
 
 ## Requirements
