@@ -2,6 +2,7 @@
 
 echo "==> running post-merge"
 
+git rev-parse HEAD > commit.txt
 composer update
 cd ./web/app/themes/coop-tech-oowp-theme
 composer update

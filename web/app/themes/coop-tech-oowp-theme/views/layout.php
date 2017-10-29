@@ -92,12 +92,10 @@
             <div class="small-12 columns">
                 <img src="<?php echo $coopLogo ?>" class="float-center" />
 		<!-- TODO the CSS link colour needs fixing! -->
-                <!-- p>Site developed by <a href="http://www.glowboxdesign.co.uk/">Glowbox Designs</a> &amp; 
-                   <a href="http://outlandish.com/">Outlandish</a>, hosted by 
-                   <a href="https://www.webarchitects.coop/">Webarchitects</a> for CoTech &#xa9;2017</p -->
+
               <p>Site developed by <a href="http://glowboxdesign.co.uk" target="_blank">Glowbox Design</a> &amp; <a href="http://outlandish.com" target="_blank">Outlandish</a>.</p>
                 <p>Source code available on <a href="https://github.com/cotech/website" target="_blank">GitHub</a>.</p>
-                <p>Hosted by <a href="https://www.webarchitects.co.uk" target="_blank">Webarchitects</a> for CoTech &#xa9;2017</p>
+                <p>Hosted by <a href="https://www.webarchitects.co.uk" target="_blank">Webarchitects</a> for CoTech &#xa9;<?php print date('Y'); ?></p>
             </div>
         </div>
     </div>
