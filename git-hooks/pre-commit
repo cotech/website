@@ -14,4 +14,4 @@ branch_name=${branch_name##refs/heads/}
 branch_name=${branch_name:-HEAD} # 'HEAD' indicates detached HEAD situation
 
 # Write it
-echo -e "prev_commit='$commit_hash'\ndate='$commit_date'\nbranch='$branch'\n" > gitcommit.txt
+echo -e "prev_commit='$commit_hash'\ndate='$commit_date'\nbranch='$branch'\n" > ./web/gitcommit.txt

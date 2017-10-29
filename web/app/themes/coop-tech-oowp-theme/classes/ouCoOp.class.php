@@ -144,6 +144,19 @@ class ouCoOp extends ouPost {
         return $array;
     }
 
+    function addressHtml($separator = "<br />"){
+        $address = $this->address();
+        $addressHtml = '';
+        $addressFields = [Fields::ADDRESS_LINE_1, Fields::ADDRESS_LINE_2,Fields::ADDRESS_LINE_3, Fields::CITY,Fields::COUNTRY, Fields::POSTCODE];
+        foreach($addressFields as $field){
+            if(isset($address[$field]) && $address[$field]){
+                $addressHtml .= htmlspecialchars($address[$field]);
+                $addressHtml .= $separator;
+            }
+        }
+        return $addressHtml;
+    }
+
     /**
      * @return ooWP_Query|ouService[]
      */

@@ -153,8 +153,7 @@
                                     array_push($mapEntries, array(
                                         'lat' => $coOp->address()[Fields::LOCATION][Fields::LATITUDE],
                                         'lng' => $coOp->address()[Fields::LOCATION][Fields::LONGITUDE],
-                                        'markerText' => '<b><a href=\"' . $coOp->permalink() . '\">' . htmlspecialchars($coOp->name())
-                                            . '</a></b><br><br>' . htmlspecialchars(implode(',<br>', $coOp->addressAsArray()))
+                                        'markerText' => "<b>".$coOp->htmlLink()."</b><br>" . $coOp->addressHtml()
                                     ));
                                 }
                             }
@@ -162,8 +161,7 @@
                         ?>
                         <script type="text/javascript">
 
-                            var mapEntries = '<?php echo $encodedMapEntries; ?>';
-                            var parsedMapEntries = JSON.parse(mapEntries);
+                            var parsedMapEntries = <?php echo $encodedMapEntries; ?>;
                             var app = window.app || {};
                             app.mapEntries = parsedMapEntries;
 
