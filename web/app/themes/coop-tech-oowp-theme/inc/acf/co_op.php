@@ -36,6 +36,21 @@ if (function_exists("register_field_group")) {
                 'max' => '',
                 'step' => '',
             ),
+
+	        array(
+		        'key' => 'field_59f10c9e092bx',
+		        'label' => 'Number of current members for whom the co-op is their main employment',
+		        'name' => 'current_total_ft_members',
+		        'type' => 'number',
+		        'instructions' => 'The number of full members (owners) in the co-op for whom the co-op is their main (more than 50%) or only form of employment.',
+		        'default_value' => '',
+		        'placeholder' => '',
+		        'prepend' => '',
+		        'append' => '',
+		        'min' => '',
+		        'max' => '',
+		        'step' => '',
+	        ),
             array(
                 'key' => 'field_59f0f626092b9',
                 'label' => 'Total number of workers',
