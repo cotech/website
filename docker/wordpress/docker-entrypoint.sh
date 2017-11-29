@@ -99,11 +99,8 @@ fi
 
 sed -i 's/listen 80/listen 18080/g' /etc/nginx/sites-enabled/bedrock
 
-chown www-data:www-data /var/run/hhvm/hhvm.hhbc
-
 # bring up our PHP binaries
 /etc/init.d/php5-fpm start
-/etc/init.d/hhvm start
 
 echo >&2 "========================================================================"
 echo >&2
