@@ -14,9 +14,12 @@ class Router extends \ooRoutemaster {
             '|^co-op/([\w\-]+)/?$|' => 'coOpSingle',
             '|^service/([\w\-]+)/?$|' => 'service',
             '|^technology/([\w\-]+)/?$|' => 'technology',
-            '|^about$|' => 'about',
-            '|^join$|' => 'join',
-            '|^manifesto$|' => 'manifesto',
+            '|^about/?$|' => 'about',
+            '|^join/?$|' => 'join',
+            '|^manifesto/?$|' => 'manifesto',
+            '|^people/?$|' => 'people', // This route is currently just for logged in users,
+            '|^coops/?$|' => 'coops', // This route is currently just for logged in users,
+                                    // should redirect to 404 page if not logged in
             '|^$|' => 'frontPage'
         ];
 
@@ -87,6 +90,39 @@ class Router extends \ooRoutemaster {
             'name' => 'manifesto',
             'post_type' => ouPage::postType()
         ]);
+    }
+
+    protected function people() {
+
+        if (is_user_logged_in()) {
+
+            $this->view->people = ouPerson::fetchAll();
+
+            global $post;
+            $post = new ouFakePost(array('post_title' => 'People'));
+
+        } else {
+
+            $this->show404();
+
+        }
+
+    }
+    protected function coops() {
+
+        if (is_user_logged_in()) {
+
+            $this->view->coops = ouCoOp::fetchAll();
+
+            global $post;
+            $post = new ouFakePost(array('post_title' => 'Co-ops'));
+
+        } else {
+
+            $this->show404();
+
+        }
+
     }
 
     protected function show404() {
