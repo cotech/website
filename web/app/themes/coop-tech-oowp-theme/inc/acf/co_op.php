@@ -99,6 +99,100 @@ if (function_exists("register_field_group")) {
         'menu_order' => 0,
     ));
 
+    register_field_group(array (
+        'id' => 'acf_rates-and-availability',
+        'title' => 'Rates and availability',
+        'fields' => array (
+            array (
+                'key' => 'field_5a1d88fd25f6d',
+                'label' => 'Minimum day rate',
+                'name' => 'minimum_day_rate',
+                'type' => 'number',
+                'instructions' => 'What is the lowest rate someone from your co-op could be hired for?',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '£',
+                'append' => '',
+                'min' => '',
+                'max' => '',
+                'step' => '',
+            ),
+            array (
+                'key' => 'field_5a1d892925f6e',
+                'label' => 'Maximum day rate',
+                'name' => 'maximum_day_rate',
+                'type' => 'number',
+                'instructions' => 'What\'s your highest day rate?',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '£',
+                'append' => '',
+                'min' => '',
+                'max' => '',
+                'step' => '',
+            ),
+            array (
+                'key' => 'field_5a1d895f25f6f',
+                'label' => 'VAT registered?',
+                'name' => 'vat_registered',
+                'type' => 'radio',
+                'choices' => array (
+                    'Unknown' => 'Unknown',
+                    'Yes' => 'Yes',
+                    'No' => 'No',
+                ),
+                'other_choice' => 0,
+                'save_other_choice' => 0,
+                'default_value' => '',
+                'layout' => 'vertical',
+            ),
+            array (
+                'key' => 'field_5a1d89b525f70',
+                'label' => 'Lead time (months)',
+                'name' => 'lead_time',
+                'type' => 'number',
+                'instructions' => 'How long would it be before you\'re available to hire? If you don\'t update this regularly choose a value that most closely reflects your general availability. If you have someone that could do some work tomorrow, put "0"',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => 'months',
+                'min' => '',
+                'max' => '',
+                'step' => '',
+            ),
+            array (
+                'key' => 'field_5a1d8a2a25f71',
+                'label' => 'Contract types',
+                'name' => 'contract_types',
+                'type' => 'checkbox',
+                'choices' => array (
+                    'Time/materials' => 'Time/materials',
+                    'Fixed price' => 'Fixed price',
+                ),
+                'default_value' => '',
+                'layout' => 'vertical',
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'co_op',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array (
+            'position' => 'normal',
+            'layout' => 'no_box',
+            'hide_on_screen' => array (
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+
 
     register_field_group(array(
         'id' => 'acf_coop',

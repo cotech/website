@@ -1,0 +1,110 @@
+<?php
+
+use Outlandish\MappingCoTech\Fields\Fields;
+
+if(function_exists("register_field_group"))
+{
+    register_field_group(array (
+        'id' => 'acf_people',
+        'title' => 'People',
+        'fields' => array (
+            array (
+                'key' => 'field_5a1d90756ebe2',
+                'label' => 'Years experience (post 16)',
+                'name' => 'years_experience',
+                'type' => 'number',
+                'instructions' => 'How many years have you been developing your skills?',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'min' => '',
+                'max' => '',
+                'step' => '',
+            ),
+            array (
+                'key' => 'field_5a1d9873a95d8',
+                'label' => 'Availability (next 5 days)',
+                'name' => 'availability_5_days',
+                'type' => 'number',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'min' => '',
+                'max' => '',
+                'step' => '',
+            ),
+            array (
+                'key' => 'field_5a1d98c6a95d9',
+                'label' => 'Availabilty (next 30 days)',
+                'name' => 'availabilty_30_days',
+                'type' => 'number',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'min' => '',
+                'max' => '',
+                'step' => '',
+            ),
+            array (
+                'key' => 'field_5a1d9958a95da',
+                'label' => 'Availability (next 90 days)',
+                'name' => 'availability_90_days',
+                'type' => 'number',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'min' => '',
+                'max' => '',
+                'step' => '',
+            ),
+            array (
+                'key' => 'field_5a1d99c2a95db',
+                'label' => 'Minimum (cost) rate',
+                'name' => 'minimum_cost_rate',
+                'type' => 'number',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '£',
+                'append' => '',
+                'min' => '',
+                'max' => '',
+                'step' => '',
+            ),
+            array (
+                'key' => 'field_5a1d9a01a95dc',
+                'label' => 'Standard commercial rate',
+                'name' => 'maximum_commercial_rate',
+                'type' => 'number',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'min' => '',
+                'max' => '',
+                'step' => '',
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'person',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array (
+            'position' => 'normal',
+            'layout' => 'no_box',
+            'hide_on_screen' => array (
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+}

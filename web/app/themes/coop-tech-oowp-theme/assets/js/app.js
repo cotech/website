@@ -49,3 +49,5 @@ app.createMapMultiMarker = function(mapId, lat, lng, zoom, markersArray) {
       });
   }
 };
+
+$('.people-table').DataTable();
