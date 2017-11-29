@@ -16,6 +16,7 @@ class Router extends \ooRoutemaster {
             '|^join/?$|' => 'join',
             '|^manifesto/?$|' => 'manifesto',
             '|^people/?$|' => 'people', // This route is currently just for logged in users,
+            '|^coops/?$|' => 'coops', // This route is currently just for logged in users,
                                     // should redirect to 404 page if not logged in
             '|^$|' => 'frontPage'
         ];
@@ -97,6 +98,22 @@ class Router extends \ooRoutemaster {
 
             global $post;
             $post = new ouFakePost(array('post_title' => 'People'));
+
+        } else {
+
+            $this->show404();
+
+        }
+
+    }
+    protected function coops() {
+
+        if (is_user_logged_in()) {
+
+            $this->view->coops = ouCoOp::fetchAll();
+
+            global $post;
+            $post = new ouFakePost(array('post_title' => 'Co-ops'));
 
         } else {
 

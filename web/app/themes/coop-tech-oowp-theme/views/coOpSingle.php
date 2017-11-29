@@ -145,6 +145,7 @@
 
                 <?php
                 if (is_user_logged_in()):
+
                     if ($post->people()->posts):
                     /** @var ouPerson $person */?>
                     <!-- People -->
