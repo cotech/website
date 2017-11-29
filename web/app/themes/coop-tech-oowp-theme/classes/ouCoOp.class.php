@@ -186,6 +186,7 @@ class ouCoOp extends ouPost {
         return $this->connected(ouPerson::postType(), false, $this->getQueryArgs());
     }
 
+
     public function leadTime(){
         return $this->metadata('lead_time');
     }
