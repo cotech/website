@@ -6,10 +6,7 @@
     </div>
     <div class="row expanded">
         <div class="small-12 small-centered large-10 columns">
-            <?php $this->post->printPartial('peopleTable', [
-                    'people' => $this->people,
-                    'showCoOp' => true
-                ]); ?>
+            <?php $this->post->printPartial('peopleTable', ['people' => $this->people]); ?>
         </div>
     </div>
 </section>
