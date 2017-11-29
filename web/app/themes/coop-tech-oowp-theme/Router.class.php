@@ -90,15 +90,21 @@ class Router extends \ooRoutemaster {
     }
 
     protected function people() {
-        //TODO: check if user is logged in
-        //TODO: redirect to 404 if not logged in
 
-        $this->view->people = ouPerson::fetchAll();
+        if (is_user_logged_in()) {
 
-        $this->querySingle([
-            'name' => 'people',
-            'post_type' => ouPage::postType()
-        ]);
+            $this->view->people = ouPerson::fetchAll();
+
+            $this->querySingle([
+                'name' => 'people',
+                'post_type' => ouPage::postType()
+            ]);
+
+        } else {
+
+            $this->show404();
+
+        }
 
     }
 

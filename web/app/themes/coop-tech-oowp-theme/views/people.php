@@ -28,9 +28,9 @@
                     <?php $coOp = $person->coOp(); ?>
                     <tr>
                         <th><?php echo $person->htmlLink() ?></th>
-                        <th><?php echo $person->coOp(true)->name() ?></th>
+                        <th><?php echo $person->coOp(true)->htmlLink() ?></th>
                         <td><?php echo $person->experience() ?> years</td>
-                        <td><?php echo $person->servicesList() ?></td>
+                        <td><?php echo implode(", ", [$person->servicesList(), $person->technologiesList()]); ?></td>
                         <td><?php echo $person->availability(5) ?></td>
                         <td><?php echo $person->metadata('availabilty_30_days') ?></td>
                         <td><?php echo $person->availability(90) ?></td>
