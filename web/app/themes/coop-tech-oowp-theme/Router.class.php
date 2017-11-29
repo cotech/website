@@ -106,6 +106,7 @@ class Router extends \ooRoutemaster {
         }
 
     }
+
     protected function coops() {
 
         if (is_user_logged_in()) {
