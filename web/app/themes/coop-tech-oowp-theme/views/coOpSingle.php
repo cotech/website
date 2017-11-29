@@ -142,7 +142,8 @@
                 </section>
                 <!-- /Clients -->
                 <?php endif; ?>
-                <?php if ($post->people()->posts):  /** @var ouPerson $person */?>
+                <?php if ($post->people()->posts):
+                    /** @var ouPerson $person */?>
                     <!-- People -->
                     <section>
                         <h4>People</h4>
@@ -158,7 +159,7 @@
                                 <tr>
                                     <th><?php echo $person->htmlLink() ?></th>
                                     <td><?php echo $person->experience() ?> years</td>
-                                    <td><?php echo $person->servicesList() ?></td>
+                                    <td><?php echo implode(", ", [$person->servicesList() , $person->technologiesList()]); ?></td>
                                     <td><?php echo $person->availability(5) ?></td>
                                     <td><?php echo $person->metadata('availabilty_30_days') ?></td>
                                     <td><?php echo $person->availability(90) ?></td>
