@@ -17,6 +17,9 @@ class Router extends \ooRoutemaster {
             '|^manifesto/?$|' => 'manifesto',
             '|^people/?$|' => 'people', // This route is currently just for logged in users,
                                     // should redirect to 404 page if not logged in
+
+            '|^constitution/?$|' => 'constitution',
+
             '|^$|' => 'frontPage'
         ];
 
@@ -71,6 +74,13 @@ class Router extends \ooRoutemaster {
     protected function about() {
         $this->querySingle([
             'name' => 'about',
+            'post_type' => ouPage::postType()
+        ]);
+    }
+
+    protected function constitution() {
+        $this->querySingle([
+            'name' => 'constitution',
             'post_type' => ouPage::postType()
         ]);
     }
