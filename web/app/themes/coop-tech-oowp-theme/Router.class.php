@@ -72,31 +72,25 @@ class Router extends \ooRoutemaster {
     }
 
     protected function about() {
-        $this->querySingle([
-            'name' => 'about',
-            'post_type' => ouPage::postType()
-        ]);
+        global $post;
+        $post = new ouFakePost(array('post_title' => 'About'));
     }
 
     protected function constitution() {
-        $this->querySingle([
-            'name' => 'constitution',
-            'post_type' => ouPage::postType()
-        ]);
+
+        global $post;
+        $post = new ouFakePost(array('post_title' => 'Constitution'));
+
     }
 
     protected function join() {
-        $this->querySingle([
-            'name' => 'join',
-            'post_type' => ouPage::postType()
-        ]);
+        global $post;
+        $post = new ouFakePost(array('post_title' => 'Join'));
     }
 
     protected function manifesto() {
-        $this->querySingle([
-            'name' => 'manifesto',
-            'post_type' => ouPage::postType()
-        ]);
+        global $post;
+        $post = new ouFakePost(array('post_title' => 'Manifesto'));
     }
 
     protected function people() {
