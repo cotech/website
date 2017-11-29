@@ -32,3 +32,10 @@ gitcommit.txt
 
 \.DS_Store
 .gitignore
+
+# Ansible provisioned
+web/favicon.ico
+
+# Generated via crontab
+web/cotech-images.tgz
+

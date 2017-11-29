@@ -20,6 +20,7 @@ class Router extends \ooRoutemaster {
             '|^people/?$|' => 'people', // This route is currently just for logged in users,
             '|^co-?ops/?$|' => 'coops', // This route is currently just for logged in users,
             // should redirect to 404 page if not logged in
+
             '|^$|' => 'frontPage'
         ];
 
