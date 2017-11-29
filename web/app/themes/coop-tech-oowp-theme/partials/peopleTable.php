@@ -12,7 +12,7 @@ $showCoOpColumn = ($this->postType() !== ouCoOp::postType())
 <table class="people-table">
     <thead>
     <tr>
-        <?php if (!empty($showCoOpColumn)): ?>
+        <?php if ($showCoOpColumn): ?>
             <th rowspan="2">Co-op</th>
         <?php endif; ?>
         <th rowspan="2">Name</th>
@@ -31,7 +31,7 @@ $showCoOpColumn = ($this->postType() !== ouCoOp::postType())
     <tbody>
     <?php foreach ($people as $person): /** @var ouPerson $person */ ?>
         <tr>
-            <?php if (!empty($showCoOpColumn)): ?>
+            <?php if ($showCoOpColumn): ?>
                 <th><?= $person->coOp(true)->htmlLink() ?></th>
             <?php endif; ?>
             <th><?= $person->htmlLink() ?></th>
