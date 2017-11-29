@@ -8,8 +8,6 @@ class Router extends \ooRoutemaster {
 	 */
 	protected function __construct() {
         parent::__construct();
-        // don't add routes here, add them in routes.php.
-        // they will be loaded in functions.php
         $this->routes   = [
             '|^co-op/([\w\-]+)/?$|' => 'coOpSingle',
             '|^service/([\w\-]+)/?$|' => 'service',
@@ -18,7 +16,7 @@ class Router extends \ooRoutemaster {
             '|^join/?$|' => 'join',
             '|^manifesto/?$|' => 'manifesto',
             '|^people/?$|' => 'people', // This route is currently just for logged in users,
-            '|^coops/?$|' => 'coops', // This route is currently just for logged in users,
+            '|^co-?ops/?$|' => 'coops', // This route is currently just for logged in users,
                                     // should redirect to 404 page if not logged in
             '|^$|' => 'frontPage'
         ];

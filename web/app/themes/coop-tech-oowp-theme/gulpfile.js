@@ -25,7 +25,9 @@ elixir(function(mix) {
             paths.npm + 'jquery/dist/jquery.js',
             paths.npm + 'leaflet/dist/leaflet.js',
             paths.npm + 'what-input/dist/what-input.js',
-            paths.foundation + 'dist/foundation.js'
+            paths.foundation + 'dist/foundation.js',
+            paths.npm + 'datatables.net/js/jquery.dataTables.js',
+            paths.npm + 'datatables.net-zf/js/dataTables.foundation.js'
         ], paths.public + 'js/vendor.js')
 
         //todo: webpack this?
