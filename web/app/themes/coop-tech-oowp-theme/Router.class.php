@@ -19,7 +19,7 @@ class Router extends \ooRoutemaster {
                                     // should redirect to 404 page if not logged in
 
             '|^constitution/?$|' => 'constitution',
-            '|^coops/?$|' => 'coops', // This route is currently just for logged in users,
+            '|^co-?ops/?$|' => 'coops', // This route is currently just for logged in users,
                                     // should redirect to 404 page if not logged in
             '|^$|' => 'frontPage'
         ];
