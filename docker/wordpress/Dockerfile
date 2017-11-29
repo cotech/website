@@ -1,4 +1,4 @@
-FROM adamyeats/docker-nginx-hhvm-bedrock
+FROM outlandish/docker-nginx-hhvm-bedrock
 
 # Allow Composer to run as superuser inside the container
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
