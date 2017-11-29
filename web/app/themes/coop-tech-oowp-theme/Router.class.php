@@ -78,6 +78,13 @@ class Router extends \ooRoutemaster {
         ]);
     }
 
+    protected function constitution() {
+        $this->querySingle([
+            'name' => 'constitution',
+            'post_type' => ouPage::postType()
+        ]);
+    }
+
     protected function join() {
         $this->querySingle([
             'name' => 'join',
