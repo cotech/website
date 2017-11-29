@@ -209,6 +209,10 @@ class ouCoOp extends ouPost {
         if(in_array('Fixed price', $meta))
         return true;
     }
+
+    public function legalStructure(){
+        return $this->metadata('legal_structure') ?: "";
+    }
     /**
      * @return string
      */
