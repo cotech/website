@@ -15,6 +15,7 @@ class Router extends \ooRoutemaster {
             '|^service/([\w\-]+)/?$|' => 'service',
             '|^technology/([\w\-]+)/?$|' => 'technology',
             '|^about$|' => 'about',
+            '|^constitution$|' => 'constitution',
             '|^join$|' => 'join',
             '|^manifesto$|' => 'manifesto',
             '|^$|' => 'frontPage'
@@ -71,6 +72,13 @@ class Router extends \ooRoutemaster {
     protected function about() {
         $this->querySingle([
             'name' => 'about',
+            'post_type' => ouPage::postType()
+        ]);
+    }
+
+    protected function constitution() {
+        $this->querySingle([
+            'name' => 'constitution',
             'post_type' => ouPage::postType()
         ]);
     }
