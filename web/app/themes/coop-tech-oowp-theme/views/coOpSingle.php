@@ -142,6 +142,17 @@
                 </section>
                 <!-- /Clients -->
                 <?php endif; ?>
+
+                <?php if (is_user_logged_in()): ?>
+                    <?php if (!empty($post->people()->posts)): ?>
+                        <!-- People -->
+                        <section>
+                            <h4>People</h4>
+                            <?php $this->post->printPartial('peopleTable', ['people' => $post->people()->posts]); ?>
+                        </section>
+                        <!-- /People -->
+                    <?php endif; ?>
+                <?php endif; ?>
             </div>
 
         </div>

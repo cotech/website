@@ -12,6 +12,8 @@
   "author": "Matthew Kendon <matt@outlandish.com>",
   "license": "ISC",
   "dependencies": {
+    "datatables.net": "1.10.16",
+    "datatables.net-zf": "1.10.16",
     "font-awesome": "4.7.0",
     "foundation-icons": "^1.0.1",
     "foundation-sites": "6.2.4",

@@ -8,8 +8,7 @@ class Router extends \ooRoutemaster {
 	 */
 	protected function __construct() {
         parent::__construct();
-        // don't add routes here, add them in routes.php.
-        // they will be loaded in functions.php
+
         $this->routes   = [
             '|^co-op/([\w\-]+)/?$|' => 'coOpSingle',
             '|^service/([\w\-]+)/?$|' => 'service',
@@ -17,6 +16,11 @@ class Router extends \ooRoutemaster {
             '|^about$|' => 'about',
             '|^join$|' => 'join',
             '|^manifesto$|' => 'manifesto',
+            '|^constitution$|' => 'constitution',
+            '|^people/?$|' => 'people', // This route is currently just for logged in users,
+            '|^co-?ops/?$|' => 'coops', // This route is currently just for logged in users,
+            // should redirect to 404 page if not logged in
+
             '|^$|' => 'frontPage'
         ];
 
@@ -69,24 +73,59 @@ class Router extends \ooRoutemaster {
     }
 
     protected function about() {
-        $this->querySingle([
-            'name' => 'about',
-            'post_type' => ouPage::postType()
-        ]);
+        global $post;
+        $post = new ouFakePost(array('post_title' => 'About'));
+    }
+
+    protected function constitution() {
+
+        global $post;
+        $post = new ouFakePost(array('post_title' => 'Constitution'));
+
     }
 
     protected function join() {
-        $this->querySingle([
-            'name' => 'join',
-            'post_type' => ouPage::postType()
-        ]);
+        global $post;
+        $post = new ouFakePost(array('post_title' => 'Join'));
     }
 
     protected function manifesto() {
-        $this->querySingle([
-            'name' => 'manifesto',
-            'post_type' => ouPage::postType()
-        ]);
+        global $post;
+        $post = new ouFakePost(array('post_title' => 'Manifesto'));
+    }
+
+    protected function people() {
+
+        if (is_user_logged_in()) {
+
+            $this->view->people = ouPerson::fetchAll();
+
+            global $post;
+            $post = new ouFakePost(array('post_title' => 'People'));
+
+        } else {
+
+            $this->show404();
+
+        }
+
+    }
+
+    protected function coops() {
+
+        if (is_user_logged_in()) {
+
+            $this->view->coops = ouCoOp::fetchAll();
+
+            global $post;
+            $post = new ouFakePost(array('post_title' => 'Co-ops'));
+
+        } else {
+
+            $this->show404();
+
+        }
+
     }
 
     protected function show404() {

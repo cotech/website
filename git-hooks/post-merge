@@ -5,7 +5,7 @@ echo "==> running post-merge"
 git rev-parse HEAD > commit.txt
 composer update
 cd ./web/app/themes/coop-tech-oowp-theme
-composer update
+composer install
 npm install
 gulp
 ./node_modules/gulp/bin/gulp.js  # in case gulp not in $PATH

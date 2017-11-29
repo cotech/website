@@ -13,6 +13,7 @@ class ouCoOp extends ouPost {
         self::registerConnection(ouClient::postType(), ['cardinality' => 'many-to-many']);
         self::registerConnection(ouService::postType(), ['cardinality' => 'many-to-many']);
         self::registerConnection(ouTechnology::postType(), ['cardinality' => 'many-to-many']);
+        self::registerConnection(ouPerson::postType(), ['cardinality' => 'many-to-many']);
     }
 
     public static function friendlyName() {
@@ -178,6 +179,40 @@ class ouCoOp extends ouPost {
         return $this->connected(ouClient::postType(), false, $this->getQueryArgs());
     }
 
+    /**
+     * @return ooWP_Query|ouPeople[]
+     */
+    public function people() {
+        return $this->connected(ouPerson::postType(), false, $this->getQueryArgs());
+    }
+
+
+    public function leadTime(){
+        return $this->metadata('lead_time');
+    }
+    public function minimumDayRate(){
+        return $this->metadata('minimum_day_rate');
+    }
+    public function standardDayRate(){
+        return $this->metadata('maximum_day_rate');
+    }
+    public function vatRegistered(){
+        return $this->metadata('vat_registered');
+    }
+    public function timeAndMaterials(){
+        $meta = (array) $this->metadata('contract_types');
+        if(in_array('Time/materials', $meta))
+        return true;
+    }
+    public function fixedPriceContracts(){
+        $meta = (array) $this->metadata('contract_types');
+        if(in_array('Fixed price', $meta))
+        return true;
+    }
+
+    public function legalStructure(){
+        return $this->metadata('legal_structure') ?: "";
+    }
     /**
      * @return string
      */

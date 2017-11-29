@@ -22,13 +22,18 @@ app.map = null;
 
 app.createMap = function(mapId, lat, lng, zoom) {
   window.app.map = L.map(mapId).setView([lat, lng], zoom);
+
 }
 
 app.createMapSingleMarker = function(mapId, lat, lng, zoom, markerText) {
     if (!window.app.map) {
         window.app.createMap(mapId, lat, lng, zoom);
         var myMap = window.app.map;
-
+        // disable map zoom when using scroll
+        myMap.scrollZoom.disable();
+        // myMap.dragPan.disable();
+        // myMap.map.boxZoom.disable();
+        // myMap.touchZoomRotate.disable();
         L.tileLayer(window.app.apiUrl, window.app.tileLayerOptions).addTo(myMap);
 
         var marker = L.marker([lat - 0.0005, lng]).addTo(myMap);
@@ -49,3 +54,5 @@ app.createMapMultiMarker = function(mapId, lat, lng, zoom, markersArray) {
       });
   }
 };
+
+$('.people-table').DataTable();
