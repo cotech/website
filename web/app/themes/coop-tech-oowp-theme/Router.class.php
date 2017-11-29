@@ -95,10 +95,8 @@ class Router extends \ooRoutemaster {
 
             $this->view->people = ouPerson::fetchAll();
 
-            $this->querySingle([
-                'name' => 'people',
-                'post_type' => ouPage::postType()
-            ]);
+            global $post;
+            $post = new ouFakePost(array('post_title' => 'People'));
 
         } else {
 
