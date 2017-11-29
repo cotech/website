@@ -153,11 +153,11 @@ class ouPerson extends ouPost
     }
 
     /**
-     * @return ooWP_Query|ouClient[]
+     * @return ooWP_Query|ouCoOp[]
      */
-    public function coOp()
+    public function coOp($single = false)
     {
-        return $this->connected(ouCoOp::postType(), false, $this->getQueryArgs());
+        return $this->connected(ouCoOp::postType(), $single, $this->getQueryArgs());
     }
 
     /**
