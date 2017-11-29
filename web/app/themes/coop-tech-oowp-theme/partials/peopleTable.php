@@ -1,7 +1,18 @@
+<?php
+// Requires people array to be passed into printPartial args
+
+// Extra co-op column is displayed if the current post is not a coOp
+// (I.e., it is showed for the 'people' view but not the 'coOpSingle' view)
+$showCoOpColumn = ($this->postType() !== ouCoOp::postType())
+    ? true
+    : false;
+
+?>
+
 <table class="people-table">
     <thead>
     <tr>
-        <?php if (!empty($showCoOp)): ?>
+        <?php if (!empty($showCoOpColumn)): ?>
             <th rowspan="2">Co-op</th>
         <?php endif; ?>
         <th rowspan="2">Name</th>
@@ -20,7 +31,7 @@
     <tbody>
     <?php foreach ($people as $person): /** @var ouPerson $person */ ?>
         <tr>
-            <?php if (!empty($showCoOp)): ?>
+            <?php if (!empty($showCoOpColumn)): ?>
                 <th><?= $person->coOp(true)->htmlLink() ?></th>
             <?php endif; ?>
             <th><?= $person->htmlLink() ?></th>

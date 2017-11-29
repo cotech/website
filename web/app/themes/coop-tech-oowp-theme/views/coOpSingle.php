@@ -148,9 +148,7 @@
                         <!-- People -->
                         <section>
                             <h4>People</h4>
-                            <?php $this->post->printPartial('peopleTable', [
-                                    'people' => $post->people()->posts
-                                ]); ?>
+                            <?php $this->post->printPartial('peopleTable', ['people' => $post->people()->posts]); ?>
                         </section>
                         <!-- /People -->
                     <?php endif; ?>
