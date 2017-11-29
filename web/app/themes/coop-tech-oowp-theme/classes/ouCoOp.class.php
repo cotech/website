@@ -13,6 +13,7 @@ class ouCoOp extends ouPost {
         self::registerConnection(ouClient::postType(), ['cardinality' => 'many-to-many']);
         self::registerConnection(ouService::postType(), ['cardinality' => 'many-to-many']);
         self::registerConnection(ouTechnology::postType(), ['cardinality' => 'many-to-many']);
+        self::registerConnection(ouPerson::postType(), ['cardinality' => 'many-to-many']);
     }
 
     public static function friendlyName() {
@@ -176,6 +177,13 @@ class ouCoOp extends ouPost {
      */
     public function clients() {
         return $this->connected(ouClient::postType(), false, $this->getQueryArgs());
+    }
+
+    /**
+     * @return ooWP_Query|ouPeople[]
+     */
+    public function people() {
+        return $this->connected(ouPerson::postType(), false, $this->getQueryArgs());
     }
 
     /**
