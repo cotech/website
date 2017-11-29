@@ -12,10 +12,10 @@ class Router extends \ooRoutemaster {
             '|^co-op/([\w\-]+)/?$|' => 'coOpSingle',
             '|^service/([\w\-]+)/?$|' => 'service',
             '|^technology/([\w\-]+)/?$|' => 'technology',
-            '|^about$|' => 'about',
-            '|^join$|' => 'join',
-            '|^manifesto$|' => 'manifesto',
-            '|^people$|' => 'people', // This route is currently just for logged in users,
+            '|^about/?$|' => 'about',
+            '|^join/?$|' => 'join',
+            '|^manifesto/?$|' => 'manifesto',
+            '|^people/?$|' => 'people', // This route is currently just for logged in users,
                                     // should redirect to 404 page if not logged in
             '|^$|' => 'frontPage'
         ];
