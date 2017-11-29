@@ -100,7 +100,7 @@ fi
 sed -i 's/listen 80/listen 18080/g' /etc/nginx/sites-enabled/bedrock
 
 # bring up our PHP binaries
-/etc/init.d/php5-fpm start
+/etc/init.d/php7.1-fpm start
 
 echo >&2 "========================================================================"
 echo >&2
