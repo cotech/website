@@ -16,6 +16,7 @@
                     <th >VAT registered?</th>
                     <th >Fixed price contracts</th>
                     <th >Time and materials</th>
+                    <th >Legal structure</th>
                 </tr>
 
                 </thead>
@@ -29,6 +30,7 @@
                         <td><?php echo $coop->vatRegistered(); ?></td>
                         <td><?php echo $coop->fixedPriceContracts() ? "Yes" : ""; ?></td>
                         <td><?php echo $coop->timeAndMaterials() ?  "Yes" : ""; ?></td>
+                        <td><?php echo $coop->legalStructure(); ?></td>
                     </tr>
                 <?php endforeach ?>
                 </tbody>

@@ -100,6 +100,49 @@ if (function_exists("register_field_group")) {
     ));
 
     register_field_group(array (
+        'id' => 'acf_legal-structure',
+        'title' => 'Legal structure',
+        'fields' => array (
+            array (
+                'key' => 'field_5a1efa1c4d249',
+                'label' => 'Legal structure',
+                'name' => 'legal_structure',
+                'type' => 'radio',
+                'choices' => array (
+                    'Unknown' => 'Unknown',
+                    'LLP' => 'LLP',
+                    'Ltd' => 'Ltd',
+                    'Company Limited by Guarantee' => 'Company Limited by Guarantee',
+                    'Co-operative consortium society' => 'Co-operative consortium society',
+                    'Worker co-operative society' => 'Worker co-operative society',
+                ),
+                'other_choice' => 1,
+                'save_other_choice' => 1,
+                'default_value' => '',
+                'layout' => 'vertical',
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'co_op',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array (
+            'position' => 'normal',
+            'layout' => 'no_box',
+            'hide_on_screen' => array (
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+
+    register_field_group(array (
         'id' => 'acf_rates-and-availability',
         'title' => 'Rates and availability',
         'fields' => array (
