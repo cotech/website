@@ -22,6 +22,11 @@ app.map = null;
 
 app.createMap = function(mapId, lat, lng, zoom) {
   window.app.map = L.map(mapId).setView([lat, lng], zoom);
+    // disable map zoom when using scroll
+    window.app.map.scrollZoom.disable();
+    window.app.map.dragPan.disable();
+    window.app.map.boxZoom.disable();
+    // window.app.map.touchZoomRotate.disable();
 }
 
 app.createMapSingleMarker = function(mapId, lat, lng, zoom, markerText) {

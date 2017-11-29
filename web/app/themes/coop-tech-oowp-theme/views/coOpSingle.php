@@ -142,7 +142,10 @@
                 </section>
                 <!-- /Clients -->
                 <?php endif; ?>
-                <?php if ($post->people()->posts):
+
+                <?php
+                if (is_user_logged_in()):
+                    if ($post->people()->posts):
                     /** @var ouPerson $person */?>
                     <!-- People -->
                     <section>
@@ -170,6 +173,7 @@
                         </table>
                     </section>
                     <!-- /Clients -->
+                <?php endif; ?>
                 <?php endif; ?>
             </div>
 
