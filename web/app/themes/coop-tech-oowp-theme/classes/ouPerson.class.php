@@ -85,7 +85,10 @@ class ouPerson extends ouPost
     {
         $links = [];
         foreach($this->services() as $service){
-            $links []= "<a href='".$service->permalink()."' title='".$service->fields->description."'>".$service->title()."</a>";
+            $desc = htmlspecialchars(p2p_get_meta($service->p2p_id, "description", true));
+            $xp = p2p_get_meta($service->p2p_id, "experience_points", true);
+            $info = $desc ? " (i)" : "";
+            $links []= "<a href='".$service->permalink()."' title='".$desc."' data-xp='$xp'>".$service->title()."$info</a>";
 
         }
         return implode(", ", $links);
