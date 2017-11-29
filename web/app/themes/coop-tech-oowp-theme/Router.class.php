@@ -8,8 +8,6 @@ class Router extends \ooRoutemaster {
 	 */
 	protected function __construct() {
         parent::__construct();
-        // don't add routes here, add them in routes.php.
-        // they will be loaded in functions.php
         $this->routes   = [
             '|^co-op/([\w\-]+)/?$|' => 'coOpSingle',
             '|^service/([\w\-]+)/?$|' => 'service',
@@ -17,6 +15,8 @@ class Router extends \ooRoutemaster {
             '|^about$|' => 'about',
             '|^join$|' => 'join',
             '|^manifesto$|' => 'manifesto',
+            '|^people$|' => 'people', // This route is currently just for logged in users,
+                                    // should redirect to 404 page if not logged in
             '|^$|' => 'frontPage'
         ];
 
@@ -87,6 +87,19 @@ class Router extends \ooRoutemaster {
             'name' => 'manifesto',
             'post_type' => ouPage::postType()
         ]);
+    }
+
+    protected function people() {
+        //TODO: check if user is logged in
+        //TODO: redirect to 404 if not logged in
+
+        $this->view->people = ouPerson::fetchAll();
+
+        $this->querySingle([
+            'name' => 'people',
+            'post_type' => ouPage::postType()
+        ]);
+
     }
 
     protected function show404() {
