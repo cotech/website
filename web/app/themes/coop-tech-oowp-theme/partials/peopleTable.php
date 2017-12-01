@@ -29,14 +29,17 @@ $showCoOpColumn = ($this->postType() !== ouCoOp::postType())
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($people as $person): /** @var ouPerson $person */ ?>
+
+    <?php  foreach ($people as $person): /** @var ouPerson $person */
+    $hostCoop = $person->coOp(true);
+    ?>
         <tr>
-            <?php if ($showCoOpColumn): ?>
-                <th><?= $person->coOp(true)->htmlLink() ?></th>
+            <?php if ($showCoOpColumn ): ?>
+                <th><?php print method_exists($hostCoop , 'htmlLink') ? $hostCoop->htmlLink() : "None connected" ?></th>
             <?php endif; ?>
             <th><?= $person->htmlLink() ?></th>
-            <td><?= $person->experience() ?> years</td>
-            <td><?= implode(", ", [$person->servicesList(), $person->technologiesList()]); ?></td>
+            <td><?= $person->experience() ?: "Some" ?> years</td>
+            <td><?= $person->skillListString(); ?></td>
             <td><?= $person->availability(5) ?></td>
             <td><?= $person->metadata('availabilty_30_days') ?></td>
             <td><?= $person->availability(90) ?></td>
