@@ -25,18 +25,19 @@ services:
              gulp watch"
     volumes:
       - .:/app
-      - /app/web/app/themes/coop-tech-oowp-theme/node_modules
+      - theme_node_modules:/app/web/app/themes/coop-tech-oowp-theme/node_modules
     working_dir: /app/web/app/themes/coop-tech-oowp-theme
 
   wordpress:
     build: docker/wordpress
     ports:
-      - 18080:18080
+      - 18080:8080
     links:
       - db:db
     volumes:
-      - .:/var/www/html
-    working_dir: /var/www/html
+      - .:/app
+      - wordpress_vendor:/app/vendor
+      - theme_vendor:/app/web/app/themes/coop-tech-oowp-theme/vendor
     environment:
       DB_HOST: db
       DB_NAME: wordpress
@@ -56,3 +57,8 @@ services:
       PMA_HOST: db
       PMA_USER: wordpress
       PMA_PASSWORD: wordpress
+
+volumes:
+  wordpress_vendor:
+  theme_vendor:
+  theme_node_modules:
