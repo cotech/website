@@ -24,7 +24,7 @@
                 <?php foreach ($this->coops as $coop): /** @var ouCoOp $coop */ ?>
                     <tr>
                         <th><?php echo $coop->htmlLink() ?></th>
-                        <th><?php echo $coop->leadTime() ?></th>
+                        <th><?php echo $coop->leadTime() ?> months</th>
                         <td><?php echo $coop->minimumDayRate() ?></td>
                         <td><?php echo $coop->standardDayRate(); ?></td>
                         <td><?php echo $coop->vatRegistered(); ?></td>

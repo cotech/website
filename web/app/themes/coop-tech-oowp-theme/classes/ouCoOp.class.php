@@ -188,7 +188,7 @@ class ouCoOp extends ouPost {
 
 
     public function leadTime(){
-        return $this->metadata('lead_time');
+        return $this->metadata('lead_time') ?: 0;
     }
     public function minimumDayRate(){
         return $this->metadata('minimum_day_rate');

@@ -1,14 +1,45 @@
-FROM adamyeats/docker-nginx-hhvm-bedrock
+FROM php:7.1.12
 
-# Allow Composer to run as superuser inside the container
-# https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
-ENV COMPOSER_ALLOW_SUPERUSER 1
+COPY . /app
 
-RUN apt-get update && apt-get install -y vim mysql-client
+# install package dependencies
+#   git/subversion/unzip are used whilst install composer dependencies
+#   mysql client is used inside the setup script
+#--------------------------------------
 
-COPY docker-entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+RUN apt-get update && apt-get install -y \
+    git \
+    subversion \
+    unzip \
+    mysql-client
 
-ENTRYPOINT ["/entrypoint.sh"]
+# install composer
+#--------------------------------------
 
-CMD ["nginx", "-g", "daemon off;"]
+RUN curl -sS https://getcomposer.org/installer | \
+    php -- --install-dir=/usr/local/bin --filename=composer
+
+# install wp cli
+#--------------------------------------
+
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
+    chmod +x wp-cli.phar && \
+    mv wp-cli.phar /usr/local/bin/wp
+
+# install php extensions
+#--------------------------------------
+
+RUN docker-php-ext-install \
+    pdo \
+    pdo_mysql \
+    mysqli
+
+# add extra files to container
+#--------------------------------------
+
+COPY setup-and-run.sh /setup-and-run.sh
+COPY php.ini /usr/local/etc/php/php.ini
+
+WORKDIR /app
+
+CMD ["/setup-and-run.sh"]

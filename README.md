@@ -1,4 +1,3 @@
---temp change to test git functionalit
 # Cooperative Technologists
 
 ## Requirements
@@ -13,9 +12,9 @@
 
 1. Check out this repository
 2. Install the dependencies
-3. From the root run 
+3. From the root run
     ```
-    composer install 
+    composer install
     cd ./web/app/themes/coop-tech-oowp-theme
     composer update
     npm install
@@ -67,13 +66,13 @@ Currently the [live](https://www.coops.tech/) and [dev](https://dev.coops.tech/)
 
 ## Querying the WordPress database directly
 
-Even though the format of the WordPress database is pretty horrible you can perform analytics queries on a local copy of the database which can be downloaded from the admin section of the site if you have Admin permissions. 
+Even though the format of the WordPress database is pretty horrible you can perform analytics queries on a local copy of the database which can be downloaded from the admin section of the site if you have Admin permissions.
 
-e.g. to get the names and email addresses of co-ops that have not entered a turnover so you can nag them: 
+e.g. to get the names and email addresses of co-ops that have not entered a turnover so you can nag them:
 
 ```sql
 SELECT * FROM (
-    SELECT post_id,  post_title, meta_value as turnover 
+    SELECT post_id,  post_title, meta_value as turnover
     FROM `wp_postmeta` LEFT JOIN wp_posts on post_id = ID
     where meta_key = 'turnover'
     and post_status = 'publish'
@@ -81,4 +80,3 @@ SELECT * FROM (
 LEFT JOIN wp_postmeta on noturnover.post_id = wp_postmeta.post_id
 where meta_value REGEXP  '^[^@]+@[^@]+\.[^@]{2,}$'
 ```
-
