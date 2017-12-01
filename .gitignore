@@ -20,7 +20,7 @@ sql-dump-*.sql
 !.env.example
 
 # Vendor (e.g. Composer)
-vendor/*
+vendor/
 !vendor/.gitkeep
 
 # Editors
