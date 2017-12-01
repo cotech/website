@@ -80,4 +80,3 @@ SELECT * FROM (
 LEFT JOIN wp_postmeta on noturnover.post_id = wp_postmeta.post_id
 where meta_value REGEXP  '^[^@]+@[^@]+\.[^@]{2,}$'
 ```
-
