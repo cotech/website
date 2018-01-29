@@ -57,7 +57,7 @@
     "wpackagist-plugin/wp-piwik": "1.0.19",
     "wpackagist-plugin/contact-form-7": "4.9.2",
     "wpackagist-plugin/database-sync": "^0.5.1",
-    "wpackagist-plugin/flamingo": "1.7",
+    "wpackagist-plugin/flamingo": "1.8",
     "wpackagist-plugin/contact-form-7-recaptcha": "1.2.0",
     "wpackagist-plugin/acf-to-rest-api": "3.1.0",
     "wpackagist-plugin/email-subscribers": "3.4.8",
