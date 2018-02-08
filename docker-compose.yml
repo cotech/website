@@ -38,6 +38,7 @@ services:
       - .:/app
       - wordpress_vendor:/app/vendor
       - theme_vendor:/app/web/app/themes/coop-tech-oowp-theme/vendor
+      - composer_home:/root/.composer
     environment:
       DB_HOST: db
       DB_NAME: wordpress
@@ -62,3 +63,4 @@ volumes:
   wordpress_vendor:
   theme_vendor:
   theme_node_modules:
+  composer_home:
