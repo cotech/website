@@ -1,61 +1,90 @@
-var elixir = require('laravel-elixir');
+const gulp = require('gulp')
+const sass = require('gulp-sass')
+const concat = require('gulp-concat')
+const when = require('gulp-if')
+const uglify = require('gulp-uglify')
+const prefix = require('gulp-autoprefixer')
+const merge = require('merge-stream')
 
-elixir.config.sourcemaps = true;
-elixir.config.assetsPath = 'assets/';
-elixir.config.publicPath = 'public/';
-elixir.config.css.sass.folder = 'scss';
+const assetsPath = './assets'
+const publicPath = './public'
 
-var paths = {
-    npm: '../../node_modules/',
-    assets: elixir.config.assetsPath,
-    public: elixir.config.publicPath,
-    foundation: '../../node_modules/foundation-sites/',
-    foundationIcons: 'node_modules/foundation-icons/foundation-icons'
-};
+const PROD = process.argv
+  .join('')
+  .includes('--production')
 
-elixir(function(mix) {
-    mix
-        .sass('app.scss', null, null, { includePaths: [
-            'node_modules/foundation-sites/scss/',
-            'node_modules/font-awesome/scss/',
-            'node_modules/leaflet/dist/'
-        ]})
+gulp.task('copy', () => {
+  return merge(
+    gulp
+      .src(`${assetsPath}/img/**/*`)
+      .pipe(gulp.dest(`${publicPath}/img`)),
 
-        .scripts([
-            paths.npm + 'jquery/dist/jquery.js',
-            paths.npm + 'leaflet/dist/leaflet.js',
-            paths.npm + 'what-input/dist/what-input.js',
-            paths.foundation + 'dist/foundation.js',
-            paths.npm + 'datatables.net/js/jquery.dataTables.js',
-            paths.npm + 'datatables.net-zf/js/dataTables.foundation.js'
-        ], paths.public + 'js/vendor.js')
+    gulp
+      .src('node_modules/foundation-icons/svgs/**/*')
+      .pipe(gulp.dest(`${publicPath}/foundation-icons/svgs`)),
 
-        //todo: webpack this?
-        .scripts([
-            'app.js'
-        ], paths.public + 'js/app.js')
+    gulp
+      .src('node_modules/foundation-icons/*.{woff,ttf}')
+      .pipe(gulp.dest(`${publicPath}/css`)),
 
-        //images to public folder
-        .copy(paths.assets + 'img', paths.public + 'img/')
+    gulp
+      .src('node_modules/leaflet/dist/images/**/*')
+      .pipe(gulp.dest(`${publicPath}/css/images`)),
 
-        //leaflet images to css/images
-        .copy('node_modules/leaflet/dist/images', paths.public + 'css/images/')
+    gulp
+      .src([
+        `${assetsPath}/fonts/**/*`,
+        'node_modules/font-awesome/fonts/**/*'
+      ])
+      .pipe(gulp.dest(`${publicPath}/fonts`))
+  )
+})
 
-        //move fonts to public folder
-        .copy([
-            paths.assets + 'fonts',
-            'node_modules/font-awesome/fonts'
-        ], paths.public + 'fonts/')
+gulp.task('scripts:app', () => {
+  return gulp
+    .src(`${assetsPath}/js/**/*.js`)
+    .pipe(concat('app.js'))
+    .pipe(when(PROD, uglify()))
+    .pipe(gulp.dest(`${publicPath}/js`))
+})
 
-        //move foundation-icons to public folder
-        .copy('node_modules/foundation-icons/svgs', paths.public + 'foundation-icons/svgs/')
-        .copy([
-            paths.foundationIcons + '.css',
-            paths.foundationIcons + '.eot',
-            paths.foundationIcons + '.scss',
-            paths.foundationIcons + '.svg',
-            paths.foundationIcons + '.ttf',
-            paths.foundationIcons + '.woff'
-        ], paths.public + 'foundation-icons/')
-    ;
-});
+gulp.task('scripts:vendor', () => {
+  return gulp
+    .src([
+      'node_modules/jquery/dist/jquery.js',
+      'node_modules/leaflet/dist/leaflet.js',
+      'node_modules/what-input/dist/what-input.js',
+      'node_modules/foundation-sites/dist/foundation.js',
+      'node_modules/datatables.net/js/jquery.dataTables.js',
+      'node_modules/datatables.net-zf/js/dataTables.foundation.js'
+    ])
+    .pipe(concat('vendor.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(`${publicPath}/js`))
+})
+
+gulp.task('styles', () => {
+  return gulp
+    .src(`${assetsPath}/scss/app.scss`)
+    .pipe(sass({
+      includePaths: [
+        'node_modules/foundation-icons/',
+        'node_modules/foundation-sites/scss/',
+        'node_modules/font-awesome/scss/',
+        'node_modules/leaflet/dist/'
+      ]
+    })
+    .on('error', sass.logError))
+    .pipe(prefix('last 2 version', 'ie 8', 'ie 9'))
+    .pipe(gulp.dest(`${publicPath}/css`))
+})
+
+gulp.task('watch', ['scripts:app', 'styles'], () => {
+  return gulp.watch([
+    `${assetsPath}/js/**/*.js`,
+    `${assetsPath}/scss/**/*.scss`
+  ] , ['scripts:app', 'styles'])
+})
+
+gulp.task('scripts', ['scripts:vendor', 'scripts:app'])
+gulp.task('default', ['copy', 'scripts', 'styles'])

@@ -18,11 +18,6 @@ services:
 
   assets:
     build: docker/assets
-    command: |
-      sh -c "/download-images.sh &&
-             yarn &&
-             yarn add --force node-sass &&
-             gulp watch"
     volumes:
       - .:/app
       - theme_node_modules:/app/web/app/themes/coop-tech-oowp-theme/node_modules
