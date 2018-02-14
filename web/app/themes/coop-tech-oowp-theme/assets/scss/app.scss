@@ -1,4 +1,5 @@
 @import 'settings';
+@import 'foundation-icons.scss';
 @import 'foundation';
 @import 'font-awesome';
 @import 'leaflet';
@@ -822,4 +823,47 @@ footer {
       }
     }
   }
+}
+
+
+
+/* ---------------------------------------- SUBSCRIBE ---------------------------------------- */
+
+.es_shortcode_form {
+  float: left;
+  width: 100%;
+}
+
+.es_shortcode_form_email {
+  font-weight: bold;
+}
+
+.es_textbox {
+  width: 50%;
+  float: left;
+  margin: 0;
+
+  input {
+    height: 50px;
+    margin: 0;
+  }
+}
+
+.es_button {
+  width: 45%;
+  float: left;
+  padding: 0;
+  margin-left: 5%;
+
+  #es_txt_button_pg {
+    @extend .button;
+    width: 100%;
+    height: 50px;
+  }
+}
+
+#es_shortcode_msg {
+  float: left;
+  clear: both;
+  color: black;
 }

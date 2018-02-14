@@ -33,14 +33,17 @@
 For an easy to use development environment run we use Docker Compose.
 
 0. Make sure you have [downloaded Docker](https://www.docker.com/community-edition#/download) and have it installed on your machine and running.
-1. On your command line of choice kickstart it all with `docker-compose up -d` run from inside this directory. You can follow the logs with `docker-compose logs -f`.
+1. On your command line of choice kickstart it all with `docker-compose up -d` run from inside this directory.
 2. It will take some time, especially for the first run.
+3. You can follow the logs with `docker-compose logs -f`.
+    - e.g. to check that the `wordpress` service is ready, you can do `docker-compose logs wordpress`
 
 Then you can access:
 
 | URL | Description |
 | --- | --- |
-| [localhost:18080](http://localhost:18080) | WordPress URL (dev:dev) |
+| [localhost:18080](http://localhost:18080) | WordPress Website |
+| [localhost:18080](http://localhost:18080/wp/wp-admin) | WordPress Admin (login: dev:dev) |
 | [localhost:18081](http://localhost:18081) | PHPMyAdmin |
 
 ### Images
