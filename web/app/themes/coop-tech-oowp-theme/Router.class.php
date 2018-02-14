@@ -31,7 +31,18 @@ class Router extends \ooRoutemaster {
         remove_action('wp_head', 'feed_links_extra', 3);
     }
 
-	protected function preDispatch($action, $args = array()) {
+    public function route()
+    {
+        // allow the email-subscribers plugin to do its thing
+        if((isset($_GET['es']))) {
+            return;
+        } else {
+            parent::route();
+        }
+    }
+
+
+    protected function preDispatch($action, $args = array()) {
 		parent::preDispatch($action, $args);
         $this->view->frontPage = ouPage::fetchById(get_option('page_on_front'));
 	}

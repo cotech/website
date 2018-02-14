@@ -42,7 +42,8 @@ Then you can access:
 
 | URL | Description |
 | --- | --- |
-| [localhost:18080](http://localhost:18080) | WordPress URL (dev:dev) |
+| [localhost:18080](http://localhost:18080) | WordPress Website |
+| [localhost:18080](http://localhost:18080/wp/wp-admin) | WordPress Admin (login: dev:dev) |
 | [localhost:18081](http://localhost:18081) | PHPMyAdmin |
 
 ### Images

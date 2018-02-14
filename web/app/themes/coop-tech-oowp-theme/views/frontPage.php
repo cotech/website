@@ -285,4 +285,13 @@
     </div>
 </section>
 
+<section id="newsletter" data-magellan-target="newsletter">
+    <div class="row">
+        <div class="small-12 medium-6 small-centered columns">
+            <h2>CoTech Newsletter</h2>
+            <p>Subscribe to our newsletter and stay up-to-date with <br/>what's going on in CoTech:</p>
+            <?php echo do_shortcode('[email-subscribers namefield="NO" group="Public"]'); ?>
+        </div>
+    </div>
+</section>
 </div>
