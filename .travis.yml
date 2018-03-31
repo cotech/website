@@ -1,0 +1,9 @@
+---
+
+sudo: false
+
+language: generic
+
+script:
+  - docker-compose up -d
+  - docker-compose stop
