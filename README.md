@@ -84,3 +84,11 @@ SELECT * FROM (
 LEFT JOIN wp_postmeta on noturnover.post_id = wp_postmeta.post_id
 where meta_value REGEXP  '^[^@]+@[^@]+\.[^@]{2,}$'
 ```
+
+## Editing Content
+
+For content that cannot be edited on the Wordpress Admin interface, please see:
+
+> https://github.com/cotech/website/tree/master/web/app/themes/coop-tech-oowp-theme/views
+
+For example, [frontPage.php](https://github.com/cotech/website/blob/master/web/app/themes/coop-tech-oowp-theme/views/frontPage.php).
