@@ -21,7 +21,6 @@
     <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
     <link rel="canonical" href="<?php print $post->permalink(); ?>">
     <?php wp_head(); ?>
-    <link rel="stylesheet" href="<?php echo $publicDir . 'foundation-icons/foundation-icons.css' ?>">
     <link rel="icon" type="image/x-icon" href="<?php echo $coTechLogo ?>">
     <script type="text/javascript">
         window.mapboxAccessToken = '<?php echo constant('MAPBOX_API_ACCESS_TOKEN') ?>';
