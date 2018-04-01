@@ -64,6 +64,16 @@ The [live site](https://www.coops.tech/) is set up exactly the same way but trac
 
 If the [dev site](https://dev.coops.tech/) images and database needs syncing from the [live site](https://www.coops.tech/) then please contact `chris@webarchitects.coop` and ask him to run the [live2dev Ansible playbook](https://git.coop/cotech/ansible/blob/master/live2dev.yml).
 
+It's also possible to get access to the deployment machine. Create an issue and your SSH public key part can be added. You can then:
+
+```
+ssh cotechdev@webarch1.co.uk
+```
+
+The site is in `~/sites/web`, add yourself to `~/.forward` if you wish to get emails.
+
+If you want to change the crontab, please make changes [over here](https://git.coop/cotech/ansible/blob/master/roles/live2dev/tasks/main.yml#L29).
+
 ## Deployment (manual)
 
 Currently the [live](https://www.coops.tech/) and [dev](https://dev.coops.tech/) sites are running on [Werbarchitects shared hosting](https://webarch.net/wp) and although SFTP/SSHFS and phpMyAdmin access is to available to any developers who need it (ask `chris@webarchitects.coop` to add your SSH public keys to the server and to email you the MySQL login details), `ssh` access is only availabe to Webarchitects sysadmins, see [the wiki](https://wiki.coops.tech/wiki/CoTech_WordPress#Updating_the_code) for the steps to manually update the code.
