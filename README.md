@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/cotech/website.svg?branch=master)](https://travis-ci.org/cotech/website)
+[![Build Status](https://travis-ci.org/cotech/website.svg?branch=dev)](https://travis-ci.org/cotech/website)
 
 # Cooperative Technologists
 
