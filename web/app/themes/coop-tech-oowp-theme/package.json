@@ -1,29 +1,28 @@
 {
-  "name": "outlandish-starter-theme",
+  "name": "cotech-website",
   "private": true,
   "version": "1.0.0",
-  "description": "The Outlandish Starter Theme",
-  "main": "index.js",
+  "description": "The website for CoTech",
   "scripts": {
     "build": "gulp",
     "watch": "gulp watch",
     "build:production": "gulp --production"
   },
-  "author": "Matthew Kendon <matt@outlandish.com>",
-  "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "datatables.net": "1.10.16",
     "datatables.net-zf": "1.10.16",
     "font-awesome": "4.7.0",
     "foundation-icons": "^1.0.1",
     "foundation-sites": "6.2.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^2.0.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
     "jquery": "^3.1.1",
-    "laravel-elixir": "6.0.0-13",
     "leaflet": "^1.0.2",
-    "node-sass": "^4.5.3",
+    "merge-stream": "^1.0.1",
     "what-input": "^4.0.3"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1"
   }
 }
