@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fd71ff08f96c8b3b4d4d81307087ca41",
-    "content-hash": "0a96047a8f46233ac6596cba8c69a7f2",
+    "hash": "20f80e57c106d0b6a913085824cdc077",
+    "content-hash": "25d85b2bee3702774f8d3977683b8ff4",
     "packages": [
         {
             "name": "composer/installers",
@@ -567,15 +567,15 @@
         },
         {
             "name": "wpackagist-plugin/email-subscribers",
-            "version": "3.5.14",
+            "version": "3.5.13",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/email-subscribers/",
-                "reference": "tags/3.5.14"
+                "reference": "tags/3.5.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/email-subscribers.3.5.14.zip",
+                "url": "https://downloads.wordpress.org/plugin/email-subscribers.3.5.13.zip",
                 "reference": null,
                 "shasum": null
             },
