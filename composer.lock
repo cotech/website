@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fd71ff08f96c8b3b4d4d81307087ca41",
-    "content-hash": "0a96047a8f46233ac6596cba8c69a7f2",
+    "hash": "37177f2eb2c1bcba39113345b9ef05e4",
+    "content-hash": "64adea4799fa522faa668d9443862d1f",
     "packages": [
         {
             "name": "composer/installers",
@@ -456,7 +456,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/acf-to-rest-api.3.1.0.zip",
-                "reference": "tags/3.1.0",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -516,7 +516,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/contact-form-7-recaptcha.1.2.0.zip",
-                "reference": "tags/1.2.0",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -527,15 +527,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "1.5.8",
+            "version": "1.6.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/1.5.8"
+                "reference": "tags/1.6.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.5.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.6.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -556,7 +556,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/database-sync.0.5.1.zip",
-                "reference": "tags/0.5.1",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -567,15 +567,15 @@
         },
         {
             "name": "wpackagist-plugin/email-subscribers",
-            "version": "3.5.14",
+            "version": "3.5.15",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/email-subscribers/",
-                "reference": "tags/3.5.14"
+                "reference": "tags/3.5.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/email-subscribers.3.5.14.zip",
+                "url": "https://downloads.wordpress.org/plugin/email-subscribers.3.5.15.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -616,7 +616,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/posts-to-posts.1.6.5.zip",
-                "reference": "tags/1.6.5",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -656,7 +656,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wp-fail2ban.3.5.3.zip",
-                "reference": "tags/3.5.3",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -676,7 +676,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wp-piwik.1.0.19.zip",
-                "reference": "tags/1.0.19",
+                "reference": null,
                 "shasum": null
             },
             "require": {

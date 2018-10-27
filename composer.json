@@ -50,7 +50,7 @@
     "johnpbloch/wordpress": "4.9.8",
     "oscarotero/env": "^1.0",
     "wpackagist-plugin/advanced-custom-fields": "5.7.7",
-    "wpackagist-plugin/custom-post-type-ui": "1.5.8",
+    "wpackagist-plugin/custom-post-type-ui": "1.6.0",
     "wpackagist-plugin/posts-to-posts": "1.6.5",
     "wpackagist-plugin/wordpress-importer": "0.6.4",
     "wpackagist-plugin/wp-fail2ban": "3.5.3",
@@ -60,7 +60,7 @@
     "wpackagist-plugin/flamingo": "1.9",
     "wpackagist-plugin/contact-form-7-recaptcha": "1.2.0",
     "wpackagist-plugin/acf-to-rest-api": "3.1.0",
-    "wpackagist-plugin/email-subscribers": "3.5.14",
+    "wpackagist-plugin/email-subscribers": "3.5.15",
     "outlandish/oowp": "0.9.1",
     "outlandish/routemaster": "dev-wp-json-fix",
     "wp-sync-db/wp-sync-db-media-files": "^1.1"
