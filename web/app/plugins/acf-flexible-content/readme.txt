@@ -1,11 +1,23 @@
 === Advanced Custom Fields: Flexible Content Field ===
 Contributors: elliotcondon
-Requires at least: 3.6.0
-Tested up to: 4.9.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Author: Elliot Condon
+Author URI: http://www.elliotcondon.com
+Plugin URI: http://www.advancedcustomfields.com
+Requires at least: 3.0
+Tested up to: 3.5.1
+Stable tag: trunk
+Homepage: http://www.advancedcustomfields.com/add-ons/flexible-content-field/
+Version: 1.1.1
 
-Create unique page designs with a flexible layout!
+
+== Copyright ==
+Copyright 2011 - 2013 Elliot Condon
+
+This software is NOT to be distributed, but can be INCLUDED in WP themes: Premium or Contracted.
+This software is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
 
 == Description ==
 
@@ -40,15 +52,6 @@ include_once('acf-flexible-content/acf-flexible-content.php');
 
 
 == Changelog ==
-
-= 2.1.0 =
-* Added support for ACF version 5.7.0
-
-= 2.0.1 =
-* Minor fixes and improvements
-
-= 2.0.0 =
-* Added support for ACF version 5
 
 = 1.1.1 =
 * Fixed bug causing a sub field default_value of "0" to be ignored

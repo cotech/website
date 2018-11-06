@@ -38,7 +38,3 @@ web/favicon.ico
 
 # Generated via crontab
 web/cotech-images.tgz
-
-
-#NPM
-node_modules

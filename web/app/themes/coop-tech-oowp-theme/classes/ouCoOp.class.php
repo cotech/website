@@ -224,7 +224,7 @@ class ouCoOp extends ouPost {
      * @return array
      */
     public function socialMedia() {
-        return $this->metadata(Fields::SOCIAL_MEDIA) ?: [];
+        return $this->metadata(Fields::SOCIAL_MEDIA);
     }
 
     /**

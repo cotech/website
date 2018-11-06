@@ -1,13 +1,27 @@
 === Advanced Custom Fields: Repeater Field ===
 Contributors: elliotcondon
-Requires at least: 3.6.0
-Tested up to: 4.9.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Author: Elliot Condon
+Author URI: http://www.elliotcondon.com
+Plugin URI: http://www.advancedcustomfields.com
+Requires at least: 3.0
+Tested up to: 3.5.1
+Stable tag: trunk
+Homepage: http://www.advancedcustomfields.com/add-ons/repeater-field/
+Version: 1.1.1
 
-Break free from static inputs and create multiple rows of loop-able data
+
+== Copyright ==
+Copyright 2011 - 2013 Elliot Condon
+
+This software is NOT to be distributed, but can be INCLUDED in WP themes: Premium or Contracted.
+This software is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
 
 == Description ==
+
+= Break free from static inputs and create multiple rows of loop-able data =
 
 The Repeater field acts as a table of data where you can define the columns (sub fields) and add infinite rows.
 Any type of field can be added as a sub field which gives you the potential to create very flexible templates.
@@ -38,15 +52,6 @@ include_once('acf-repeater/acf-repeater.php');
 
 == Changelog ==
 
-= 2.1.0 =
-* Added support for ACF version 5.7.0
-
-= 2.0.1 =
-* Minor fixes and improvements
-
-= 2.0.0 =
-* Added support for ACF version 5
-
 = 1.1.1 =
 * Fixed CSS bug causing any nested flexible content fields to not display add/remove buttons for each layout
 * Fixes CSS bug causing cropped tables on small screen sizes
@@ -55,7 +60,7 @@ include_once('acf-repeater/acf-repeater.php');
 * Added Support for sub field conditional logic
 * Added Support for sub field required validation
 * Updated UI for 'column width' option (prepend %)
-* Updated UI for 'Maximum Rows' option (can be left blank)
+* Updated UI for 'Maxinmum Rows' option (can be left blank)
 * Updated JS to use .on function instead of .live
 * Added new update script allowing distribution in premium plugins / themes
 
