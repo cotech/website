@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "af052eced6710eaa83c1093dbf862c9c",
-    "content-hash": "77f244291e65cf2ebeb2eb84b5801ae5",
+    "hash": "017de8283f67b76124b6e43468c5854a",
+    "content-hash": "58b0294f436398c31aedfebbdf7dd236",
     "packages": [
         {
             "name": "composer/installers",
@@ -467,15 +467,15 @@
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields",
-            "version": "4.4.12",
+            "version": "5.7.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/advanced-custom-fields/",
-                "reference": "tags/4.4.12"
+                "reference": "tags/5.7.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.12.zip",
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.5.7.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -487,15 +487,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "5.0",
+            "version": "5.0.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/5.0"
+                "reference": "tags/5.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.0.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -527,15 +527,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "1.5.6",
+            "version": "1.6.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/1.5.6"
+                "reference": "tags/1.6.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.5.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.6.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -587,15 +587,15 @@
         },
         {
             "name": "wpackagist-plugin/flamingo",
-            "version": "1.8",
+            "version": "1.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/flamingo/",
-                "reference": "tags/1.8"
+                "reference": "tags/1.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/flamingo.1.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/flamingo.1.9.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -627,15 +627,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-importer",
-            "version": "0.6.3",
+            "version": "0.6.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-importer/",
-                "reference": "tags/0.6.3"
+                "reference": "tags/0.6.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.6.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.6.4.zip",
                 "reference": null,
                 "shasum": null
             },
