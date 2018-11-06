@@ -1,25 +1,11 @@
 === Advanced Custom Fields: Options Page ===
 Contributors: elliotcondon
-Author: Elliot Condon
-Author URI: http://www.elliotcondon.com
-Plugin URI: http://www.advancedcustomfields.com
-Requires at least: 3.0
-Tested up to: 3.6.0
-Stable tag: trunk
-Homepage: http://www.advancedcustomfields.com/add-ons/options-page/
-Version: 1.2.0
+Requires at least: 3.6.0
+Tested up to: 4.9.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-
-== Copyright ==
-Copyright 2011 - 2013 Elliot Condon
-
-This software is NOT to be distributed, but can be INCLUDED in WP themes and Plugins: Premium or Contracted.
-If you include this software within a premium theme or premium plugin, you MUST remove the acf-options-page-update.php file from the folder.
-
-This software is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
+Global Options have never been so easy
 
 == Description ==
 
@@ -54,6 +40,17 @@ include_once('acf-options-page/acf-options-page.php');
 
 
 == Changelog ==
+
+= 2.1.0 =
+* Added support for ACF version 5.7.0
+
+= 2.0.1 =
+* Minor fixes and improvements
+
+= 2.0.0 =
+* Added support for ACF version 5
+* Added new settings to the acf_add_options_page() function https://www.advancedcustomfields.com/resources/acf_add_options_page/
+* Added new acf_add_options_sub_page() function https://www.advancedcustomfields.com/resources/acf_add_options_sub_page/
 
 = 1.2.0 =
 * Added Polish translation - Thanks to matczar (http://support.advancedcustomfields.com/forums/users/matczar/)
