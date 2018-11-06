@@ -61,7 +61,7 @@
     "wpackagist-plugin/flamingo": "1.9",
     "wpackagist-plugin/contact-form-7-recaptcha": "1.2.0",
     "wpackagist-plugin/acf-to-rest-api": "3.1.0",
-    "wpackagist-plugin/email-subscribers": "3.4.8",
+    "wpackagist-plugin/email-subscribers": "3.5.15",
     "outlandish/oowp": "0.9.1",
 
     "outlandish/routemaster": "dev-wp-json-fix",
