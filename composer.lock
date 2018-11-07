@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a4ecc569a25fe115f3ff9ebc67e10a4b",
-    "content-hash": "9cdad44c4254998796fb444e052fdcf2",
+    "hash": "850abb5ea1fca1be945c73b238e8399d",
+    "content-hash": "f1d5e6f64e22aeed758285abca2b71e3",
     "packages": [
         {
             "name": "composer/installers",
@@ -319,7 +319,7 @@
             ],
             "description": "A routing plugin for WordPress",
             "support": {
-                "source": "https://github.com/outlandishideas/oowp/tree/0.9.1",
+                "source": "https://github.com/outlandishideas/oowp/tree/v2.0.5",
                 "issues": "https://github.com/outlandishideas/oowp/issues"
             },
             "time": "2017-04-27 13:33:33"
@@ -456,7 +456,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/acf-to-rest-api.3.1.0.zip",
-                "reference": null,
+                "reference": "tags/3.1.0",
                 "shasum": null
             },
             "require": {
@@ -516,7 +516,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/contact-form-7-recaptcha.1.2.0.zip",
-                "reference": null,
+                "reference": "tags/1.2.0",
                 "shasum": null
             },
             "require": {
@@ -556,7 +556,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/database-sync.0.5.1.zip",
-                "reference": null,
+                "reference": "tags/0.5.1",
                 "shasum": null
             },
             "require": {
@@ -616,7 +616,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/posts-to-posts.1.6.5.zip",
-                "reference": null,
+                "reference": "tags/1.6.5",
                 "shasum": null
             },
             "require": {
@@ -647,15 +647,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-fail2ban",
-            "version": "3.5.3",
+            "version": "3.6.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-fail2ban/",
-                "reference": "tags/3.5.3"
+                "reference": "tags/3.6.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-fail2ban.3.5.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-fail2ban.3.6.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -676,7 +676,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wp-piwik.1.0.19.zip",
-                "reference": null,
+                "reference": "tags/1.0.19",
                 "shasum": null
             },
             "require": {
